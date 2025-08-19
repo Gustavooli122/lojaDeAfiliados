@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrossel estilo Bootstrap com Swipe</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .transition-transform {
+      transition: transform 0.5s ease-in-out;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 flex justify-center items-center min-h-screen">
+
+  <div class="relative w-full max-w-3xl overflow-hidden rounded-lg shadow-lg">
+    <!-- Container dos slides -->
+    <div id="slides" class="flex w-full transition-transform">
+      <div class="w-full flex-shrink-0 relative">
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200" class="w-full h-96 object-cover">
+      </div>
+      <div class="w-full flex-shrink-0 relative">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200" class="w-full h-96 object-cover">
+      </div>
+      <div class="w-full flex-shrink-0 relative">
+        <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1200" class="w-full h-96 object-cover">
+      </div>
+      <div class="w-full flex-shrink-0 relative">
+        <img src="https://images.unsplash.com/photo-1526481280691-9061e1c0f1f4?w=1200" class="w-full h-96 object-cover">
+      </div>
+    </div>
+
+    <!-- Botões -->
+    <button id="prev" class="absolute left-3 top-1/2 -translate-y-1/2 bg-black bg-opacity-50 text-white p-3 rounded-full">
+      &#10094;
+    </button>
+    <button id="next" class="absolute right-3 top-1/2 -translate-y-1/2 bg-black bg-opacity-50 text-white p-3 rounded-full">
+      &#10095;
+    </button>
+  </div>
+
+  <script>
+    const slides = document.getElementById('slides');
+    const totalSlides = slides.children.length;
+    let index = 0;
+
+    function showSlide(n) {
+      // Se o índice for menor que 0, volta para o último slide
+      if (n < 0) index = totalSlides - 1;
+      // Se o índice for maior ou igual ao total, volta para o primeiro slide
+      else if (n >= totalSlides) index = 0;
+      // Caso contrário, atualiza o índice normalmente
+      else index = n;
+      // Move os slides usando transform para mostrar o slide correto
+      slides.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    // Botão "anterior": mostra o slide anterior ao clicar
+    document.getElementById('prev').addEventListener('click', () => showSlide(index - 1));
+    // Botão "próximo": mostra o próximo slide ao clicar
+    document.getElementById('next').addEventListener('click', () => showSlide(index + 1));
+
+    // Auto-play: troca de slide automaticamente a cada 4 segundos
+    setInterval(() => showSlide(index + 1), 4000);
+
+    // --- SWIPE NO MOBILE ---
+    // Variáveis para armazenar posição inicial e final do toque
+    let startX = 0;
+    let endX = 0;
+
+    // Detecta início do toque e armazena a posição X
+    slides.addEventListener('touchstart', (e) => {
+      startX = e.touches[0].clientX;
+    });
+
+    // Detecta fim do toque e armazena a posição X, depois chama handleSwipe
+    slides.addEventListener('touchend', (e) => {
+      endX = e.changedTouches[0].clientX;
+      handleSwipe();
+    });
+
+    function handleSwipe() {
+      // Calcula a diferença entre início e fim do toque
+      const diff = startX - endX;
+      if (Math.abs(diff) > 50) { // arrasto mínimo
+        if (diff > 0) {
+          showSlide(index + 1); // arrastou pra esquerda → próximo
+        } else {
+          showSlide(index - 1); // arrastou pra direita → anterior
+        }
+      }
+    }
+  </script>
+</body>
+</html>

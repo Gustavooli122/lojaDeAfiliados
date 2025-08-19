@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sidebar com Animação Suave</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Classe para esconder o sidebar mantendo transições */
+    
+  </style>
+</head>
+<body class="bg-gray-100">
+
+  <button id="btnMenu" class="m-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">
+    Abrir Menu
+  </button>
+
+  <div
+    id="sidebar"
+    class="fixed top-0 left-0 h-full w-64 bg-gray-800 text-white transform -translate-x-full transition-transform  duration-600 ease-in-out z-50"
+  >
+    <div class="p-4 flex justify-between items-center border-b border-gray-700">
+      <h2 class="text-lg font-semibold">Menu</h2>
+      <button id="btnClose" class="text-white text-xl font-bold hover:text-red-400">&times;</button>
+    </div>
+    <nav class="p-4">
+      <ul>
+        <li class="py-2 hover:bg-gray-700 rounded px-2 cursor-pointer">Home</li>
+        <li class="py-2 hover:bg-gray-700 rounded px-2 cursor-pointer">Produtos</li>
+        <li class="py-2 hover:bg-gray-700 rounded px-2 cursor-pointer">Sobre</li>
+        <li class="py-2 hover:bg-gray-700 rounded px-2 cursor-pointer">Contato</li>
+      </ul>
+    </nav>
+  </div>
+
+  <script>
+    const btnMenu = document.getElementById('btnMenu');
+    const btnClose = document.getElementById('btnClose');
+    const sidebar = document.getElementById('sidebar');
+
+    function abrirSidebar() {
+      // Força o navegador a reconhecer a remoção para animar corretamente
+      requestAnimationFrame(() => {
+        sidebar.classList.remove('-translate-x-full');
+        sidebar.classList.add('translate-x-0');
+      });
+    }
+
+    function fecharSidebar() {
+      // Inicia a animação de saída
+      sidebar.classList.add('-translate-x-full');
+      sidebar.classList.remove('translate-x-0');
+    }
+
+      // Quando a transição acabar, esconde o sidebar
+    /*  function onTransitionEnd(event) {
+        if (event.propertyName === 'transform') {
+          sidebar.classList.add('hidden-sidebar');
+          sidebar.removeEventListener('transitionend', onTransitionEnd);
+        }
+      }
+
+      sidebar.addEventListener('transitionend', onTransitionEnd); */
+
+    btnMenu.addEventListener('click', abrirSidebar);
+    btnClose.addEventListener('click', fecharSidebar);
+  </script>
+
+</body>
+</html>
