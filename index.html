@@ -8,47 +8,42 @@
   <link rel="stylesheet" href="css/index.css">
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap" rel="stylesheet">
-
-
 </head>
 <body class="bg-write font-poppins overflow-x-hidden">
   <div class="flex flex-col overflow-x-hidden">
-    <div class="hidden sm:hidden md:hidden lg:flex bg-[rgb(33,41,52)] w-full pt-2 pb-2 pl-10 pr-10 justify-between items-center">
+    <aside class="hidden sm:hidden md:hidden lg:flex bg-[rgb(33,41,52)] w-full pt-2 pb-2 pl-10 pr-10 justify-between items-center">
       <div class="flex gap-2 justify-center flex-row">
-      <img src="https://img.icons8.com/ios-filled/20/ffffff/new-post.png" alt="imagem-de-email" class="w-3 h-3 m-auto">
-      <a href="mailto:contato@exemplo.com" class="text-gray-400 text-xs mr-2">info@company.com</a>
-      <img src="https://img.icons8.com/ios-filled/20/ffffff/whatsapp.png" alt="icone-whatszap" class="w-3 h-3  m-auto">
-      <a href="tel:010-020-0340" class="text-gray-400 text-xs">010-020-0340</a>
-    </div>
-   <div class="flex gap-4">
+        <img src="https://img.icons8.com/ios-filled/20/ffffff/new-post.png" alt="imagem-de-email" class="w-3 h-3 m-auto">
+        <a href="mailto:contato@exemplo.com" class="text-gray-400 text-xs mr-2">info@company.com</a>
+        <img src="https://img.icons8.com/ios-filled/20/ffffff/whatsapp.png" alt="icone-whatszap" class="w-3 h-3  m-auto">
+        <a href="tel:010-020-0340" class="text-gray-400 text-xs">010-020-0340</a>
+      </div>
+      <nav class="flex gap-4" aria-label="Redes sociais">
         <a href="#"><img src="https://img.icons8.com/ios-filled/24/ffffff/facebook-new.png" alt="Facebook" class="w-4"></a>
         <a href="#"><img src="https://img.icons8.com/ios-filled/24/ffffff/instagram-new.png" alt="Instagram" class="w-4"></a>
         <a href="#"><img src="https://img.icons8.com/ios-filled/24/ffffff/twitter.png" alt="Twitter" class="w-4"></a>
         <a href="#"><img src="https://img.icons8.com/ios-filled/24/ffffff/linkedin.png" alt="LinkedIn" class="w-4"></a>
-      </div>
-    </div>
+      </nav>
+    </aside>
     <header class="flex justify-between items-center mt-[-2rem] mb-[-2rem] z-20 ">
       <img src="img/logo.png" alt="Logo da loja" width="170px" height="40px">
-          <nav>
-             <ul class="hidden sm:hidden md:hidden lg:flex flex-row gap-28 text-3xl">
-        <li><a href="#" class="text-gray-600 text-xl hover:text-[#2ea55cd5]">Lar</a></li>
-        <li><a href="#" class="text-gray-600 text-xl hover:text-[#2ea55cd5]">Sobre</a></li>
-        <li><a href="#" class="text-gray-600 text-xl hover:text-[#2ea55cd5]">Comprar</a></li>
-        <li><a href="#" class="text-gray-600 text-xl hover:text-[#2ea55cd5]">Contatos</a></li>
-      </ul>
-          </nav>
-
-          <div class="lg:flex hidden gap-3 mr-3 " aria-label="Carrinho de compras">
-            
-            <a href="#"><img src="img/lupa.png" alt="Ícone de lupa" width="25px" class="m-auto" ></a> 
-
-            <a href="#"> <img src="img/carrinho-de-compras.png" alt="carrinho-de-compras" width="25px" class="m-auto"></a>
-
-          <div class="rounded-[50px] bg-slate-300 w-auto h-5 flex justify-center items-center -translate-x-4 -translate-y-3">
-            <p id="numeroCarrinho" class="text-gray-900 text-xs font-medium m-2">0</p>
-          </div>
-          </div>
-          <nav aria-label="Menu principal" class="m-0.5"><button onclick="abrirNavegacao()" class="p-0 m-0" aria-label="Abrir menu">
+      <nav aria-label="Menu principal">
+        <ul class="hidden sm:hidden md:hidden lg:flex flex-row gap-28 text-3xl">
+          <li><a href="#" class="text-gray-600 text-xl hover:text-[#2ea55cd5]">Lar</a></li>
+          <li><a href="#" class="text-gray-600 text-xl hover:text-[#2ea55cd5]">Sobre</a></li>
+          <li><a href="#" class="text-gray-600 text-xl hover:text-[#2ea55cd5]">Comprar</a></li>
+          <li><a href="#" class="text-gray-600 text-xl hover:text-[#2ea55cd5]">Contatos</a></li>
+        </ul>
+      </nav>
+      <div class="lg:flex hidden gap-3 mr-3 " aria-label="Carrinho de compras">
+        <a href="#"><img src="img/lupa.png" alt="Ícone de lupa" width="25px" class="m-auto" ></a> 
+        <a href="#"> <img src="img/carrinho-de-compras.png" alt="carrinho-de-compras" width="25px" class="m-auto"></a>
+        <div class="rounded-[50px] bg-slate-300 w-auto h-5 flex justify-center items-center -translate-x-4 -translate-y-3">
+          <p id="numeroCarrinho" class="text-gray-900 text-xs font-medium m-2">0</p>
+        </div>
+      </div>
+      <nav aria-label="Menu mobile" class="m-0.5">
+        <button onclick="abrirNavegacao()" class="p-0 m-0" aria-label="Abrir menu">
           <img src="img/menu.png" alt="Ícone do menu" class="w-[80px] h-[80px] object-cover lg:hidden">
         </button>
       </nav>
@@ -75,10 +70,9 @@
         </div>
       </section>
     </nav>
-    <main id="carrossel" class="flex absolute transition-transformMenu ease-in-out duration-500 z-20 translate-y-24 lg:translate-y-32 justify-center items-center overflow-hidden h-auto w-full shadow-md ">
-      
+    <main class="flex carrossel absolute transition-transformMenu ease-in-out duration-500 z-20 translate-y-24 lg:translate-y-32 justify-center items-center overflow-hidden h-auto w-full shadow-md ">
       <button id="btnProximo" class="absolute top-[50vh]  lg:top-[36vh] right-0  mr-4 text-6xl text-[#2ea55c7c] hover:text-[#2ea55cd5] z-30" aria-label="Próximo slide">&#10095;</button>
-          <button id="btnAnterior" class="absolute top-[50vh]  lg:top-[36vh] left-0  ml-4 text-6xl text-[#2ea55c7c] hover:text-[#2ea55cd5] z-30" aria-label="Slide anterior ">&#10094;</button>
+      <button id="btnAnterior" class="absolute top-[50vh]  lg:top-[36vh] left-0  ml-4 text-6xl text-[#2ea55c7c] hover:text-[#2ea55cd5] z-30" aria-label="Slide anterior ">&#10094;</button>
       <section id="btnProximo" class="relative overflow-hidden flex flex-col justify-center" aria-label="Banner principal">
         <div id="slides" class="md:pb-5 flex w-full  transition-transformCarrossel items-center ">
           <article class="w-full flex-shrink-0 flex flex-col lg:flex-row-reverse lg:gap-10 items-center lg:justify-center lg:h-[36rem] lg:p-20 h-[53rem]  p-10" aria-label="Banner 1">
@@ -106,100 +100,87 @@
             </section>
           </article>
         </div> 
-        
         <section class="flex flex-col md:grid grid-cols-3 lg:auto-cols-min auto-rows-min md:gap-y-1 items-center mt-20  mb-40 lg:gap-2 lg:pl-20 lg:pr-20">
-       <header class="col-span-3  sm: mb-17 lg:mb-2 p-24">
-         <h1 class="text-center mb-4 text-5xl text-gray-700">Categorias do mês</h1>
-         <p class="text-center text-gray-700 p-0 lg:pl-50 lg:pr-50 mt-5"> Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </header> 
-        <article class="flex flex-col items-center text-center sm: mb-16">
-           <img src="img/category_img_01.jpg" alt="category_img_01" class="rounded-full w-[70%] h-auto md:w-[60%] lg:w-[75%]">
-       
-          <h2 class="text-gray-800 m-5 text-xl font-bold">watchs</h2>
-          <button class="bg-[#2ea55cd5] text-gray-100 pt-2 pb-2 pl-3 pr-3 rounded-md">Go shop</button>
-        </article>
-         <article class="text-center flex flex-col items-center  sm: mb-16">
-          <img src="img/category_img_02.jpg" alt="category_img_02" class="rounded-full w-[70%] h-auto md:w-[60%]  lg:w-[75%]">
-          <h2 class="text-gray-800 m-5 text-xl font-bold">shoes</h2>
-          <button class="bg-[#2ea55cd5] text-gray-100 pt-2 pb-2 pl-3 pr-3 rounded-md">Go shop</button>
-        </article>
-         <article class="text-center flex flex-col items-center  sm: mb-16">
-          <img src="img/category_img_03.jpg" alt="category_img_03" class="rounded-full w-[70%] h-auto md:w-[60%]  lg:w-[75%]">
-          <h2 class="text-gray-800 m-5 text-xl font-bold">Accessories</h2>
-          <button class="bg-[#2ea55cd5] text-gray-100 pt-2 pb-2 pl-3 pr-3 rounded-md">Go shop</button>
-        </article>
-</section>
-     <section class="bg-[#e9eef5] p-10 flex flex-col md:grid grid-cols-3 auto-rows-min gap-5 lg:pb-12">
-       <header class="flex flex-col gap-5 mt-4 col-span-3 md:mb-6">
-       <h1 class="text-center text-5xl text-gray-700 font-[200]">Featured Product</h1> 
-      <p class="text-center text-gray-700"> Reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p> 
-       </header>
-       <article class="bg-white pb-5">
+          <header class="col-span-3  sm: mb-17 lg:mb-2 p-24">
+            <h1 class="text-center mb-4 text-5xl text-gray-700">Categorias do mês</h1>
+            <p class="text-center text-gray-700 p-0 lg:pl-50 lg:pr-50 mt-5"> Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </header> 
+          <article class="flex flex-col items-center text-center sm: mb-16">
+            <img src="img/category_img_01.jpg" alt="category_img_01" class="rounded-full w-[70%] h-auto md:w-[60%] lg:w-[75%]">
+            <h2 class="text-gray-800 m-5 text-xl font-bold">watchs</h2>
+            <button class="bg-[#2ea55cd5] text-gray-100 pt-2 pb-2 pl-3 pr-3 rounded-md">Go shop</button>
+          </article>
+          <article class="text-center flex flex-col items-center  sm: mb-16">
+            <img src="img/category_img_02.jpg" alt="category_img_02" class="rounded-full w-[70%] h-auto md:w-[60%]  lg:w-[75%]">
+            <h2 class="text-gray-800 m-5 text-xl font-bold">shoes</h2>
+            <button class="bg-[#2ea55cd5] text-gray-100 pt-2 pb-2 pl-3 pr-3 rounded-md">Go shop</button>
+          </article>
+          <article class="text-center flex flex-col items-center  sm: mb-16">
+            <img src="img/category_img_03.jpg" alt="category_img_03" class="rounded-full w-[70%] h-auto md:w-[60%]  lg:w-[75%]">
+            <h2 class="text-gray-800 m-5 text-xl font-bold">Accessories</h2>
+            <button class="bg-[#2ea55cd5] text-gray-100 pt-2 pb-2 pl-3 pr-3 rounded-md">Go shop</button>
+          </article>
+        </section>
+        <section class="bg-[#e9eef5] p-10 flex flex-col md:grid grid-cols-3 auto-rows-min gap-5 lg:pb-12">
+          <header class="flex flex-col gap-5 mt-4 col-span-3 md:mb-6">
+            <h1 class="text-center text-5xl text-gray-700 font-[200]">Featured Product</h1> 
+            <p class="text-center text-gray-700"> Reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p> 
+          </header>
+          <article class="bg-white pb-5">
             <a href="#"><img src="img/feature_prod_01.jpg" alt="img-produto-card" class="w-full md:w-full"></a>
-
-           <div class="flex justify-between ml-3 mr-3 mt-4">
-            
-            <ul class="flex gap-2 md:flex-wrap md:w-[60%]">
-              
-            <li><i class="fa fa-star text-lg" style="color: #facc15;"></i>
-            <li><i class="fa fa-star text-lg" style="color: #facc15;"></i>
-            <li><i class="fa fa-star text-lg" style="color: #facc15;"></i>
-            <li><i class="fa fa-star text-lg" style="color: #facc15;"></i>
-            <li><i class="fa fa-star text-lg" style="color: #979797;"></i>
-            
-            </li></ul> <p class="text-gray-400">$ 240,00</p></div> 
+            <div class="flex justify-between ml-3 mr-3 mt-4">
+              <ul class="flex gap-2 md:flex-wrap md:w-[60%]">
+                <li><i class="fa fa-star text-lg" style="color: #facc15;"></i></li>
+                <li><i class="fa fa-star text-lg" style="color: #facc15;"></i></li>
+                <li><i class="fa fa-star text-lg" style="color: #facc15;"></i></li>
+                <li><i class="fa fa-star text-lg" style="color: #facc15;"></i></li>
+                <li><i class="fa fa-star text-lg" style="color: #979797;"></i></li>
+              </ul> 
+              <p class="text-gray-400">$ 240,00</p>
+            </div> 
             <div class="m-4">
-             <h2 class="mb-3  text-2xl "> Peso de academia</h2>
-               <p class="text-gray-700">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt in culpa qui officia deserunt. </p>
-
-             <p class="text-gray-400 mt-4"> Avaliações (24)</p>
+              <h2 class="mb-3  text-2xl "> Peso de academia</h2>
+              <p class="text-gray-700">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt in culpa qui officia deserunt. </p>
+              <p class="text-gray-400 mt-4"> Avaliações (24)</p>
             </div>
-       </article>
-           <article class="bg-white pb-5">
+          </article>
+          <article class="bg-white pb-5">
             <a href="#"><img src="img/feature_prod_02.jpg" alt="img-produto-card" class="w-full md:w-full"></a>
-
-           <div class="flex justify-between ml-3 mr-3 mt-4">
-            
-            <ul class="flex gap-2 md:flex-wrap md:w-[60%]">
-              
-            <li><i class="fa fa-star text-lg" style="color: #facc15;"></i>
-            <li><i class="fa fa-star text-lg" style="color: #facc15;"></i>
-            <li><i class="fa fa-star text-lg" style="color: #facc15;"></i>
-            <li><i class="fa fa-star text-lg" style="color: #facc15;"></i>
-            <li><i class="fa fa-star text-lg" style="color: #979797;"></i>
-            
-            </li></ul> <p class="text-gray-400">$ 240,00</p></div> 
+            <div class="flex justify-between ml-3 mr-3 mt-4">
+              <ul class="flex gap-2 md:flex-wrap md:w-[60%]">
+                <li><i class="fa fa-star text-lg" style="color: #facc15;"></i></li>
+                <li><i class="fa fa-star text-lg" style="color: #facc15;"></i></li>
+                <li><i class="fa fa-star text-lg" style="color: #facc15;"></i></li>
+                <li><i class="fa fa-star text-lg" style="color: #facc15;"></i></li>
+                <li><i class="fa fa-star text-lg" style="color: #979797;"></i></li>
+              </ul> 
+              <p class="text-gray-400">$ 240,00</p>
+            </div> 
             <div class="m-4">
-             <h2 class="mb-3  text-2xl "> Peso de academia</h2>
-               <p class="text-gray-700">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt in culpa qui officia deserunt. </p>
-
-             <p class="text-gray-400 mt-4"> Avaliações (24)</p>
+              <h2 class="mb-3  text-2xl "> Peso de academia</h2>
+              <p class="text-gray-700">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt in culpa qui officia deserunt. </p>
+              <p class="text-gray-400 mt-4"> Avaliações (24)</p>
             </div>
-       </article>
-           <article class="bg-white pb-5">
+          </article>
+          <article class="bg-white pb-5">
             <a href="#"><img src="img/feature_prod_03.jpg" alt="img-produto-card" class="w-full md:w-full"></a>
-
-           <div class="flex justify-between ml-3 mr-3 mt-4">
-            
-            <ul class="flex gap-2 md:flex-wrap md:w-[60%]">
-              
-            <li><i class="fa fa-star text-lg" style="color: #facc15;"></i>
-            <li><i class="fa fa-star text-lg" style="color: #facc15;"></i>
-            <li><i class="fa fa-star text-lg" style="color: #facc15;"></i>
-            <li><i class="fa fa-star text-lg" style="color: #facc15;"></i>
-            <li><i class="fa fa-star text-lg" style="color: #979797;"></i>
-            
-            </li></ul> <p class="text-gray-400">$ 240,00</p></div> 
+            <div class="flex justify-between ml-3 mr-3 mt-4">
+              <ul class="flex gap-2 md:flex-wrap md:w-[60%]">
+                <li><i class="fa fa-star text-lg" style="color: #facc15;"></i></li>
+                <li><i class="fa fa-star text-lg" style="color: #facc15;"></i></li>
+                <li><i class="fa fa-star text-lg" style="color: #facc15;"></i></li>
+                <li><i class="fa fa-star text-lg" style="color: #facc15;"></i></li>
+                <li><i class="fa fa-star text-lg" style="color: #979797;"></i></li>
+              </ul> 
+              <p class="text-gray-400">$ 240,00</p>
+            </div> 
             <div class="m-4">
-             <h2 class="mb-3  text-2xl "> Peso de academia</h2>
-               <p class="text-gray-700">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt in culpa qui officia deserunt. </p>
-
-             <p class="text-gray-400 mt-4"> Avaliações (24)</p>
+              <h2 class="mb-3  text-2xl "> Peso de academia</h2>
+              <p class="text-gray-700">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt in culpa qui officia deserunt. </p>
+              <p class="text-gray-400 mt-4"> Avaliações (24)</p>
             </div>
-       </article>
-     </section>
-
-     
+          </article>
+        </section>
         <!--estrelas
         <div class="flex">
         <i class="fa fa-star text-3xl" style="color: #facc15;"></i>
@@ -208,74 +189,65 @@
         <i class="fa fa-star text-3xl" style="color: #facc15;"></i>
         <i class="fa fa-star text-3xl" style="color: #929292;"></i>
       </div>-->
- <footer class="bg-gray-800 text-white py-10">
-  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
-    <!-- Seção 1: Empresa -->
-    <div>
-      <h2 class="text-[#2ea55cd5] text-3xl font-bold mb-8  border-b-[1px] border-gray-600 pb-5 ">Afilideal</h2>
-      <ul class="space-y-4 text-gray-300">
-        <li class="flex items-center gap-2">
-          <img src="https://img.icons8.com/ios-filled/20/ffffff/marker.png" alt="Localização">
-          123 Consectetur at ligula 10660
-        </li>
-        <li class="flex items-center gap-2">
-          <img src="https://img.icons8.com/ios-filled/20/ffffff/whatsapp.png" alt="WhatsApp">
-          010-020-0340
-        </li>
-        <li class="flex items-center gap-2">
-          <img src="https://img.icons8.com/ios-filled/20/ffffff/new-post.png" alt="Email">
-          info@company.com
-        </li>
-      </ul>
-    </div>
-
-    <!-- Seção 2: Products -->
-    <div>
-      <h2 class="text-white text-xl  mb-4   border-b-[1px] border-gray-700 pb-5">Products</h2>
-      <ul class="space-y-2 text-gray-300">
-        <li>Luxury</li>
-        <li>Sport Wear</li>
-        <li>Men's Shoes</li>
-        <li>Women's Shoes</li>
-        <li>Popular Dress</li>
-        <li>Gym Accessories</li>
-        <li>Sport Shoes</li>
-      </ul>
-    </div>
-
-    <!-- Seção 3: Further Info -->
-    <div>
-      <h2 class=  "text-xl mb-4 text-gray-200 ">Further Info</h2>
-      <ul class="space-y-2 text-gray-300 mb-4   border-b-[1px] border-gray-700 pb-5   border-t-[1px] pt-5">
-        <li>Home</li>
-        <li>About Us</li>
-        <li>Shop Locations</li>
-        <li>FAQs</li>
-        <li>Contact</li>
-      </ul>
-
-      <!-- Redes sociais -->
-      <div class="flex gap-4 mb-5 mt-2">
-        <a href="#"><img src="https://img.icons8.com/ios-filled/24/ffffff/facebook-new.png" alt="Facebook"></a>
-        <a href="#"><img src="https://img.icons8.com/ios-filled/24/ffffff/instagram-new.png" alt="Instagram"></a>
-        <a href="#"><img src="https://img.icons8.com/ios-filled/24/ffffff/twitter.png" alt="Twitter"></a>
-        <a href="#"><img src="https://img.icons8.com/ios-filled/24/ffffff/linkedin.png" alt="LinkedIn"></a>
-      </div>
-
-  
-
-      <!-- Copyright -->
-      <p class="text-gray-400 text-sm mt-7">
-        &copy; 2021 Company Name | Designed by <a href="#" class="underline">TemplateMo</a>
-      </p>
-    </div>
-  </div>
-</footer>
+        <footer class="bg-gray-800 text-white py-10">
+          <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Seção 1: Empresa -->
+            <section>
+              <h2 class="text-[#2ea55cd5] text-3xl font-bold mb-8  border-b-[1px] border-gray-600 pb-5 ">Afilideal</h2>
+              <ul class="space-y-4 text-gray-300">
+                <li class="flex items-center gap-2">
+                  <img src="https://img.icons8.com/ios-filled/20/ffffff/marker.png" alt="Localização">
+                  123 Consectetur at ligula 10660
+                </li>
+                <li class="flex items-center gap-2">
+                  <img src="https://img.icons8.com/ios-filled/20/ffffff/whatsapp.png" alt="WhatsApp">
+                  010-020-0340
+                </li>
+                <li class="flex items-center gap-2">
+                  <img src="https://img.icons8.com/ios-filled/20/ffffff/new-post.png" alt="Email">
+                  info@company.com
+                </li>
+              </ul>
+            </section>
+            <!-- Seção 2: Products -->
+            <section>
+              <h2 class="text-white text-xl  mb-4   border-b-[1px] border-gray-700 pb-5">Products</h2>
+              <ul class="space-y-2 text-gray-300">
+                <li>Luxury</li>
+                <li>Sport Wear</li>
+                <li>Men's Shoes</li>
+                <li>Women's Shoes</li>
+                <li>Popular Dress</li>
+                <li>Gym Accessories</li>
+                <li>Sport Shoes</li>
+              </ul>
+            </section>
+            <!-- Seção 3: Further Info -->
+            <section>
+              <h2 class="text-xl mb-4 text-gray-200 ">Further Info</h2>
+              <ul class="space-y-2 text-gray-300 mb-4   border-b-[1px] border-gray-700 pb-5   border-t-[1px] pt-5">
+                <li>Home</li>
+                <li>About Us</li>
+                <li>Shop Locations</li>
+                <li>FAQs</li>
+                <li>Contact</li>
+              </ul>
+              <!-- Redes sociais -->
+              <nav class="flex gap-4 mb-5 mt-2" aria-label="Redes sociais">
+                <a href="#"><img src="https://img.icons8.com/ios-filled/24/ffffff/facebook-new.png" alt="Facebook"></a>
+                <a href="#"><img src="https://img.icons8.com/ios-filled/24/ffffff/instagram-new.png" alt="Instagram"></a>
+                <a href="#"><img src="https://img.icons8.com/ios-filled/24/ffffff/twitter.png" alt="Twitter"></a>
+                <a href="#"><img src="https://img.icons8.com/ios-filled/24/ffffff/linkedin.png" alt="LinkedIn"></a>
+              </nav>
+              <!-- Copyright -->
+              <p class="text-gray-400 text-sm mt-7">
+                &copy; 2021 Company Name | Designed by <a href="#" class="underline">TemplateMo</a>
+              </p>
+            </section>
+          </div>
+        </footer>
       </section>
-
-    
     </main>
-
-  <script src="script/index.js"></script>
-</body>
+    <script src="script/index.js"></script>
+  </div>
 </html>
