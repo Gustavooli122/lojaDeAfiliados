@@ -1,5 +1,5 @@
 const navPrincipal = document.getElementById("navPrincipal");
-const carrossel = document.getElementById("carrossel");
+const carrossel = document.querySelector(".carrossel");
 
 function abrirNavegacao() {
   carrossel.classList.toggle("translate-y-[20rem]");
@@ -29,4 +29,5 @@ document.getElementById("btnProximo").addEventListener("click", () => mostrarSli
 // Auto-play
 setInterval(() => {
   mostrarSlide(index + 1);
+
 }, 6000);
