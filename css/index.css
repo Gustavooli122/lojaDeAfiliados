@@ -9,3 +9,7 @@
 #slides > article{
     background: hsl(0, 0%, 94%);
 }
+.font-poppins {
+  font-family: 'Poppins', sans-serif;
+}
+
