@@ -4,12 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-     <!-- TailwindCSS via CDN -->
+     <!-- TailwindCSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Fonte Poppins -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <!-- Fonts -->
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
    <link rel="stylesheet" href="comprar.css">
 </head>
@@ -30,14 +33,7 @@
     </aside>
     <header class="flex justify-between items-center mt-[-2rem] mb-[-2rem] z-20 ">
       <img src="../img/logo.png" alt="Logo da loja" width="170px" height="40px">
-      <nav aria-label="Menu principal">
-        <ul class="hidden sm:hidden md:hidden lg:flex flex-row gap-28 text-3xl">
-          <li><a href="#" class="text-gray-600 text-xl hover:text-[#2ea55cd5]">Lar</a></li>
-          <li><a href="#" class="text-gray-600 text-xl hover:text-[#2ea55cd5]">Sobre</a></li>
-          <li><a href="#" class="text-gray-600 text-xl hover:text-[#2ea55cd5]">Comprar</a></li>
-          <li><a href="#" class="text-gray-600 text-xl hover:text-[#2ea55cd5]">Contatos</a></li>
-        </ul>
-      </nav>
+      
       <div class="lg:flex hidden gap-3 mr-3 " aria-label="Carrinho de compras">
         <a href="#"><img src="../img/lupa.png" alt="Ícone de lupa" width="25px" class="m-auto" ></a> 
         <a href="#"> <img src="../img/carrinho-de-compras.png" alt="carrinho-de-compras" width="25px" class="m-auto"></a>
@@ -51,7 +47,28 @@
         </button>
       </nav>
     </header>
-    
+    <nav aria-label="Navegação secundária" id="navPrincipal" class="relative flex-col mt-10 z-10 lg:hidden">
+      <ul class="flex flex-col gap-1 -translate-y-10 translate-x-6 lg:flex-row">
+        <li><a href="#" class="text-gray-600 text-lg hover:text-[#2ea55cd5]">Lar</a></li>
+        <li><a href="#" class="text-gray-600 text-lg hover:text-[#2ea55cd5]">Sobre</a></li>
+        <li><a href="#" class="text-gray-600 text-lg hover:text-[#2ea55cd5]">Comprar</a></li>
+        <li><a href="#" class="text-gray-600 text-lg hover:text-[#2ea55cd5]">Contatos</a></li>
+      </ul>
+      <section class="flex justify-between h-auto w-full -translate-y-3 mb-5 ">
+        <form class="rounded-sm flex border border-gray-300 w-[70%] ml-6" role="search" aria-label="Procurar produtos">
+          <input type="text" id="inputProcurar" placeholder="Procurar..." class="w-full placeholder:p-5 rounded-md">
+          <button type="submit" class="bg-gray-300 w-[60px] flex justify-center items-center" aria-label="Buscar">
+            <img src="../img/lupa.png" alt="Ícone de lupa" width="25px" class="m-[5px]">
+          </button>
+        </form>
+        <div class="flex items-center mr-3" aria-label="Carrinho de compras">
+          <img src="../img/carrinho-de-compras.png" alt="carrinho-de-compras" width="30px">
+          <div class="rounded-[50px] bg-slate-300 w-auto h-5 flex justify-center items-center -translate-x-4 -translate-y-3">
+            <p id="numeroCarrinho" class="text-gray-900 text-xs font-medium m-2">0</p>
+          </div>
+        </div>
+      </section>
+    </nav>
 
    
      <main  class="flex flex-col carrossel absolute transition-transformMenu ease-in-out duration-500 z-20 translate-y-[-15rem] lg:translate-y-[-0.5rem]  overflow-hidden w-full bg-white shadow-[inset_0_4px_15px_rgba(0,0,0,0.2)]">
@@ -370,8 +387,4 @@
      <script src="../script/index.js"></script>
      <script src="../script/compras.js"></script>
 </body>
-
 </html>
-
-
-
