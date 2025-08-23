@@ -3,13 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Minha Loja</title>
+  <title>Tailwind Local</title>
+
+  <!-- TailwindCSS via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonte Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="css/index.css">
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
- <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap" rel="stylesheet">
+  <!-- Google Fonts -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
 </head>
-<body class="bg-write font-poppins overflow-x-hidden">
+<body class="bg-write font-sans overflow-x-hidden">
   <div class="flex flex-col overflow-x-hidden">
     <aside class="hidden sm:hidden md:hidden lg:flex bg-[rgb(33,41,52)] w-full pt-2 pb-2 pl-10 pr-10 justify-between items-center">
       <div class="flex gap-2 justify-center flex-row">
@@ -48,7 +55,13 @@
         </button>
       </nav>
     </header>
-   
+    <nav aria-label="Navegação secundária" id="navPrincipal" class="relative flex-col mt-10 z-10 lg:hidden">
+      <ul class="flex flex-col gap-1 -translate-y-10 translate-x-6 lg:flex-row">
+        <li><a href="#" class="text-gray-600 text-lg hover:text-[#2ea55cd5]">Lar</a></li>
+        <li><a href="#" class="text-gray-600 text-lg hover:text-[#2ea55cd5]">Sobre</a></li>
+        <li><a href="paginas/compras.html" class="text-gray-600 text-lg hover:text-[#2ea55cd5]">Comprar</a></li>
+        <li><a href="#" class="text-gray-600 text-lg hover:text-[#2ea55cd5]">Contatos</a></li>
+      </ul>
       <section class="flex justify-between h-auto w-full -translate-y-3 mb-5 ">
         <form class="rounded-sm flex border border-gray-300 w-[70%] ml-6" role="search" aria-label="Procurar produtos">
           <input type="text" id="inputProcurar" placeholder="Procurar..." class="w-full placeholder:p-5 rounded-md">
@@ -64,7 +77,7 @@
         </div>
       </section>
     </nav>
-<main class="flex carrossel absolute transition-transformMenu ease-in-out duration-500 z-20 translate-y-24 lg:translate-y-32 justify-center items-center overflow-hidden h-auto w-full shadow-md ">
+    <main class="flex carrossel absolute transition-transformMenu ease-in-out duration-500 z-20 translate-y-24 lg:translate-y-32 justify-center items-center overflow-hidden h-auto w-full shadow-md ">
       <button id="btnProximo" class="absolute top-[50vh]  lg:top-[36vh] right-0  mr-4 text-6xl text-[#2ea55c7c] hover:text-[#2ea55cd5] z-30" aria-label="Próximo slide">&#10095;</button>
       <button id="btnAnterior" class="absolute top-[50vh]  lg:top-[36vh] left-0  ml-4 text-6xl text-[#2ea55c7c] hover:text-[#2ea55cd5] z-30" aria-label="Slide anterior ">&#10094;</button>
       <section id="btnProximo" class="relative overflow-hidden flex flex-col justify-center" aria-label="Banner principal">
@@ -244,4 +257,5 @@
     </main>
     <script src="script/index.js"></script>
   </div>
+</body>
 </html>
