@@ -1,6 +1,7 @@
-.containerShop article{
+.containerShop > article{
     width:100%;
     scale: 0.95;
 }
+
 
 
