@@ -1,13 +1,3 @@
-.shopImg{
- object-fit: cover;
-       width: 100%;      /* ocupa toda a largura da célula */
-      height: 200px; 
-}
-.containerShop{
-    display: grid;
-    grid-template-columns: repeat(2, minmax(200px, 1fr));
-}
 .containerShop article{
-    padding: 0.5rem;
-    box-shadow: 0 2px 2px 2px rgb(53, 53, 53);
+    width: 200px;
 }
