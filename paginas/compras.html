@@ -4,15 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-     <!-- TailwindCSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Fonte Poppins -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
+    <link href="../../dist/output.css" rel="stylesheet">
+  
+  <link rel="stylesheet" href="fontwesome/css/all.min.css">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
    <link rel="stylesheet" href="comprar.css">
 </head>
@@ -47,32 +43,40 @@
         </button>
       </nav>
     </header>
-    <nav aria-label="Navegação secundária" id="navPrincipal" class="relative flex-col mt-10 z-10 lg:hidden">
-      <ul class="flex flex-col gap-1 -translate-y-10 translate-x-6 lg:flex-row">
-        <li><a href="#" class="text-gray-600 text-lg hover:text-[#2ea55cd5]">Lar</a></li>
-        <li><a href="#" class="text-gray-600 text-lg hover:text-[#2ea55cd5]">Sobre</a></li>
-        <li><a href="#" class="text-gray-600 text-lg hover:text-[#2ea55cd5]">Comprar</a></li>
-        <li><a href="#" class="text-gray-600 text-lg hover:text-[#2ea55cd5]">Contatos</a></li>
-      </ul>
-      <section class="flex justify-between h-auto w-full -translate-y-3 mb-5 ">
-        <form class="rounded-sm flex border border-gray-300 w-[70%] ml-6" role="search" aria-label="Procurar produtos">
-          <input type="text" id="inputProcurar" placeholder="Procurar..." class="w-full placeholder:p-5 rounded-md">
-          <button type="submit" class="bg-gray-300 w-[60px] flex justify-center items-center" aria-label="Buscar">
-            <img src="../img/lupa.png" alt="Ícone de lupa" width="25px" class="m-[5px]">
-          </button>
-        </form>
-        <div class="flex items-center mr-3" aria-label="Carrinho de compras">
-          <img src="../img/carrinho-de-compras.png" alt="carrinho-de-compras" width="30px">
-          <div class="rounded-[50px] bg-slate-300 w-auto h-5 flex justify-center items-center -translate-x-4 -translate-y-3">
-            <p id="numeroCarrinho" class="text-gray-900 text-xs font-medium m-2">0</p>
-          </div>
-        </div>
-      </section>
-    </nav>
+   <nav aria-label="Navegação secundária" id="navPrincipal" 
+     class="relative flex-col mt-10 z-10 lg:hidden">
+
+  <ul class="flex flex-col gap-1 -translate-y-10 lg:flex-row px-6">
+    <li><a href="#" class="text-gray-600 text-lg hover:text-[#2ea55cd5]">Lar</a></li>
+    <li><a href="#" class="text-gray-600 text-lg hover:text-[#2ea55cd5]">Sobre</a></li>
+    <li><a href="#" class="text-gray-600 text-lg hover:text-[#2ea55cd5]">Comprar</a></li>
+    <li><a href="#" class="text-gray-600 text-lg hover:text-[#2ea55cd5]">Contatos</a></li>
+  </ul>
+
+  <section class="flex justify-between h-auto w-full -translate-y-3 mb-5 px-6">
+    <form class="rounded-sm flex border border-gray-300 w-[70%]" 
+          role="search" aria-label="Procurar produtos">
+      <input type="text" id="inputProcurar" placeholder="Procurar..." 
+             class="w-full placeholder:p-5 rounded-md">
+      <button type="submit" 
+              class="bg-gray-300 w-[60px] flex justify-center items-center" 
+              aria-label="Buscar">
+        <img src="../img/lupa.png" alt="Ícone de lupa" width="25px" class="m-[5px]">
+      </button>
+    </form>
+
+    <div class="flex items-center mr-3" aria-label="Carrinho de compras">
+      <img src="../img/carrinho-de-compras.png" alt="carrinho-de-compras" width="30px">
+      <div class="rounded-[50px] bg-slate-300 w-auto h-5 flex justify-center items-center -translate-x-4 -translate-y-3">
+        <p id="numeroCarrinho" class="text-gray-900 text-xs font-medium m-2">0</p>
+      </div>
+    </div>
+  </section>
+</nav>
 
    
      <main  class="flex flex-col carrossel absolute transition-transformMenu ease-in-out duration-500 z-20 translate-y-[-15rem] lg:translate-y-[-0.5rem]  overflow-hidden w-full bg-white shadow-[inset_0_4px_15px_rgba(0,0,0,0.2)]">
-   <aside class="w-full p-6">
+   <aside class="p-6">
     <!-- Título -->
     <h2 class="text-3xl text-gray-800 mb-4 font-[300]">Categories</h2>
 
@@ -141,187 +145,113 @@
       <li class="px-4 py-2 hover:bg-blue-500 hover:text-white cursor-pointer">Item</li>
     </ul>
   </div>
-     
-      <section class="containerShop bg-white p-2auto-rows-min gap-y-3 items-center mt-20  mb-40 gap-x-2 lg:pl-20 lg:pr-20 ">
+     <div class="bg-gray-200 py-10 mt-20">
+      <section class="containerShop  grid grid-cols-2 my-5 mx-6 gap-5">
      <article class="bg-white pb-5">
-            <a href="#"><img  src="https://a-static.mlcdn.com.br/1500x1500/celular-samsung-galaxy-a05s-128gb-6gb-ram-tela-infinita-de-6-7/samsung/5976/d373d4904ff731f8d1386b3155d41b6e.jpeg" alt="img-produto-card" class="shopImg"></a>
-            <div class="flex justify-between ml-3 mr-3 mt-4">
+            <a href="#"><img src="../img/feature_prod_01.jpg" alt="img-produto-card" class="w-full md:w-full"></a>
+            <div class="flex justify-between mx-3 mt-4">
               <ul class="flex gap-2 md:flex-wrap md:w-[60%]">
-                <li><i class="fa fa-star text-lg" style="color: #facc15;"></i></li>
-                <li><i class="fa fa-star text-lg" style="color: #facc15;"></i></li>
-                <li><i class="fa fa-star text-lg" style="color: #facc15;"></i></li>
-                <li><i class="fa fa-star text-lg" style="color: #facc15;"></i></li>
-                <li><i class="fa fa-star text-lg" style="color: #979797;"></i></li>
+                <li><i class="fa fa-star text-sm" style="color: #facc15;"></i></li>
+                <li><i class="fa fa-star text-sm" style="color: #facc15;"></i></li>
+                <li><i class="fa fa-star text-sm" style="color: #facc15;"></i></li>
+                <li><i class="fa fa-star text-sm" style="color: #facc15;"></i></li>
+                <li><i class="fa fa-star text-sm" style="color: #979797;"></i></li>
               </ul> 
               <p class="text-gray-400">$ 240,00</p>
             </div> 
             <div class="m-4">
               <h2 class="mb-3  text-xl "> Peso de academia</h2>
-              <p class="text-gray-700">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+              <p class="text-gray-700 text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt in culpa qui officia deserunt. </p>
               <p class="text-gray-400 mt-4"> Avaliações (24)</p>
             </div>
           </article>
           <article class="bg-white pb-5">
-            <a href="#"><img src="https://i.zst.com.br/thumbs/12/14/19/-1348890228.jpg" alt="img-produto-card" class="shopImg"></a>
-            <div class="flex justify-between ml-3 mr-3 mt-4">
+            <a href="#"><img src="../img/feature_prod_02.jpg" alt="img-produto-card" class="w-full md:w-full"></a>
+             <div class="flex justify-between mx-3 mt-4">
               <ul class="flex gap-2 md:flex-wrap md:w-[60%]">
-                <li><i class="fa fa-star text-lg" style="color: #facc15;"></i></li>
-                <li><i class="fa fa-star text-lg" style="color: #facc15;"></i></li>
-                <li><i class="fa fa-star text-lg" style="color: #facc15;"></i></li>
-                <li><i class="fa fa-star text-lg" style="color: #facc15;"></i></li>
-                <li><i class="fa fa-star text-lg" style="color: #979797;"></i></li>
+                <li><i class="fa fa-star text-sm" style="color: #facc15;"></i></li>
+                <li><i class="fa fa-star text-sm" style="color: #facc15;"></i></li>
+                <li><i class="fa fa-star text-sm" style="color: #facc15;"></i></li>
+                <li><i class="fa fa-star text-sm" style="color: #facc15;"></i></li>
+                <li><i class="fa fa-star text-sm" style="color: #979797;"></i></li>
               </ul> 
               <p class="text-gray-400">$ 240,00</p>
             </div> 
             <div class="m-4">
-                     <h2 class="mb-3  text-xl "> Peso de academia</h2>
-              <p class="text-gray-700">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+              <h2 class="mb-3  text-xl "> Peso de academia</h2>
+              <p class="text-gray-700  text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt in culpa qui officia deserunt. </p>
               <p class="text-gray-400 mt-4"> Avaliações (24)</p>
             </div>
           </article>
           <article class="bg-white pb-5">
-            <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuDCvuxSKpQXFY6Ks7RITzxFOw_o_wRq_JVQ&s" alt="img-produto-card" class="shopImg"></a>
-            <div class="flex justify-between ml-3 mr-3 mt-4">
+            <a href="#"><img src="../img/feature_prod_03.jpg" alt="img-produto-card" class="w-full md:w-full"></a>
+           <div class="flex justify-between mx-3 mt-4">
               <ul class="flex gap-2 md:flex-wrap md:w-[60%]">
-                <li><i class="fa fa-star text-lg" style="color: #facc15;"></i></li>
-                <li><i class="fa fa-star text-lg" style="color: #facc15;"></i></li>
-                <li><i class="fa fa-star text-lg" style="color: #facc15;"></i></li>
-                <li><i class="fa fa-star text-lg" style="color: #facc15;"></i></li>
-                <li><i class="fa fa-star text-lg" style="color: #979797;"></i></li>
+                <li><i class="fa fa-star text-sm" style="color: #facc15;"></i></li>
+                <li><i class="fa fa-star text-sm" style="color: #facc15;"></i></li>
+                <li><i class="fa fa-star text-sm" style="color: #facc15;"></i></li>
+                <li><i class="fa fa-star text-sm" style="color: #facc15;"></i></li>
+                <li><i class="fa fa-star text-sm" style="color: #979797;"></i></li>
               </ul> 
               <p class="text-gray-400">$ 240,00</p>
             </div> 
             <div class="m-4">
-                  <h2 class="mb-3  text-xl "> Peso de academia</h2>
-              <p class="text-gray-700">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
-              <p class="text-gray-400 mt-4"> Avaliações (24)</p>
-            </div>
-          </article>
-
-           <article class="bg-white pb-5">
-            <a href="#"><img src="https://a-static.mlcdn.com.br/1500x1500/celular-samsung-galaxy-a05s-128gb-6gb-ram-tela-infinita-de-6-7/samsung/5976/d373d4904ff731f8d1386b3155d41b6e.jpeg" alt="img-produto-card" class="shopImg"></a>
-            <div class="flex justify-between ml-3 mr-3 mt-4">
-              <ul class="flex gap-2 md:flex-wrap md:w-[60%]">
-                <li><i class="fa fa-star text-lg" style="color: #facc15;"></i></li>
-                <li><i class="fa fa-star text-lg" style="color: #facc15;"></i></li>
-                <li><i class="fa fa-star text-lg" style="color: #facc15;"></i></li>
-                <li><i class="fa fa-star text-lg" style="color: #facc15;"></i></li>
-                <li><i class="fa fa-star text-lg" style="color: #979797;"></i></li>
-              </ul> 
-              <p class="text-gray-400">$ 240,00</p>
-            </div> 
-            <div class="m-4">
-                      <h2 class="mb-3  text-xl "> Peso de academia</h2>
-              <p class="text-gray-700">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+              <h2 class="mb-3  text-xl "> Peso de academia</h2>
+              <p class="text-gray-700  text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt in culpa qui officia deserunt. </p>
               <p class="text-gray-400 mt-4"> Avaliações (24)</p>
             </div>
           </article>
           <article class="bg-white pb-5">
-            <a href="#"><img src="https://i.zst.com.br/thumbs/12/14/19/-1348890228.jpg" alt="img-produto-card" class="shopImg"></a>
-            <div class="flex justify-between ml-3 mr-3 mt-4">
+            <a href="#"><img src="../img/feature_prod_01.jpg" alt="img-produto-card" class="w-full md:w-full"></a>
+             <div class="flex justify-between mx-3 mt-4">
               <ul class="flex gap-2 md:flex-wrap md:w-[60%]">
-                <li><i class="fa fa-star text-lg" style="color: #facc15;"></i></li>
-                <li><i class="fa fa-star text-lg" style="color: #facc15;"></i></li>
-                <li><i class="fa fa-star text-lg" style="color: #facc15;"></i></li>
-                <li><i class="fa fa-star text-lg" style="color: #facc15;"></i></li>
-                <li><i class="fa fa-star text-lg" style="color: #979797;"></i></li>
+                <li><i class="fa fa-star text-sm" style="color: #facc15;"></i></li>
+                <li><i class="fa fa-star text-sm" style="color: #facc15;"></i></li>
+                <li><i class="fa fa-star text-sm" style="color: #facc15;"></i></li>
+                <li><i class="fa fa-star text-sm" style="color: #facc15;"></i></li>
+                <li><i class="fa fa-star text-sm" style="color: #979797;"></i></li>
               </ul> 
               <p class="text-gray-400">$ 240,00</p>
             </div> 
             <div class="m-4">
-                        <h2 class="mb-3  text-xl "> Peso de academia</h2>
-              <p class="text-gray-700">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+              <h2 class="mb-3  text-xl "> Peso de academia</h2>
+              <p class="text-gray-700  text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt in culpa qui officia deserunt. </p>
               <p class="text-gray-400 mt-4"> Avaliações (24)</p>
             </div>
           </article>
           <article class="bg-white pb-5">
-            <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuDCvuxSKpQXFY6Ks7RITzxFOw_o_wRq_JVQ&s" alt="img-produto-card" class="shopImg"></a>
-            <div class="flex justify-between ml-3 mr-3 mt-4">
+            <a href="#"><img src="../img/feature_prod_02.jpg" alt="img-produto-card" class="w-full md:w-full"></a>
+            <div class="flex justify-between mx-3 mt-4">
               <ul class="flex gap-2 md:flex-wrap md:w-[60%]">
-                <li><i class="fa fa-star text-lg" style="color: #facc15;"></i></li>
-                <li><i class="fa fa-star text-lg" style="color: #facc15;"></i></li>
-                <li><i class="fa fa-star text-lg" style="color: #facc15;"></i></li>
-                <li><i class="fa fa-star text-lg" style="color: #facc15;"></i></li>
-                <li><i class="fa fa-star text-lg" style="color: #979797;"></i></li>
+                <li><i class="fa fa-star text-sm" style="color: #facc15;"></i></li>
+                <li><i class="fa fa-star text-sm" style="color: #facc15;"></i></li>
+                <li><i class="fa fa-star text-sm" style="color: #facc15;"></i></li>
+                <li><i class="fa fa-star text-sm" style="color: #facc15;"></i></li>
+                <li><i class="fa fa-star text-sm" style="color: #979797;"></i></li>
               </ul> 
               <p class="text-gray-400">$ 240,00</p>
             </div> 
             <div class="m-4">
-              <h2 class="mb-3  text-2xl "> Peso de academia</h2>
-              <p class="text-gray-700">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt in culpa qui officia deserunt. </p>
-              <p class="text-gray-400 mt-4"> Avaliações (24)</p>
-            </div>
-          </article>
-
-           <article class="bg-white pb-5">
-            <a href="#"><img src="https://a-static.mlcdn.com.br/1500x1500/celular-samsung-galaxy-a05s-128gb-6gb-ram-tela-infinita-de-6-7/samsung/5976/d373d4904ff731f8d1386b3155d41b6e.jpeg" alt="img-produto-card" class="shopImg"></a>
-            <div class="flex justify-between ml-3 mr-3 mt-4">
-              <ul class="flex gap-2 md:flex-wrap md:w-[60%]">
-                <li><i class="fa fa-star text-lg" style="color: #facc15;"></i></li>
-                <li><i class="fa fa-star text-lg" style="color: #facc15;"></i></li>
-                <li><i class="fa fa-star text-lg" style="color: #facc15;"></i></li>
-                <li><i class="fa fa-star text-lg" style="color: #facc15;"></i></li>
-                <li><i class="fa fa-star text-lg" style="color: #979797;"></i></li>
-              </ul> 
-              <p class="text-gray-400">$ 240,00</p>
-            </div> 
-            <div class="m-4">
-                      <h2 class="mb-3  text-xl "> Peso de academia</h2>
-              <p class="text-gray-700">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+              <h2 class="mb-3  text-xl "> Peso de academia</h2>
+              <p class="text-gray-700  text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt in culpa qui officia deserunt. </p>
               <p class="text-gray-400 mt-4"> Avaliações (24)</p>
             </div>
           </article>
           <article class="bg-white pb-5">
-            <a href="#"><img src="https://i.zst.com.br/thumbs/12/14/19/-1348890228.jpg" alt="img-produto-card" class="shopImg"></a>
-            <div class="flex justify-between ml-3 mr-3 mt-4">
+            <a href="#"><img src="../img/feature_prod_03.jpg" alt="img-produto-card" class="w-full md:w-full"></a>
+          <div class="flex justify-between mx-3 mt-4">
               <ul class="flex gap-2 md:flex-wrap md:w-[60%]">
-                <li><i class="fa fa-star text-lg" style="color: #facc15;"></i></li>
-                <li><i class="fa fa-star text-lg" style="color: #facc15;"></i></li>
-                <li><i class="fa fa-star text-lg" style="color: #facc15;"></i></li>
-                <li><i class="fa fa-star text-lg" style="color: #facc15;"></i></li>
-                <li><i class="fa fa-star text-lg" style="color: #979797;"></i></li>
+                <li><i class="fa fa-star text-sm" style="color: #facc15;"></i></li>
+                <li><i class="fa fa-star text-sm" style="color: #facc15;"></i></li>
+                <li><i class="fa fa-star text-sm" style="color: #facc15;"></i></li>
+                <li><i class="fa fa-star text-sm" style="color: #facc15;"></i></li>
+                <li><i class="fa fa-star text-sm" style="color: #979797;"></i></li>
               </ul> 
               <p class="text-gray-400">$ 240,00</p>
             </div> 
             <div class="m-4">
-                        <h2 class="mb-3  text-xl "> Peso de academia</h2>
-              <p class="text-gray-700">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
-              <p class="text-gray-400 mt-4"> Avaliações (24)</p>
-            </div>
-          </article>
-          <article class="bg-white pb-5">
-            <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuDCvuxSKpQXFY6Ks7RITzxFOw_o_wRq_JVQ&s" alt="img-produto-card" class="shopImg"></a>
-            <div class="flex justify-between ml-3 mr-3 mt-4">
-              <ul class="flex gap-2 md:flex-wrap md:w-[60%]">
-                <li><i class="fa fa-star text-lg" style="color: #facc15;"></i></li>
-                <li><i class="fa fa-star text-lg" style="color: #facc15;"></i></li>
-                <li><i class="fa fa-star text-lg" style="color: #facc15;"></i></li>
-                <li><i class="fa fa-star text-lg" style="color: #facc15;"></i></li>
-                <li><i class="fa fa-star text-lg" style="color: #979797;"></i></li>
-              </ul> 
-              <p class="text-gray-400">$ 240,00</p>
-            </div> 
-            <div class="m-4">
-                       <h2 class="mb-3  text-xl "> Peso de academia</h2>
-              <p class="text-gray-700">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
-              <p class="text-gray-400 mt-4"> Avaliações (24)</p>
-            </div>
-          </article>
-            <article class="bg-white pb-5">
-            <a href="#"><img src="https://i.zst.com.br/thumbs/12/14/19/-1348890228.jpg" alt="img-produto-card" class="shopImg"></a>
-            <div class="flex justify-between ml-3 mr-3 mt-4">
-              <ul class="flex gap-2 md:flex-wrap md:w-[60%]">
-                <li><i class="fa fa-star text-lg" style="color: #facc15;"></i></li>
-                <li><i class="fa fa-star text-lg" style="color: #facc15;"></i></li>
-                <li><i class="fa fa-star text-lg" style="color: #facc15;"></i></li>
-                <li><i class="fa fa-star text-lg" style="color: #facc15;"></i></li>
-                <li><i class="fa fa-star text-lg" style="color: #979797;"></i></li>
-              </ul> 
-              <p class="text-gray-400">$ 240,00</p>
-            </div> 
-            <div class="m-4">
-                    <h2 class="mb-3  text-xl "> Peso de academia</h2>
-              <p class="text-gray-700">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+              <h2 class="mb-3  text-xl "> Peso de academia</h2>
+              <p class="text-gray-700  text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt in culpa qui officia deserunt. </p>
               <p class="text-gray-400 mt-4"> Avaliações (24)</p>
             </div>
           </article>
@@ -382,9 +312,12 @@
               </p>
             </section>
           </div>
-        </footer>
+        </footer></div>
      </main>
      <script src="../script/index.js"></script>
      <script src="../script/compras.js"></script>
 </body>
 </html>
+</body>
+</html>
+
