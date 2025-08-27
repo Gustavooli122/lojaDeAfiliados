@@ -1,4 +1,4 @@
-  document.querySelectorAll(".accordion-btn").forEach(btn => {
+   document.querySelectorAll(".accordion-btn").forEach(btn => {
       btn.addEventListener("click", () => {
         const icon = btn.querySelector("i");
         const content = btn.nextElementSibling;
@@ -40,3 +40,11 @@
         dropdownMenu.classList.add("hidden");
       }
     });
+   
+
+    const menuNavegacao = document.querySelector(".menuNavegacao");
+    
+    function abrirMenu(){
+        menuNavegacao.classList.toggle("translate-y-0");
+        menuNavegacao.classList.toggle("lg:translate-y-[20rem]")
+    }
