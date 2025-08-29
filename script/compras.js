@@ -1,4 +1,4 @@
-   document.querySelectorAll(".accordion-btn").forEach(btn => {
+  document.querySelectorAll(".accordion-btn").forEach(btn => {
       btn.addEventListener("click", () => {
         const icon = btn.querySelector("i");
         const content = btn.nextElementSibling;
@@ -39,12 +39,14 @@
       if (!dropdownBtn.contains(e.target) && !dropdownMenu.contains(e.target)) {
         dropdownMenu.classList.add("hidden");
       }
-    });
-   
+    }); 
 
-    const menuNavegacao = document.querySelector(".menuNavegacao");
-    
-    function abrirMenu(){
-        menuNavegacao.classList.toggle("translate-y-0");
-        menuNavegacao.classList.toggle("lg:translate-y-[20rem]")
-    }
+     function abrirMenu() {
+  // pega o menu da página atual
+  const menu = document.querySelector(".menuNavegacao");
+
+  if (menu) { // só roda se existir na página
+    menu.classList.toggle("translate-y-0");
+    menu.classList.toggle("translate-y-[-15rem]"); // ou o valor inicial que você usa
+  }
+}
