@@ -1,7 +1,11 @@
-const navPrincipal = document.getElementById("navPrincipal");
-const carrossel = document.querySelector(".carrossel");
 
+
+
+ const carrossel = document.querySelector(".carrossel");
+
+  
 function abrirNavegacao() {
+
   carrossel.classList.toggle("translate-y-[20rem]");
   carrossel.classList.remove("lg:translate-y-[20rem]")
 
@@ -35,5 +39,8 @@ document.getElementById("btnProximo").addEventListener("click", () => mostrarSli
 setInterval(() => {
   mostrarSlide(index + 1);
 }, 6000);
+
+
+
 
 
