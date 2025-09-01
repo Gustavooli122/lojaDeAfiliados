@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="../../dist/output.css" rel="stylesheet">
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+   <link rel="stylesheet" href="comprar.css">
+</head>
+<body>
+     <aside class="hidden sm:hidden md:hidden lg:flex bg-[rgb(33,41,52)] w-full pt-2 pb-2 pl-10 pr-10 justify-between items-center">
+      <div class="flex gap-2 justify-center flex-row">
+        <img src="https://img.icons8.com/ios-filled/20/ffffff/new-post.png" alt="imagem-de-email" class="w-3 h-3 m-auto">
+        <a href="mailto:contato@exemplo.com" class="text-gray-400 text-xs mr-2">info@company.com</a>
+        <img src="https://img.icons8.com/ios-filled/20/ffffff/whatsapp.png" alt="icone-whatszap" class="w-3 h-3  m-auto">
+        <a href="tel:010-020-0340" class="text-gray-400 text-xs">010-020-0340</a>
+      </div>
+      <nav class="flex gap-4" aria-label="Redes sociais">
+        <a href="#"><img src="https://img.icons8.com/ios-filled/24/ffffff/facebook-new.png" alt="Facebook" class="w-4"></a>
+        <a href="#"><img src="https://img.icons8.com/ios-filled/24/ffffff/instagram-new.png" alt="Instagram" class="w-4"></a>
+        <a href="#"><img src="https://img.icons8.com/ios-filled/24/ffffff/twitter.png" alt="Twitter" class="w-4"></a>
+        <a href="#"><img src="https://img.icons8.com/ios-filled/24/ffffff/linkedin.png" alt="LinkedIn" class="w-4"></a>
+      </nav>
+    </aside>
+    <header class="flex justify-between items-center mt-[-2rem] mb-[-2rem] z-20 lg:flex-row">
+      <img src="../img/logo.png" alt="Logo da loja" width="170px" height="40px">
+      <nav aria-label="Menu principal">
+        <ul class="hidden sm:hidden md:hidden lg:flex flex-row gap-28 text-3xl">
+          <li><a href="../index.html" class="text-gray-600 text-xl hover:text-[#2ea55cd5]">Inicio</a></li>
+          <li><a href="#" class="text-gray-600 text-xl hover:text-[#2ea55cd5]">Sobre</a></li>
+          <li><a href="../paginas/compras.html" class="text-gray-600 text-xl hover:text-[#2ea55cd5]">Comprar</a></li>
+          <li><a href="#" class="text-gray-600 text-xl hover:text-[#2ea55cd5]">Contatos</a></li>
+        </ul>
+      </nav>
+      <div class="lg:flex hidden gap-3 mr-3 " aria-label="Carrinho de compras">
+        <a href="#"><img src="../img/lupa.png" alt="Ícone de lupa" width="25px" class="m-auto" ></a> 
+        <a href="#"> <img src="../img/carrinho-de-compras.png" alt="carrinho-de-compras" width="25px" class="m-auto"></a>
+        <div class="rounded-[50px] bg-slate-300 w-auto h-5 flex justify-center items-center -translate-x-4 -translate-y-3">
+          <p id="numeroCarrinho" class="text-gray-900 text-xs font-medium m-2">0</p>
+        </div>
+      </div>
+      <nav aria-label="Menu mobile" class="m-0.5">
+       <button  class="p-0 m-0 btnAbrirMenu" onclick="abrirMenu()" aria-label="Abrir menu">
+          <img src="../img/menu.png" alt="Ícone do menu" class="w-[80px] h-[80px] object-cover lg:hidden">
+        </button>
+      </nav>
+    </header>
+    <nav aria-label="Navegação secundária"  class=" navPrincipal relative flex-col mt-10 z-10 lg:hidden">
+      <ul class="flex flex-col gap-1 -translate-y-10 ml-6 lg:flex-row">
+        <li><a href="../index.html" class="text-gray-600 text-lg hover:text-[#2ea55cd5]">Início</a></li>
+        <li><a href="#" class="text-gray-600 text-lg hover:text-[#2ea55cd5]">Sobre</a></li>
+        <li><a href="../paginas/compras.html" class="text-gray-600 text-lg hover:text-[#2ea55cd5]">Comprar</a></li>
+        <li><a href="#" class="text-gray-600 text-lg hover:text-[#2ea55cd5]">Contatos</a></li>
+      </ul>
+      <section class="flex justify-between h-auto w-full -translate-y-3 mb-5 ">
+        <form class="rounded-sm flex border border-gray-300 w-[70%] ml-6" role="search" aria-label="Procurar produtos">
+          <input type="text" id="inputProcurar" placeholder="Procurar..." class="w-full placeholder:p-5 rounded-md">
+          <button type="submit" class="bg-gray-300 w-[60px] flex justify-center items-center" aria-label="Buscar">
+            <img src="../img/lupa.png" alt="Ícone de lupa" width="25px" class="m-[5px]">
+          </button>
+        </form>
+        <div class="flex items-center mr-3" aria-label="Carrinho de compras">
+          <img src="../img/carrinho-de-compras.png" alt="carrinho-de-compras" width="30px">
+          <div class="rounded-[50px] bg-slate-300 w-auto h-5 flex justify-center items-center -translate-x-4 -translate-y-3">
+            <p id="numeroCarrinho" class="text-gray-900 text-xs font-medium m-2">0</p>
+          </div>
+        </div>
+      </section>
+    </nav>
+   
+     <main  class="flex flex-col menuNavegacao absolute transition-transformMenu ease-in-out duration-500 z-20 translate-y-[-15rem] lg:translate-y-[-0.5rem] w-full ">
+      <section class="bg-slate-200 flex flex-col items-center py-10 mt-2  shadow-[inset_0_4px_15px_rgba(0,0,0,0.3)]">
+        <!-- Imagem principal do produto -->
+<figure>
+  <img src="../img/product_single_01.jpg" alt="Produto esportivo principal" class="w-[90%] m-5">
+  <figcaption class="sr-only">Imagem principal do produto</figcaption>
+</figure>
+
+<!-- Galeria de imagens (carrossel) -->
+<section class="relative flex items-center w-full overflow-hidden rounded-lg" aria-label="Galeria de imagens do produto">
+  
+  <!-- Container dos slides -->
+  <div id="slides" class="flex w-full flex-row transition-transform" role="region" aria-roledescription="carrossel">
+    
+    <!-- Slide 1 -->
+    <div class="w-full flex flex-shrink-0 justify-center flex-row gap-4" role="group" aria-label="Slide 1 de 3">
+      <img src="../img/product_single_02.jpg" alt="Produto ângulo lateral" class="w-[23%] object-cover">
+      <img src="../img/product_single_03.jpg" alt="Produto detalhe tecido" class="w-[23%] object-cover">
+      <img src="../img/product_single_04.jpg" alt="Produto visto de costas" class="w-[23%] object-cover">
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="w-full flex flex-shrink-0 relative justify-center flex-row gap-4" role="group" aria-label="Slide 2 de 3">
+      <img src="../img/product_single_05.jpg" alt="Produto detalhe da gola" class="w-[23%] object-cover">
+      <img src="../img/product_single_06.jpg" alt="Produto detalhe da costura" class="w-[23%] object-cover">
+      <img src="../img/product_single_07.jpg" alt="Produto em uso no treino" class="w-[23%] object-cover">
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="w-full flex flex-shrink-0 relative justify-center flex-row gap-4" role="group" aria-label="Slide 3 de 3">
+      <img src="../img/product_single_08.jpg" alt="Produto em posição frontal" class="w-[23%] object-cover">
+      <img src="../img/product_single_09.jpg" alt="Produto em posição lateral" class="w-[23%] object-cover">
+      <img src="../img/product_single_10.jpg" alt="Produto em posição superior" class="w-[23%] object-cover">
+    </div>
+  </div>
+
+  <!-- Botões -->
+  <button id="prev" class="absolute left-3 top-1/2 -translate-y-1/2 bg-opacity-50 text-black p-3 rounded-full text-xl" aria-label="Imagem anterior">
+    &#10094;
+  </button>
+  <button id="next" class="absolute right-3 top-1/2 -translate-y-1/2 bg-opacity-50 text-black p-3 rounded-full text-xl" aria-label="Próxima imagem">
+    &#10095;
+  </button>
+</section>
+
+     <section class="cardDeinformacoes bg-white w-[90%] text-gray-700 px-5 py-7 flex flex-col my-10">
+  <!-- Cabeçalho do produto -->
+  <header>
+    <h1 class="text-3xl  font-[300]">Roupas esportivas</h1> 
+    <p class="preco text-xl text-gray-700 my-3" aria-label="Preço do produto">$ 25,00</p>
+  </header>
+
+  <!-- Avaliação -->
+  <section aria-label="Avaliação do produto" class="flex gap-3 my-3">
+    <ul class="flex gap-2 md:flex-wrap md:w-[60%]" role="list" aria-label="Estrelas da avaliação">
+      <li><i class="fa fa-star text-base" style="color: #facc15;" aria-hidden="true"></i></li>
+      <li><i class="fa fa-star text-base" style="color: #facc15;" aria-hidden="true"></i></li>
+      <li><i class="fa fa-star text-base" style="color: #facc15;" aria-hidden="true"></i></li>
+      <li><i class="fa fa-star text-base" style="color: #facc15;" aria-hidden="true"></i></li>
+      <li><i class="fa fa-star text-base" style="color: #979797;" aria-hidden="true"></i></li>
+    </ul>
+    <p class="text-lg">Avaliação <strong>4,8</strong> | 36 comentários</p>
+  </section>
+
+  <!-- Detalhes do produto -->
+  <dl class="font-medium flex gap-2 my-3">
+    <dt><strong>Marca:</strong></dt>
+    <dd class="text-gray-500">Fácil de usar</dd>
+  </dl>
+
+  <!-- Descrição -->
+  <section class=" my-3">
+    <h2><strong>Descrição:</strong></h2>
+    <p class="text-lg">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
+      tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse. 
+      Donec condimentum elementum convallis. Nunc sed orci a diam ultrices aliquet 
+      interdum quis nulla.
+    </p>
+  </section>
+
+  <!-- Cor -->
+  <section class="flex gap-2 my-3">
+    <h2><strong>Cor  disponível:</strong></h2>
+    <p class="text-gray-500">Branco / Preto</p>
+  </section>
+
+  <!-- Especificações -->
+  <section class="flex flex-col gap-2 my-3">
+    <h2><strong>Especificações:</strong> </h2>
+    <p class="text-lg">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.  
+      Conjunto você está irritado.  
+      Ut enim ad minim, dolore magna aliqua.  
+      Excepto sint.  
+    </p>
+  </section>
+    <dl class="flex gap-3 items-center my-3">
+    <dt>Tamanhos:</dt>
+    <dd class="flex gap-2">
+      <button class="bg-[rgb(89,171,110)] text-gray-100 py-1 px-3 rounded-sm text-xl">S</button>
+      <button class="bg-[rgb(89,171,110)] text-gray-100 py-1 px-3 rounded-sm text-xl">M</button>
+      <button class="bg-[rgb(89,171,110)] text-gray-100 py-1 px-3 rounded-sm text-xl">L</button>
+      <button class="bg-[rgb(89,171,110)] text-gray-100 py-1 px-3 rounded-sm text-xl">XL</button>
+    </dd>
+  </dl>
+  <dl class="flex gap-2 items-center">
+    <dt>Quantidades:</dt>
+    <dd class="flex gap-2 py-2 items-center"><button class="bg-[rgb(89,171,110)] text-gray-100 py-1 px-3 rounded-sm text-xl">-</button>
+      <span class="inline-block bg-[rgb(128,128,128)] text-gray-100 rounded-sm text-lg h-[30px] w-[30px] text-center">1</span>
+    <button class="bg-[rgb(89,171,110)] text-gray-100 py-1 px-3 rounded-sm text-xl">+</button>
+    </dd>
+  </dl>
+    <section class="flex gap-2 my-3">
+      <a href="#" aria-label="Link do produto" class="bg-[rgb(89,171,110)] text-white py-2 px-3 rounded-[4px] text-xl w-[45%] text-center"> <button>Comprar</button></a>
+     <button class="bg-[rgb(89,171,110)] text-white py-2 px-3 rounded-[4px] mx-2 text-[18px] w-[55%]">Adicionar no Carrinho</button>
+    </section>
+</section>
+  
+
+      </section>
+    
+  <script>
+    const slides = document.getElementById('slides');
+    const totalSlides = slides.children.length;
+    let index = 0;
+
+    function showSlide(n) {
+      // Se o índice for menor que 0, volta para o último slide
+      if (n < 0) index = totalSlides - 1; //2
+      // Se o índice for maior ou igual ao total, volta para o primeiro slide
+      else if (n >= totalSlides) index = 0;
+      // Caso contrário, atualiza o índice normalmente
+      else index = n;
+      // Move os slides usando transform para mostrar o slide correto
+      slides.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    // Botão "anterior": mostra o slide anterior ao clicar
+    document.getElementById('prev').addEventListener('click', () => showSlide(index - 1));
+    // Botão "próximo": mostra o próximo slide ao clicar
+    document.getElementById('next').addEventListener('click', () => showSlide(index + 1));
+
+    // Auto-play: troca de slide automaticamente a cada 4 segundos
+    setInterval(() => showSlide(index + 1), 4000);
+
+    // --- SWIPE NO MOBILE ---
+    // Variáveis para armazenar posição inicial e final do toque
+    let startX = 0;
+    let endX = 0;
+
+    // Detecta início do toque e armazena a posição X
+    slides.addEventListener('touchstart', (e) => {
+      startX = e.touches[0].clientX;
+    });
+
+    // Detecta fim do toque e armazena a posição X, depois chama handleSwipe
+    slides.addEventListener('touchend', (e) => {
+      endX = e.changedTouches[0].clientX;
+      handleSwipe();
+    });
+
+    function handleSwipe() {
+      // Calcula a diferença entre início e fim do toque
+      const diff = startX - endX;
+      if (Math.abs(diff) > 50) { // arrasto mínimo
+        if (diff > 0) {
+          showSlide(index + 1); // arrastou pra esquerda → próximo
+        } else {
+          showSlide(index - 1); // arrastou pra direita → anterior
+        }
+      }
+    }
+  </script>
+ 
+  </div>
+   </section>
+         <footer class="bg-gray-800 text-white py-10">
+          <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Seção 1: Empresa -->
+            <section>
+              <h2 class="text-[#2ea55cd5] text-3xl font-bold mb-8  border-b-[1px] border-gray-600 pb-5 ">Afilideal</h2>
+              <ul class="space-y-4 text-gray-300">
+                <li class="flex items-center gap-2">
+                  <img src="https://img.icons8.com/ios-filled/20/ffffff/marker.png" alt="Localização">
+                  123 Consectetur at ligula 10660
+                </li>
+                <li class="flex items-center gap-2">
+                  <img src="https://img.icons8.com/ios-filled/20/ffffff/whatsapp.png" alt="WhatsApp">
+                  010-020-0340
+                </li>
+                <li class="flex items-center gap-2">
+                  <img src="https://img.icons8.com/ios-filled/20/ffffff/new-post.png" alt="Email">
+                  info@company.com
+                </li>
+              </ul>
+            </section>
+            <!-- Seção 2: Products -->
+            <section>
+              <h2 class="text-white text-xl  mb-4   border-b-[1px] border-gray-700 pb-5">Products</h2>
+              <ul class="space-y-2 text-gray-300">
+                <li>Luxury</li>
+                <li>Sport Wear</li>
+                <li>Men's Shoes</li>
+                <li>Women's Shoes</li>
+                <li>Popular Dress</li>
+                <li>Gym Accessories</li>
+                <li>Sport Shoes</li>
+              </ul>
+            </section>
+            <!-- Seção 3: Further Info -->
+            <section>
+              <h2 class="text-xl mb-4 text-gray-200 ">Further Info</h2>
+              <ul class="space-y-2 text-gray-300 mb-4   border-b-[1px] border-gray-700 pb-5   border-t-[1px] pt-5">
+                <li>Home</li>
+                <li>About Us</li>
+                <li>Shop Locations</li>
+                <li>FAQs</li>
+                <li>Contact</li>
+              </ul>
+              <!-- Redes sociais -->
+              <nav class="flex gap-4 mb-5 mt-2" aria-label="Redes sociais">
+                <a href="#"><img src="https://img.icons8.com/ios-filled/24/ffffff/facebook-new.png" alt="Facebook"></a>
+                <a href="#"><img src="https://img.icons8.com/ios-filled/24/ffffff/instagram-new.png" alt="Instagram"></a>
+                <a href="#"><img src="https://img.icons8.com/ios-filled/24/ffffff/twitter.png" alt="Twitter"></a>
+                <a href="#"><img src="https://img.icons8.com/ios-filled/24/ffffff/linkedin.png" alt="LinkedIn"></a>
+              </nav>
+              <!-- Copyright -->
+              <p class="text-gray-400 text-sm mt-7">
+                &copy; 2021 Company Name | Designed by <a href="#" class="underline">Gustavo Oliveira</a>
+              </p>
+            </section>
+          </div>
+        </footer></div>
+     </main>
+     <script src="../script/index.js"></script>
+     <script src="../script/compras.js"></script>
+     <script src="../script/produtos.js"></script>
+</body>
+</html>
