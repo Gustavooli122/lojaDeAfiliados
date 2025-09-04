@@ -1,14 +1,14 @@
 
 
-
 const produtos = [
   {
     id: 1,
-    nome: "Peso de academia",
+    nome: "Peso de academia categoriaA",
     descricao: "Produto resistente para treinos intensos.",
     preco: 2400.00,
     imagem: "../img/feature_prod_01.jpg",
-    rating: 4 // até 5
+    rating: 4, // até 5
+    categoria:"A"
   },
    {
     id: 2,
@@ -16,15 +16,17 @@ const produtos = [
     descricao: "Produto resistente para treinos intensos.",
     preco: 240.00,
     imagem: "../img/feature_prod_01.jpg",
-    rating: 4 // até 5
+    rating: 4 , // até 5
+    categoria:"C"
   },
     {
     id: 3,
-    nome: "Peso de academia",
+    nome: "Peso de academia categoriaA",
     descricao: "Produto resistente para treinos intensos.",
     preco: 240.00,
     imagem: "../img/feature_prod_01.jpg",
-    rating: 4 // até 5
+    rating: 4, // até 5
+    categoria:"A"
   },
     {
     id: 4,
@@ -32,7 +34,8 @@ const produtos = [
     descricao: "Produto resistente para treinos intensos.",
     preco: 240.00,
     imagem: "../img/feature_prod_01.jpg",
-    rating: 4 // até 5
+    rating: 4 , // até 5
+    categoria:"B"
   },
     {
     id: 5,
@@ -40,23 +43,26 @@ const produtos = [
     descricao: "Produto resistente para treinos intensos.",
     preco: 240.00,
     imagem: "../img/feature_prod_01.jpg",
-    rating: 4 // até 5
+    rating: 4 , // até 5
+    categoria:"B"
   },
     {
     id: 6,
-    nome: "Peso de academia",
+    nome: "Peso de academia categoriaA",
     descricao: "Produto resistente para treinos intensos.",
     preco: 240.00,
     imagem: "../img/feature_prod_01.jpg",
-    rating: 4 // até 5
+    rating: 4 , // até 5
+    categoria:"A"
   },
     {
     id: 7,
-    nome: "Peso de academia",
+    nome: "Peso de academia categoriaA",
     descricao: "Produto resistente para treinos intensos.",
     preco: 240.00,
     imagem: "../img/feature_prod_01.jpg",
-    rating: 4 // até 5
+    rating: 4 , // até 5
+    categoria:"A"
   },
     {
     id: 8,
@@ -64,23 +70,26 @@ const produtos = [
     descricao: "Produto resistente para treinos intensos.",
     preco: 240.00,
     imagem: "../img/feature_prod_01.jpg",
-    rating: 2 // até 5
+    rating: 2, // até 5
+    categoria:"C"
   },
     {
     id: 9,
-    nome: "Peso de academia",
+    nome: "Peso de academia categoriaA",
     descricao: "Produto resistente para treinos intensos.",
     preco: 240.00,
     imagem: "../img/feature_prod_01.jpg",
-    rating: 3 // até 5
+    rating: 3 , // até 5
+    categoria:"A"
   },
     {
     id: 10,
-    nome: "Peso de academia",
+    nome: "Peso de academia categoriaA",
     descricao: "Produto resistente para treinos intensos.",
     preco: 240.00,
     imagem: "../img/feature_prod_01.jpg",
-    rating: 5 // até 5
+    rating: 5, // até 5
+    categoria:"A"
   },
 
 ];
@@ -88,7 +97,7 @@ const produtos = [
 const container = document.querySelector(".containerShop");
 produtos.forEach(produto =>{
     const card = `<article class="bg-white pb-3 flex flex-col rounded-md shadow">
-    <a href="#">
+    <a href="produto.html?id=${produto.id}">
       <img src="${produto.imagem}" alt="img-produto-card" 
            class="w-full object-cover rounded-t-md">
     </a>
@@ -99,7 +108,7 @@ produtos.forEach(produto =>{
       <p class="text-gray-400  lg:text-xs md:text-xs sm:text-xs text-sm">R$ ${produto.preco.toFixed(2)}</p>
     </div>
     <div class="mx-2 mt-2">
-      <h2 class="text-sm font-medium leading-tight">${produto.descricao}</h2>
+      <h2 class="text-sm font-medium leading-tight">${produto.nome}</h2>
       <button class="bg-[#0d2f42] text-gray-200 text-xs px-2 py-1 mt-2 rounded hover:bg-[#123f59] w-full">
         <i class="fa-solid fa-cart-shopping text-white mr-1"></i>
         Carrinho
@@ -121,6 +130,7 @@ function gerarEstrelas(rating) {
   }
   return estrelas;
 }
+
 
 
 
