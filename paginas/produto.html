@@ -195,74 +195,28 @@
 
 <section class="flex gap-2 flex-col sm:flex-row md:flex-row lg:flex-row my-3">
   <a href="#" aria-label="Link do produto" 
-     class="bg-[#2ea55cd5] hover:bg-[#238a48] text-white py-2 px-3 rounded-[4px] text-xl w-auto text-center">
-     <button><i class="fas fa-shopping-cart mr-2"></i> Adicionar no Carrinho</button>
+     class="bg-[#0b2c57d5] hover:bg-[#238a48] text-white py-2 px-3 rounded-[4px] text-xl w-auto text-center">
+     <button>Comprar agora</button>
   </a>
-  <button class="bg-[#102f41d5] hover:bg-[#238a48] text-white py-2 px-3 rounded-[4px] text-[18px] w-auto ">
-Comprar agora
+  <button class="bg-[#2ea55cd5] hover:bg-[#238a48] text-white py-2 px-3 rounded-[4px] text-[18px] w-auto ">
+  
+<i class="fas fa-shopping-cart mr-2"></i> Adicionar no Carrinho
   </button>
 </section>
 
 </section>
-  
 
       </section>
-    
-  <script>
-    const slides = document.getElementById('slides');
-    const totalSlides = slides.children.length;
-    let index = 0;
 
-    function showSlide(n) {
-      // Se o índice for menor que 0, volta para o último slide
-      if (n < 0) index = totalSlides - 1; //2
-      // Se o índice for maior ou igual ao total, volta para o primeiro slide
-      else if (n >= totalSlides) index = 0;
-      // Caso contrário, atualiza o índice normalmente
-      else index = n;
-      // Move os slides usando transform para mostrar o slide correto
-      slides.style.transform = `translateX(-${index * 100}%)`;
-    }
-
-    // Botão "anterior": mostra o slide anterior ao clicar
-    document.getElementById('prev').addEventListener('click', () => showSlide(index - 1));
-    // Botão "próximo": mostra o próximo slide ao clicar
-    document.getElementById('next').addEventListener('click', () => showSlide(index + 1));
-
-    // Auto-play: troca de slide automaticamente a cada 4 segundos
-    setInterval(() => showSlide(index + 1), 4000);
-
-    // --- SWIPE NO MOBILE ---
-    // Variáveis para armazenar posição inicial e final do toque
-    let startX = 0;
-    let endX = 0;
-
-    // Detecta início do toque e armazena a posição X
-    slides.addEventListener('touchstart', (e) => {
-      startX = e.touches[0].clientX;
-    });
-
-    // Detecta fim do toque e armazena a posição X, depois chama handleSwipe
-    slides.addEventListener('touchend', (e) => {
-      endX = e.changedTouches[0].clientX;
-      handleSwipe();
-    });
-
-    function handleSwipe() {
-      // Calcula a diferença entre início e fim do toque
-      const diff = startX - endX;
-      if (Math.abs(diff) > 50) { // arrasto mínimo
-        if (diff > 0) {
-          showSlide(index + 1); // arrastou pra esquerda → próximo
-        } else {
-          showSlide(index - 1); // arrastou pra direita → anterior
-        }
-      }
-    }
-  </script>
  
   </div>
+   <section class="cardsRelacionados mt-10">
+  <h2 class="text-xl font-bold mb-4">Produtos Relacionados</h2>
+  <div class="cardCarrossel flex gap-4 overflow-x-auto"></div>
+</section>
    </section>
+
+  
          <footer class="bg-gray-800 text-white py-10">
           <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
             <!-- Seção 1: Empresa -->
@@ -320,12 +274,15 @@ Comprar agora
             </section>
           </div>
         </footer></div>
-     </main>
+     </main>    <script src="../script/produtos.js"></script>
+      <script src="../script/paginaDoProduto.js"></script>
+   
      <script src="../script/index.js"></script>
      <script src="../script/compras.js"></script>
-     <script src="../script/produtos.js"></script>
+   
 </body>
 </html>
+
 
 
 
