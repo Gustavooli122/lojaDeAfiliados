@@ -3,5 +3,10 @@
     scale: 0.95;
 }
 
-
+.cardCarrossel {
+  scrollbar-width: none; /* Firefox */
+}
+.cardCarrossel::-webkit-scrollbar {
+  display: none; /* Chrome, Edge, Safari */
+}
 
