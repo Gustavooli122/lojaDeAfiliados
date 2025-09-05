@@ -1,7 +1,7 @@
 
 
 
- const carrossel = document.querySelector(".carrossel");
+const carrossel = document.querySelector(".carrosselPrincipal");
 
   
 function abrirNavegacao() {
@@ -39,6 +39,7 @@ document.querySelector(".btnProximo").addEventListener("click", () => mostrarSli
 setInterval(() => {
   mostrarSlide(index + 1);
 }, 6000);
+
 
 
 
