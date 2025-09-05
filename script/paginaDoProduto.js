@@ -58,7 +58,7 @@ const slides = document.getElementById('slides');
     const carrossel = document.querySelector(".cardCarrossel");
     
     relacionados.forEach(produto =>{
-       const card = `<article class="bg-white pb-3 flex flex-col rounded-md shadow">
+       const card = `<article class="bg-white pb-3 flex flex-col rounded-md shadow-md shadow-[#949494]">
     <a href="produto.html?id=${produto.id}">
       <img src="${produto.imagem}" alt="img-produto-card" 
            class="w-full object-cover rounded-t-md">
@@ -80,3 +80,47 @@ const slides = document.getElementById('slides');
 
   carrossel.innerHTML += card;
     })
+
+      
+  let isDown = false;    // verifica se está clicado
+let comecoX;            // posição inicial do mouse/toque
+let scrollLeft;        // posição inicial do scroll
+
+// Para PC (mouse)
+carrossel.addEventListener("mousedown", (e) => {
+  isDown = true;
+  carrossel.classList.add("cursor-grabbing");
+  comecoX = e.pageX - carrossel.offsetLeft;
+  scrollLeft = carrossel.scrollLeft;
+});
+carrossel.addEventListener("mouseleave", () => {
+  isDown = false;
+  carrossel.classList.remove("cursor-grabbing");
+});
+carrossel.addEventListener("mouseup", () => {
+  isDown = false;
+  carrossel.classList.remove("cursor-grabbing");
+});
+carrossel.addEventListener("mousemove", (e) => {
+  if (!isDown) return;
+  e.preventDefault();
+  const x = e.pageX - carrossel.offsetLeft;
+  const walk = (x - comecoX) * 2; // fator de velocidade
+  carrossel.scrollLeft = scrollLeft - walk;
+});
+
+// Para celular (toque)
+carrossel.addEventListener("touchstart", (e) => {
+  isDown = true;
+ comecoX = e.touches[0].pageX - carrossel.offsetLeft;
+  scrollLeft = carrossel.scrollLeft;
+});
+carrossel.addEventListener("touchend", () => {
+  isDown = false;
+});
+carrossel.addEventListener("touchmove", (e) => {
+  if (!isDown) return;
+  const x = e.touches[0].pageX - carrossel.offsetLeft;
+  const walk = (x - comecoX) * 2;
+  carrossel.scrollLeft = scrollLeft - walk;
+});
