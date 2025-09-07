@@ -78,44 +78,48 @@
         </div>
       </section>
     </nav>
-    <main class="flex carrosselPrincipal absolute transition-transformMenu ease-in-out duration-500 z-20 translate-y-24 lg:translate-y-32 justify-center items-center  h-auto w-full">
-      <button class="absolute btnProximo top-[40vh] text-6xl text-[#2ea55c7c] hover:text-[#2ea55cd5] z-30 mr-3 right-0" aria-label="Próximo slide">&#10095;</button>
-      <button class="absolute btnAnterior top-[40vh] ml-3 text-6xl text-[#2ea55c7c] hover:text-[#2ea55cd5] z-30 left-0 " aria-label="Slide anterior ">&#10094;</button>
-      <section id="btnProximo" class="relative overflow-hidden flex flex-col justify-center" aria-label="Banner principal">
+    <main class="flex carrosselPrincipal absolute transition-transformMenu ease-in-out duration-500 z-20 translate-y-24 lg:translate-y-32 justify-center items-center  h-auto w-full ">
+      <button class="absolute btnProximo top-[40vh] md:top-[25vh] lg:top-[40vh] text-6xl text-[#2ea55c7c] hover:text-[#2ea55cd5] z-30 mr-3 lg:mr-10 right-0" aria-label="Próximo slide">&#10095;</button>
+      <button class="absolute btnAnterior top-[40vh] md:top-[25vh] lg:top-[40vh] ml-3 lg:ml-10 text-6xl text-[#2ea55c7c] hover:text-[#2ea55cd5] z-30 left-0 " aria-label="Slide anterior ">&#10094;</button>
+      <section id="btnProximo" class="relative overflow-hidden flex flex-col" aria-label="Banner principal">
 
-      
-       <div id="slides" class="flex w-full transition-transformCarrossel items-center">
+       <div id="slides" class=" w-full flex transition-transform duration-500 ">
+        
   <!-- Banner 1 -->
-  <article class="w-full flex-shrink-0 flex flex-col items-center py-5 h-full lg:flex-row-reverse " aria-label="Banner 1">
-    <img src="img/banner_img_01.jpg" alt="banner_img_02" class="scale-[0.7]  sm:scale-[0.5] md:scale-[0.4]">
-    <section class="w-full scale-[0.9] h-full px-[10%] ">
-      <h1 class="mb-6 text-4xl sm:text-4xl md:text-5x1 lg:text-5x1 text-gray-700 font-[200]">Zay eCommerce</h1>
+
+    <article class="w-full flex-shrink-0 flex items-center flex-col  lg:px-[12%]  py-10 h-full md:flex-row-reverse sm:py-[10%] lg:gap-5 md:px-0 md:py-[10%]"  aria-label="Banner 3">
+    <img src="img/banner_img_01.jpg" alt="banner_img_01" class=" w-[60%] py-5 sm:scale-[1.0] sm:w-[50%] md:w-[30%] md:m-auto md:scale-[1.0] lg:scale-[1.0] lg:w-[35%] sm:my-5 sm:py-0">
+   <section class="w-auto md:scale-[1.0] scale-[1.0] h-full  px-[15%]  lg:scale-[1.2] lg:px-[10%] sm:scale-[1.0] md:w-[60%] md:px-20">
+      <h1 class="mb-5 text-4xl sm:text-4xl md:text-4x1 lg:text-5x1 text-gray-700 font-[200]">Zay eCommerce</h1>
       <h2 class="mb-4 text-2xl text-gray-700">Modelo de comércio eletrônico pequeno e perfeito</h2>
       <p class="text-gray-700">Zay Shop é um modelo HTML5 CSS para e-commerce com a versão mais recente do Bootstrap 5 (beta 1). Este modelo é 100% gratuito e fornecido pelo site TemplateMo. Os créditos das imagens vão para Freepik Stories, Unsplash e Icons 8.</p>
     </section>
   </article>
 
   <!-- Banner 2 -->
-  <article class="w-full flex-shrink-0 flex flex-col items-center py-5 h-full lg:flex-row-reverse " aria-label="Banner 2">
-    <img src="img/banner_img_02.jpg" alt="banner_img_02" class="scale-[0.7]  sm:scale-[0.5] md:scale-[0.4]">
-    <section class="w-full scale-[0.9] h-full px-[10%] ">
-      <h1 class="mb-6 text-4xl sm:text-4xl md:text-4x1 lg:text-5x1 text-gray-700 font-[200]">Zay eCommerce</h1>
+
+    <article class="w-full flex-shrink-0 flex items-center flex-col  lg:px-[12%]  py-10 h-full md:flex-row-reverse sm:py-[10%] lg:gap-5 md:px-0 md:py-[10%]"  aria-label="Banner 3">
+    <img src="img/banner_img_02.jpg" alt="banner_img_02" class=" w-[60%] py-5 sm:scale-[1.0] sm:w-[50%] md:w-[30%] md:m-auto md:scale-[1.0] lg:scale-[1.0] lg:w-[35%] sm:my-5 sm:py-0">
+   <section class="w-auto md:scale-[1.0] scale-[1.0] h-full  px-[15%]  lg:scale-[1.2] lg:px-[10%] sm:scale-[1.0] md:w-[60%] md:px-20">
+      <h1 class="mb-5 text-4xl sm:text-4xl md:text-4x1 lg:text-5x1 text-gray-700 font-[200]">Zay eCommerce</h1>
       <h2 class="mb-4 text-2xl text-gray-700">Modelo de comércio eletrônico pequeno e perfeito</h2>
       <p class="text-gray-700">Zay Shop é um modelo HTML5 CSS para e-commerce com a versão mais recente do Bootstrap 5 (beta 1). Este modelo é 100% gratuito e fornecido pelo site TemplateMo. Os créditos das imagens vão para Freepik Stories, Unsplash e Icons 8.</p>
     </section>
   </article>
 
   <!-- Banner 3 -->
-  <article class="w-full flex-shrink-0 flex flex-col items-center py-5 h-full lg:flex-row-reverse" aria-label="Banner 3">
-    <img src="img/banner_img_03.jpg" alt="banner_img_03" class="scale-[0.7]  sm:scale-[0.5] md:scale-[0.4]">
-    <section class="w-full scale-[0.9] h-full px-[10%] ">
-      <h1 class="mb-6 text-4xl sm:text-4xl md:text-4x1 lg:text-5x1 text-gray-700 font-[200]">Zay eCommerce</h1>
+
+    <article class="w-full flex-shrink-0 flex items-center flex-col  lg:px-[12%]  py-10 h-full md:flex-row-reverse sm:py-[10%] lg:gap-5 md:px-0 md:py-[10%]"  aria-label="Banner 3">
+    <img src="img/banner_img_03.jpg" alt="banner_img_03" class=" w-[60%] py-5 sm:scale-[1.0] sm:w-[50%] md:w-[30%] md:m-auto md:scale-[1.0] lg:scale-[1.0] lg:w-[35%] sm:my-5 sm:py-0">
+   <section class="w-auto md:scale-[1.0] scale-[1.0] h-full  px-[15%]  lg:scale-[1.2] lg:px-[10%] sm:scale-[1.0] md:w-[60%] md:px-20">
+      <h1 class="mb-5 text-4xl sm:text-4xl md:text-4x1 lg:text-5x1 text-gray-700 font-[200]">Zay eCommerce</h1>
       <h2 class="mb-4 text-2xl text-gray-700">Modelo de comércio eletrônico pequeno e perfeito</h2>
       <p class="text-gray-700">Zay Shop é um modelo HTML5 CSS para e-commerce com a versão mais recente do Bootstrap 5 (beta 1). Este modelo é 100% gratuito e fornecido pelo site TemplateMo. Os créditos das imagens vão para Freepik Stories, Unsplash e Icons 8.</p>
     </section>
   </article>
 </div>
-        <section class="flex flex-col md:grid grid-cols-3 lg:auto-cols-min auto-rows-min md:gap-y-1 items-center mt-20  mb-40 lg:gap-2 lg:pl-20 lg:pr-20">
+
+        <section class="flex flex-col md:grid grid-cols-3 lg:auto-cols-min auto-rows-min md:gap-y-1 items-center  mb-40 lg:gap-2 lg:px-20">
           <header class="col-span-3  sm: mb-17 lg:mb-2 p-24">
             <h1 class="text-center mb-4 text-5xl text-gray-700">Categorias do mês</h1>
             <p class="text-center text-gray-700 p-0 lg:pl-50 lg:pr-50 mt-5"> Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
