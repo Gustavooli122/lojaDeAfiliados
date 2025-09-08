@@ -193,9 +193,13 @@ const cardDeInformacoes = document.querySelector(".cardDeinformacoes");
 <i class="fa-regular fa-heart mx-2 sm:mx-0 iconeFavoritoProduto"></i> Adicionar aos favoritos
   </button>
 
-  <script>
-  // Aguarda o HTML carregar antes de rodar
-  document.addEventListener("DOMContentLoaded", () => {
+
+</section>`;
+
+  
+ cardDeInformacoes.innerHTML += card2;
+    })
+
     const btnFavoritos = document.getElementById("btnFavoritos");
     const iconeFavoritosContorno = document.querySelector(".iconeFavoritoProduto");
 
@@ -208,13 +212,6 @@ const cardDeInformacoes = document.querySelector(".cardDeinformacoes");
       iconeFavoritosContorno.classList.remove("fa-solid");
       }
     });
-  });
-</script>
-</section>`;
 
-  
- cardDeInformacoes.innerHTML += card2;
-    })
-  
-  
+
 
