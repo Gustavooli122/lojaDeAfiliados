@@ -15,7 +15,7 @@
 
    <link rel="stylesheet" href="comprar.css">
 </head>
-<body>
+<body id="paginaDoProduto">
      <aside class="hidden sm:hidden md:hidden lg:flex bg-[rgb(33,41,52)] w-full pt-2 pb-2 pl-10 pr-10 justify-between items-center">
       <div class="flex gap-2 justify-center flex-row">
         <img src="https://img.icons8.com/ios-filled/20/ffffff/new-post.png" alt="imagem-de-email" class="w-3 h-3 m-auto">
@@ -42,9 +42,9 @@
       </nav>
       <div class="lg:flex hidden gap-3 mr-3 " aria-label="Carrinho de compras">
         <a href="#"><img src="../img/lupa.png" alt="Ícone de lupa" width="25px" class="m-auto" ></a> 
-        <a href="#"> <img src="../img/carrinho-de-compras.png" alt="carrinho-de-compras" width="25px" class="m-auto"></a>
-        <div class="rounded-[50px] bg-slate-300 w-auto h-5 flex justify-center items-center -translate-x-4 -translate-y-3">
-          <p id="numeroCarrinho" class="text-gray-900 text-xs font-medium m-2">0</p>
+        <a href="#"><i class="fa-solid fa-heart iconeFavoritoPrincipal text-2xl"></i>
+          <div class="rounded-[50px] bg-slate-300 w-auto h-5 flex justify-center items-center translate-x-3 -translate-y-10">
+          <p class="text-gray-900 text-xs numeroFavoritos font-medium m-2">0</p>
         </div>
       </div>
       <nav aria-label="Menu mobile" class="m-0.5">
@@ -67,20 +67,20 @@
             <img src="../img/lupa.png" alt="Ícone de lupa" width="25px" class="m-[5px]">
           </button>
         </form>
-        <div class="flex items-center mr-3" aria-label="Carrinho de compras">
-          <img src="../img/carrinho-de-compras.png" alt="carrinho-de-compras" width="30px">
-          <div class="rounded-[50px] bg-slate-300 w-auto h-5 flex justify-center items-center -translate-x-4 -translate-y-3">
-            <p id="numeroCarrinho" class="text-gray-900 text-xs font-medium m-2">0</p>
+      <div class="flex items-center mr-3" aria-label="Carrinho de compras">
+          <i class="fa-solid fa-heart iconeFavoritoPrincipal text-2xl"></i>
+          <div class="rounded-[50px] bg-slate-300 w-auto h-5 flex justify-center items-center -translate-x-3 -translate-y-4">
+            <p class="numeroFavoritos text-gray-900 text-xs font-medium m-2">0</p>
           </div>
         </div>
       </section>
     </nav>
    
      <main  class="flex flex-col menuNavegacao absolute transition-transformMenu ease-in-out duration-500 z-20 translate-y-[-15rem] lg:translate-y-[-0.5rem] w-full ">
-      <section class="bg-slate-200 flex flex-col items-center py-10 mt-2  shadow-[inset_0_4px_15px_rgba(0,0,0,0.3)]">
+      <section class="bg-slate-200 paginaProdutos flex flex-col items-center py-10 sm:py-[10%] mt-2 px-[5%] sm:px-[8%] shadow-[inset_0_4px_15px_rgba(0,0,0,0.3)] w-full">
         <!-- Imagem principal do produto -->
 <figure>
-  <img src="../img/product_single_01.jpg" alt="Produto esportivo principal" class="w-[90%] m-5">
+  <img id="testeBtn" src="../img/product_single_01.jpg" alt="Produto esportivo principal" class="w-full">
   <figcaption class="sr-only">Imagem principal do produto</figcaption>
 </figure>
 
@@ -88,7 +88,7 @@
 <section class="relative flex items-center w-full overflow-hidden rounded-lg" aria-label="Galeria de imagens do produto">
   
   <!-- Container dos slides -->
-  <div id="slides" class="flex w-full flex-row transition-transform" role="region" aria-roledescription="carrossel">
+  <div id="slides" class="flex w-full flex-row transition-transform mt-10" role="region" aria-roledescription="carrossel">
     
     <!-- Slide 1 -->
     <div class="w-full flex flex-shrink-0 justify-center flex-row gap-4" role="group" aria-label="Slide 1 de 3">
@@ -121,87 +121,9 @@
   </button>
 </section>
 
-     <section class="cardDeinformacoes bg-white w-[90%] text-gray-700 px-5 py-7 flex flex-col my-10">
+     <section class="cardDeinformacoes bg-white w-full text-gray-700 px-5 py-7 flex flex-col my-10 sm:px-10">
   <!-- Cabeçalho do produto -->
-  <header>
-    <h1 class="text-3xl  font-[300]">Roupas esportivas</h1> 
-    <p class="preco text-xl text-gray-700 my-3" aria-label="Preço do produto">$ 25,00</p>
-  </header>
-
-  <!-- Avaliação -->
-   <section aria-label="Avaliação do produto" class="flex flex-col sm:flex-row md:flex-row lg:flex-row gap-3 my-3">
-    <ul class="flex gap-2 md:flex-wrap md:w-[60%]" role="list" aria-label="Estrelas da avaliação">
-      <li><i class="fa fa-star text-base" style="color: #facc15;" aria-hidden="true"></i></li>
-      <li><i class="fa fa-star text-base" style="color: #facc15;" aria-hidden="true"></i></li>
-      <li><i class="fa fa-star text-base" style="color: #facc15;" aria-hidden="true"></i></li>
-      <li><i class="fa fa-star text-base" style="color: #facc15;" aria-hidden="true"></i></li>
-      <li><i class="fa fa-star text-base" style="color: #979797;" aria-hidden="true"></i></li>
-    </ul>
-    <p class="text-lg">Avaliação <strong>4,8</strong> | 36 comentários</p>
-  </section>
-
-  <!-- Detalhes do produto -->
-  <dl class="font-medium flex gap-2 my-3">
-    <dt><strong>Marca:</strong></dt>
-    <dd class="text-gray-500">Fácil de usar</dd>
-  </dl>
-
-  <!-- Descrição -->
-  <section class=" my-3">
-    <h2><strong>Descrição:</strong></h2>
-    <p class="text-lg">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
-      tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse. 
-      Donec condimentum elementum convallis. Nunc sed orci a diam ultrices aliquet 
-      interdum quis nulla.
-    </p>
-  </section>
-
-  <!-- Cor -->
-  <section class="flex gap-2 my-3">
-    <h2><strong>Cor  disponível:</strong></h2>
-    <p class="text-gray-500">Branco / Preto</p>
-  </section>
-
-  <!-- Especificações -->
-  <section class="flex flex-col gap-2 my-3">
-    <h2><strong>Especificações:</strong> </h2>
-    <p class="text-lg">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.  
-      Conjunto você está irritado.  
-      Ut enim ad minim, dolore magna aliqua.  
-      Excepto sint.  
-    </p>
-  </section>
-    <dl class="flex  flex-col sm:flex-row md:flex-row lg:flex-row  gap-3 sm:items-center md:items-center lg:items-center my-3">
-   <dl class="flex flex-col sm:flex-row md:flex-row lg:flex-row gap-3 sm:items-center md:items-center lg:items-center my-3">
-  <dt>Tamanhos:</dt>
-  <dd class="flex gap-2">
-    <button class="bg-[#2ea55cd5] hover:bg-[#238a48] text-white py-1 px-3 rounded-sm text-xl">S</button>
-    <button class="bg-[#2ea55cd5] hover:bg-[#238a48] text-white py-1 px-3 rounded-sm text-xl">M</button>
-    <button class="bg-[#2ea55cd5] hover:bg-[#238a48] text-white py-1 px-3 rounded-sm text-xl">L</button>
-    <button class="bg-[#2ea55cd5] hover:bg-[#238a48] text-white py-1 px-3 rounded-sm text-xl">XL</button>
-  </dd>
-</dl>
-
-<dl class="flex gap-2 items-center">
-  <dt>Quantidades:</dt>
-  <dd class="flex gap-2 py-2 items-center">
-    <button class="bg-[#2ea55cd5] hover:bg-[#238a48] text-white py-1 px-3 rounded-sm text-xl">-</button>
-    <span class="inline-block bg-gray-500 text-white rounded-sm text-lg h-[30px] w-[30px] text-center leading-[30px]">1</span>
-    <button class="bg-[#2ea55cd5] hover:bg-[#238a48] text-white py-1 px-3 rounded-sm text-xl">+</button>
-  </dd>
-</dl>
-
-<section class="flex gap-2 flex-col sm:flex-row md:flex-row lg:flex-row my-3">
-  <a href="#" aria-label="Link do produto" 
-     class="bg-[#0b2c57d5] hover:bg-[#238a48] text-white py-2 px-3 rounded-[4px] text-xl w-auto text-center">
-     <button>Comprar agora</button>
-  </a>
-  <button class="bg-[#2ea55cd5] hover:bg-[#238a48] text-white py-2 px-3 rounded-[4px] text-[18px] w-auto ">
   
-<i class="fas fa-shopping-cart mr-2"></i> Adicionar no Carrinho
-  </button>
 </section>
 
 </section>
@@ -210,12 +132,13 @@
 
  
   </div>
-
-   <section class="cardsRelacionados my-10 ">
-  <h2 class="text-xl font-bold mb-4 mx-2">Produtos Relacionados</h2>
+   <section class="cardsRelacionados my-10 mx-2">
+  <h2 class="text-xl font-bold mb-4">Produtos Relacionados</h2>
   <div class="cardCarrossel grid py-3 px-2 grid-flow-col  auto-cols-[calc(100%/2)] sm:auto-cols-[calc(100%/3)] md:auto-cols-[calc(100%/4)] grid-rows-1 gap-4 overflow-x-auto select-none"></div>
 </section>
-         
+   </section>
+
+  
          <footer class="bg-gray-800 text-white py-10">
           <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
             
@@ -274,7 +197,9 @@
             </section>
           </div>
         </footer></div>
-     </main>    <script src="../script/produtos.js"></script>
+     </main> 
+     
+     <script src="../script/produtos.js"></script>
       <script src="../script/paginaDoProduto.js"></script>
    
      <script src="../script/index.js"></script>
@@ -282,6 +207,7 @@
    
 </body>
 </html>
+
 
 
 
