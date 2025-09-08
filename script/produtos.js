@@ -3,7 +3,7 @@
 const produtos = [
   {
     id: 1,
-    nome: "Peso de academia categoriaA",
+    nome: "Produto Teste",
     descricao: "Produto resistente para treinos intensos.",
     preco: 2400.00,
     imagem: "../img/feature_prod_01.jpg",
@@ -12,16 +12,17 @@ const produtos = [
   },
    {
     id: 2,
-    nome: "Peso de academia",
-    descricao: "Produto resistente para treinos intensos.",
+    nome: "Peso de academia categoriaC",
+    descricao: "O produto de CategoriaC id 2 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse. Donec condimentum elementum convallis. Nunc sed orci a diam ultrices aliquet interdum quis nulla.",
     preco: 240.00,
     imagem: "../img/feature_prod_01.jpg",
+    outrasImg: ["","","","","","","","",""],
     rating: 4 , // até 5
     categoria:"C"
   },
     {
     id: 3,
-    nome: "Peso de academia categoriaA",
+    nome: "Peso de academia categoriaA id3",
     descricao: "Produto resistente para treinos intensos.",
     preco: 240.00,
     imagem: "../img/feature_prod_01.jpg",
@@ -48,7 +49,7 @@ const produtos = [
   },
     {
     id: 6,
-    nome: "Peso de academia categoriaA",
+    nome: "Peso de academia categoriaA id6",
     descricao: "Produto resistente para treinos intensos.",
     preco: 240.00,
     imagem: "../img/feature_prod_01.jpg",
@@ -57,7 +58,7 @@ const produtos = [
   },
     {
     id: 7,
-    nome: "Peso de academia categoriaA",
+    nome: "Peso de academia categoriaA id7",
     descricao: "Produto resistente para treinos intensos.",
     preco: 240.00,
     imagem: "../img/feature_prod_01.jpg",
@@ -75,7 +76,7 @@ const produtos = [
   },
     {
     id: 9,
-    nome: "Peso de academia categoriaA",
+    nome: "Peso de academia categoriaA id9",
     descricao: "Produto resistente para treinos intensos.",
     preco: 240.00,
     imagem: "../img/feature_prod_01.jpg",
@@ -84,7 +85,7 @@ const produtos = [
   },
     {
     id: 10,
-    nome: "Peso de academia categoriaA",
+    nome: "Peso de academia categoriaA id10",
     descricao: "Produto resistente para treinos intensos.",
     preco: 240.00,
     imagem: "../img/feature_prod_01.jpg",
@@ -109,10 +110,11 @@ produtos.forEach(produto =>{
     </div>
     <div class="mx-2 mt-2">
       <h2 class="text-sm font-medium leading-tight">${produto.nome}</h2>
-      <button class="bg-[#0d2f42] text-gray-200 text-xs px-2 py-1 mt-2 rounded hover:bg-[#123f59] w-full">
-        <i class="fa-solid fa-cart-shopping text-white mr-1"></i>
-        Carrinho
+        <a href="produto.html?id=${produto.id}">
+     <button class="bg-[#0d2f42] text-gray-200 text-xs px-2 py-1 mt-2 rounded hover:bg-[#123f59] w-full">
+        Ver mais
       </button>
+    </a> 
     </div>
   </article>`;
 
@@ -130,6 +132,7 @@ function gerarEstrelas(rating) {
   }
   return estrelas;
 }
+
 
 
 
