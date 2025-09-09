@@ -5,8 +5,9 @@ const produtos = [
     id: 1,
     nome: "Produto Teste",
     descricao: "Produto resistente para treinos intensos.",
-    preco: 2400.00,
+    preco:950.00,
     imagem: "../img/feature_prod_01.jpg",
+     outrasImg: ["../img/feature_prod_02.jpg","../img/feature_prod_03.jpg","../img/feature_prod_01.jpg","../img/feature_prod_03.jpg","../img/feature_prod_02.jpg"],
     rating: 4, // até 5
     categoria:"A"
   },
@@ -26,6 +27,7 @@ const produtos = [
     descricao: "Produto resistente para treinos intensos.",
     preco: 240.00,
     imagem: "../img/feature_prod_01.jpg",
+     outrasImg: ["","","","","","","","",""],
     rating: 4, // até 5
     categoria:"A"
   },
@@ -35,6 +37,7 @@ const produtos = [
     descricao: "Produto resistente para treinos intensos.",
     preco: 240.00,
     imagem: "../img/feature_prod_01.jpg",
+     outrasImg: ["","","","","","","","",""],
     rating: 4 , // até 5
     categoria:"B"
   },
@@ -44,6 +47,7 @@ const produtos = [
     descricao: "Produto resistente para treinos intensos.",
     preco: 240.00,
     imagem: "../img/feature_prod_01.jpg",
+     outrasImg: ["","","","","","","","",""],
     rating: 4 , // até 5
     categoria:"B"
   },
@@ -53,6 +57,7 @@ const produtos = [
     descricao: "Produto resistente para treinos intensos.",
     preco: 240.00,
     imagem: "../img/feature_prod_01.jpg",
+     outrasImg: ["","","","","","","","",""],
     rating: 4 , // até 5
     categoria:"A"
   },
@@ -62,6 +67,7 @@ const produtos = [
     descricao: "Produto resistente para treinos intensos.",
     preco: 240.00,
     imagem: "../img/feature_prod_01.jpg",
+     outrasImg: ["","","","","","","","",""],
     rating: 4 , // até 5
     categoria:"A"
   },
@@ -71,6 +77,7 @@ const produtos = [
     descricao: "Produto resistente para treinos intensos.",
     preco: 240.00,
     imagem: "../img/feature_prod_01.jpg",
+     outrasImg: ["","","","","","","","",""],
     rating: 2, // até 5
     categoria:"C"
   },
@@ -80,6 +87,7 @@ const produtos = [
     descricao: "Produto resistente para treinos intensos.",
     preco: 240.00,
     imagem: "../img/feature_prod_01.jpg",
+     outrasImg: ["","","","","","","","",""],
     rating: 3 , // até 5
     categoria:"A"
   },
@@ -89,6 +97,7 @@ const produtos = [
     descricao: "Produto resistente para treinos intensos.",
     preco: 240.00,
     imagem: "../img/feature_prod_01.jpg",
+     outrasImg: ["","","","","","","","",""],
     rating: 5, // até 5
     categoria:"A"
   },
