@@ -4,14 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-     <!-- TailwindCSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Fonte Poppins -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="../../dist/output.css" rel="stylesheet">
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
    <link rel="stylesheet" href="comprar.css">
 </head>
@@ -79,52 +76,9 @@
      <main  class="flex flex-col menuNavegacao absolute transition-transformMenu ease-in-out duration-500 z-20 translate-y-[-15rem] lg:translate-y-[-0.5rem] w-full ">
       <section class="bg-slate-200 paginaProdutos flex flex-col items-center py-10 sm:py-[10%] mt-2 px-[5%] sm:px-[8%] shadow-[inset_0_4px_15px_rgba(0,0,0,0.3)] w-full">
         <!-- Imagem principal do produto -->
-<figure>
-  <img id="testeBtn" src="../img/product_single_01.jpg" alt="Produto esportivo principal" class="w-full">
-  <figcaption class="sr-only">Imagem principal do produto</figcaption>
-</figure>
 
-<!-- Galeria de imagens (carrossel) -->
-<section class="relative flex items-center w-full overflow-hidden rounded-lg" aria-label="Galeria de imagens do produto">
-  
-  <!-- Container dos slides -->
-  <div id="slides" class="flex w-full flex-row transition-transform mt-10" role="region" aria-roledescription="carrossel">
-    
-    <!-- Slide 1 -->
-    <div class="w-full flex flex-shrink-0 justify-center flex-row gap-4" role="group" aria-label="Slide 1 de 3">
-      <img src="../img/product_single_02.jpg" alt="Produto ângulo lateral" class="w-[23%] object-cover">
-      <img src="../img/product_single_03.jpg" alt="Produto detalhe tecido" class="w-[23%] object-cover">
-      <img src="../img/product_single_04.jpg" alt="Produto visto de costas" class="w-[23%] object-cover">
-    </div>
 
-    <!-- Slide 2 -->
-    <div class="w-full flex flex-shrink-0 relative justify-center flex-row gap-4" role="group" aria-label="Slide 2 de 3">
-      <img src="../img/product_single_05.jpg" alt="Produto detalhe da gola" class="w-[23%] object-cover">
-      <img src="../img/product_single_06.jpg" alt="Produto detalhe da costura" class="w-[23%] object-cover">
-      <img src="../img/product_single_07.jpg" alt="Produto em uso no treino" class="w-[23%] object-cover">
-    </div>
 
-    <!-- Slide 3 -->
-    <div class="w-full flex flex-shrink-0 relative justify-center flex-row gap-4" role="group" aria-label="Slide 3 de 3">
-      <img src="../img/product_single_08.jpg" alt="Produto em posição frontal" class="w-[23%] object-cover">
-      <img src="../img/product_single_09.jpg" alt="Produto em posição lateral" class="w-[23%] object-cover">
-      <img src="../img/product_single_10.jpg" alt="Produto em posição superior" class="w-[23%] object-cover">
-    </div>
-  </div>
-
-  <!-- Botões -->
-  <button id="prev" class="absolute left-3 top-1/2 -translate-y-1/2 bg-opacity-50 text-black p-3 rounded-full text-xl" aria-label="Imagem anterior">
-    &#10094;
-  </button>
-  <button id="next" class="absolute right-3 top-1/2 -translate-y-1/2 bg-opacity-50 text-black p-3 rounded-full text-xl" aria-label="Próxima imagem">
-    &#10095;
-  </button>
-</section>
-
-     <section class="cardDeinformacoes bg-white w-full text-gray-700 px-5 py-7 flex flex-col my-10 sm:px-10">
-  <!-- Cabeçalho do produto -->
-  
-</section>
 
 </section>
 
@@ -207,9 +161,6 @@
    
 </body>
 </html>
-
-
-
 
 
 
