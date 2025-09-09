@@ -1,53 +1,4 @@
-const slides = document.getElementById('slides');
-    const totalSlides = slides.children.length;
-    let index = 0;
 
-    function showSlide(n) {
-      // Se o índice for menor que 0, volta para o último slide
-      if (n < 0) index = totalSlides - 1; //2
-      // Se o índice for maior ou igual ao total, volta para o primeiro slide
-      else if (n >= totalSlides) index = 0;
-      // Caso contrário, atualiza o índice normalmente
-      else index = n;
-      // Move os slides usando transform para mostrar o slide correto
-      slides.style.transform = `translateX(-${index * 100}%)`;
-    }
-
-    // Botão "anterior": mostra o slide anterior ao clicar
-    document.getElementById('prev').addEventListener('click', () => showSlide(index - 1));
-    // Botão "próximo": mostra o próximo slide ao clicar
-    document.getElementById('next').addEventListener('click', () => showSlide(index + 1));
-
-    // Auto-play: troca de slide automaticamente a cada 4 segundos
-    setInterval(() => showSlide(index + 1), 4000);
-
-    // --- SWIPE NO MOBILE ---
-    // Variáveis para armazenar posição inicial e final do toque
-    let startX = 0;
-    let endX = 0;
-
-    // Detecta início do toque e armazena a posição X
-    slides.addEventListener('touchstart', (e) => {
-      startX = e.touches[0].clientX;
-    });
-
-    // Detecta fim do toque e armazena a posição X, depois chama handleSwipe
-    slides.addEventListener('touchend', (e) => {
-      endX = e.changedTouches[0].clientX;
-      handleSwipe();
-    });
-
-    function handleSwipe() {
-      // Calcula a diferença entre início e fim do toque
-      const diff = startX - endX;
-      if (Math.abs(diff) > 50) { // arrasto mínimo
-        if (diff > 0) {
-          showSlide(index + 1); // arrastou pra esquerda → próximo
-        } else {
-          showSlide(index - 1); // arrastou pra direita → anterior
-        }
-      }
-    }
 
     const params = new URLSearchParams(window.location.search);
     const produtoId = parseInt(params.get("id"));
@@ -131,23 +82,47 @@ carrossel.addEventListener("touchmove", (e) => {
 });
 
 
-const cardDeInformacoes = document.querySelector(".cardDeinformacoes");
+const cardDeInformacoes = document.querySelector(".paginaProdutos");
     
     produtoCompleto.forEach(produto =>{
-       const card2 = `<header>
+       const card2 = `
+
+       
+       <figure>
+  <img id="imgPrincipal" src="${produto.imagem}" alt="Produto esportivo principal" class="w-full">
+  <figcaption class="sr-only">Imagem principal do produto</figcaption>
+</figure>
+<!-- Galeria de imagens (carrossel) -->
+<section class="relative flex items-center w-full overflow-hidden rounded-lg" aria-label="Galeria de imagens do produto">
+  
+  <!-- Container dos slides -->
+  <div id="slides" class="flex w-full flex-row transition-transform mt-10" role="region" aria-roledescription="carrossel">
+    
+  </div>
+
+  <!-- Botões -->
+  <button id="prev" class="absolute left-3 top-1/2 -translate-y-1/2 bg-opacity-50 text-black p-3 rounded-full text-xl" aria-label="Imagem anterior">
+    &#10094;
+  </button>
+  <button id="next" class="absolute right-3 top-1/2 -translate-y-1/2 bg-opacity-50 text-black p-3 rounded-full text-xl" aria-label="Próxima imagem">
+    &#10095;
+  </button>
+</section>
+
+    
+        <section class="bg-white w-full text-gray-700 px-5 py-7 flex flex-col my-10 sm:px-10">
+  <!-- Cabeçalho do produto -->
+  
+<header>
     <h1 class="text-3xl sm:text-4xl font-[300]">${produto.nome}</h1> 
    
-    <p class="preco text-xl sm:text-2xl text-gray-700 my-3" aria-label="Preço do produto">$ 25,00</p>
+    <p class="preco text-xl sm:text-2xl text-gray-700 my-3" aria-label="Preço do produto">R$${produto.preco}</p>
   </header>
 
   <!-- Avaliação -->
    <section aria-label="Avaliação do produto" class="flex flex-col sm:flex-row md:flex-row lg:flex-row gap-3 sm:gap-5 my-3 sm:my-4 sm:items-center">
     <ul class="flex gap-2 md:flex-wrap md:w-[60%] sm:gap-3" role="list" aria-label="Estrelas da avaliação">
-      <li><i class="fa fa-star text-base" style="color: #facc15;" aria-hidden="true"></i></li>
-      <li><i class="fa fa-star text-base" style="color: #facc15;" aria-hidden="true"></i></li>
-      <li><i class="fa fa-star text-base" style="color: #facc15;" aria-hidden="true"></i></li>
-      <li><i class="fa fa-star text-base" style="color: #facc15;" aria-hidden="true"></i></li>
-      <li><i class="fa fa-star text-base" style="color: #979797;" aria-hidden="true"></i></li>
+      ${gerarEstrelas(produto.rating)}
     </ul>
     <p class="text-lg">Avaliação <strong>4,8</strong> | 36 comentários</p>
   </section>
@@ -194,12 +169,39 @@ const cardDeInformacoes = document.querySelector(".cardDeinformacoes");
   </button>
 
 
-</section>`;
+</section></section>`;
 
-  
+
  cardDeInformacoes.innerHTML += card2;
-    })
+const slides = document.getElementById('slides');
+const botaoAntes = document.getElementById('prev');
+const botaoDepois = document.getElementById('next');
+const imgs = produtoAtual.outrasImg;
 
+// Limpa o container antes de adicionar
+slides.innerHTML = "";
+
+// Loop para criar slides de até 3 imagens cada
+for (let i = 0; i < imgs.length; i += 3) {
+  // Pega até 3 imagens por vez
+  const slideImgs = imgs.slice(i, i + 3)
+    .map(src => `<img src="${src}" alt="Produto ângulo lateral" class="w-[23%] object-cover outrasImg">`)
+    .join('');
+
+  // Adiciona o slide ao carrossel
+  slides.innerHTML += `
+    <div class="w-full flex flex-shrink-0 justify-center flex-row gap-4" role="group" aria-label="Slide ${i/3 + 1} de ${Math.ceil(imgs.length/3)}">
+      ${slideImgs}
+    </div>
+  `;
+}
+if(imgs.length <= 3){
+  botaoAntes.classList.add("hidden")
+  botaoDepois.classList.add("hidden")
+}
+   
+    })
+  
     const btnFavoritos = document.getElementById("btnFavoritos");
     const iconeFavoritosContorno = document.querySelector(".iconeFavoritoProduto");
 
@@ -213,5 +215,68 @@ const cardDeInformacoes = document.querySelector(".cardDeinformacoes");
       }
     });
 
+    const slides = document.getElementById('slides');
+    const totalSlides = slides.children.length;
+    let index = 0;
+    const botaoAntes = document.getElementById('prev');
+    const botaoDepois = document.getElementById('next');
+
+    function showSlide(n) {
+      // Se o índice for menor que 0, volta para o último slide
+      if (n < 0) index = totalSlides - 1; //2
+      // Se o índice for maior ou igual ao total, volta para o primeiro slide
+      else if (n >= totalSlides) index = 0;
+      // Caso contrário, atualiza o índice normalmente
+      else index = n;
+      // Move os slides usando transform para mostrar o slide correto
+      slides.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+     botaoAntes.addEventListener('click', () => showSlide(index - 1));
+    // Botão "próximo": mostra o próximo slide ao clicar
+     botaoDepois.addEventListener('click', () => showSlide(index + 1));
+
+    // Auto-play: troca de slide automaticamente a cada 4 segundos
+     setInterval(() => showSlide(index + 1), 4000);
+    // --- SWIPE NO MOBILE ---
+    // Variáveis para armazenar posição inicial e final do toque
+    let startX = 0;
+    let endX = 0;
+
+    // Detecta início do toque e armazena a posição X
+    slides.addEventListener('touchstart', (e) => {
+      startX = e.touches[0].clientX;
+    });
+
+    // Detecta fim do toque e armazena a posição X, depois chama handleSwipe
+    slides.addEventListener('touchend', (e) => {
+      endX = e.changedTouches[0].clientX;
+      handleSwipe();
+    });
+
+    function handleSwipe() {
+      // Calcula a diferença entre início e fim do toque
+      const diff = startX - endX;
+      if (Math.abs(diff) > 50) { // arrasto mínimo
+        if (diff > 0) {
+          showSlide(index + 1); // arrastou pra esquerda → próximo
+        } else {
+          showSlide(index - 1); // arrastou pra direita → anterior
+        }
+      }
+    }
+
+    const imgPrincipal = document.getElementById("imgPrincipal")
+   const carrosselDeImgs = document.querySelectorAll(".outrasImg")
+
+   carrosselDeImgs.forEach((imgs)=>{
+    imgs.addEventListener("click",()=>{
+       let imgAtual = imgs.getAttribute("src");
+       imgPrincipal.setAttribute("src", imgAtual)
+
+    })
+   }) 
+   
+ 
 
 
