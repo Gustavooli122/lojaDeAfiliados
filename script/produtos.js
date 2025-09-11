@@ -118,9 +118,9 @@ produtos.forEach(produto =>{
       <p class="text-gray-400  lg:text-xs md:text-xs sm:text-xs text-sm">R$ ${produto.preco.toFixed(2)}</p>
     </div>
     <div class="mx-2 mt-2">
-      <h2 class="text-sm font-medium leading-tight">${produto.nome}</h2>
+      <h2 class="text-sm sm:text-base font-medium leading-tight">${produto.nome}</h2>
         <a href="produto.html?id=${produto.id}">
-     <button class="bg-[#0d2f42] text-gray-200 text-xs px-2 py-1 mt-2 rounded hover:bg-[#123f59] w-full">
+     <button class="bg-[#0d2f42] text-gray-200 text-xs sm:text-sm md:text-base px-2 sm:py-2 sm:px-2 py-1 mt-4 rounded hover:bg-[#123f59] w-full">
         Ver mais
       </button>
     </a> 
@@ -134,14 +134,13 @@ function gerarEstrelas(rating) {
   let estrelas = "";
   for (let i = 1; i <= 5; i++) {
     if (i <= rating) {
-      estrelas += `<i class="fa fa-star text-yellow-500  lg:text-xs md:text-xs sm:text-xs text-sm my-2"></i>`;
+      estrelas += `<i class="fa fa-star text-yellow-500  md:text-base text-sm my-2"></i>`;
     } else {
-      estrelas += `<i class="fa fa-star text-gray-300 lg:text-xs md:text-xs sm:text-xs text-sm my-2"></i>`;
+      estrelas += `<i class="fa fa-star text-gray-300 md:text-base text-sm my-2"></i>`;
     }
   }
   return estrelas;
 }
-
 
 
 
