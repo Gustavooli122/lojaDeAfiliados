@@ -8,7 +8,7 @@
     const produtoCompleto = [produtoAtual]; // transforma em array para poder usar forEach
 
 
-    const carrossel = document.querySelector(".cardCarrossel");
+    const produtoRelacionados = document.querySelector(".produtosRelacionados");
     
     relacionados.forEach(produto =>{
        const card = `<article class="bg-white pb-3 flex flex-col rounded-md shadow-md shadow-[#949494]">
@@ -33,7 +33,7 @@
   </article>`;
 
   
-  carrossel.innerHTML += card;
+  produtoRelacionados.innerHTML += card;
     })
 
   
@@ -41,45 +41,6 @@
   let isDown = false;    // verifica se está clicado
 let comecoX;            // posição inicial do mouse/toque
 let scrollLeft;        // posição inicial do scroll
-
-// Para PC (mouse)
-carrossel.addEventListener("mousedown", (e) => {
-  isDown = true;
-  carrossel.classList.add("cursor-grabbing");
-  comecoX = e.pageX - carrossel.offsetLeft;
-  scrollLeft = carrossel.scrollLeft;
-});
-carrossel.addEventListener("mouseleave", () => {
-  isDown = false;
-  carrossel.classList.remove("cursor-grabbing");
-});
-carrossel.addEventListener("mouseup", () => {
-  isDown = false;
-  carrossel.classList.remove("cursor-grabbing");
-});
-carrossel.addEventListener("mousemove", (e) => {
-  if (!isDown) return;
-  e.preventDefault();
-  const x = e.pageX - carrossel.offsetLeft;
-  const walk = (x - comecoX) * 2; // fator de velocidade
-  carrossel.scrollLeft = scrollLeft - walk;
-});
-
-// Para celular (toque)
-carrossel.addEventListener("touchstart", (e) => {
-  isDown = true;
- comecoX = e.touches[0].pageX - carrossel.offsetLeft;
-  scrollLeft = carrossel.scrollLeft;
-});
-carrossel.addEventListener("touchend", () => {
-  isDown = false;
-});
-carrossel.addEventListener("touchmove", (e) => {
-  if (!isDown) return;
-  const x = e.touches[0].pageX - carrossel.offsetLeft;
-  const walk = (x - comecoX) * 2;
-  carrossel.scrollLeft = scrollLeft - walk;
-});
 
 
 const cardDeInformacoes = document.querySelector(".paginaProdutos");
@@ -101,10 +62,10 @@ const cardDeInformacoes = document.querySelector(".paginaProdutos");
   </div>
 
   <!-- Botões -->
-  <button id="prev" class="absolute left-3 top-1/2 -translate-y-1/2 bg-opacity-50 text-black p-3 rounded-full text-xl" aria-label="Imagem anterior">
+  <button id="prev" class="absolute left-3 top-20 -translate-y-1/2 bg-opacity-50 text-black p-3 rounded-full text-2xl sm:text-2xl md:text-3xl" aria-label="Imagem anterior">
     &#10094;
   </button>
-  <button id="next" class="absolute right-3 top-1/2 -translate-y-1/2 bg-opacity-50 text-black p-3 rounded-full text-xl" aria-label="Próxima imagem">
+  <button id="next" class="absolute right-3 top-20 -translate-y-1/2 bg-opacity-50 text-black p-3 rounded-full  text-2xl sm:text-2xl md:text-3xl" aria-label="Próxima imagem">
     &#10095;
   </button>
 </section>
@@ -278,5 +239,6 @@ if(imgs.length <= 3){
    }) 
    
  
+
 
 
