@@ -20,12 +20,12 @@
       <ul id = "rating" class="flex gap-1">
     ${gerarEstrelas(produto.rating)}
       </ul>
-      <p class="text-gray-400  lg:text-xs md:text-xs sm:text-xs text-sm">R$ ${produto.preco.toFixed(2)}</p>
+    <p class="text-gray-400  lg:text-xs md:text-xs sm:text-xs text-sm">R$ ${produto.preco.toFixed(2)}</p>
     </div>
     <div class="mx-2 mt-2">
-      <h2 class="text-sm font-medium leading-tight">${produto.nome}</h2>
-      <a href="produto.html?id=${produto.id}">
-     <button class="bg-[#0d2f42] text-gray-200 text-xs px-2 py-1 mt-2 rounded hover:bg-[#123f59] w-full">
+      <h2 class="text-sm sm:text-base font-medium leading-tight">${produto.nome}</h2>
+        <a href="produto.html?id=${produto.id}">
+     <button class="bg-[#0d2f42] text-gray-200 text-xs sm:text-sm md:text-base px-2 sm:py-2 sm:px-2 py-1 mt-4 rounded hover:bg-[#123f59] w-full">
         Ver mais
       </button>
     </a> 
@@ -57,15 +57,15 @@ const cardDeInformacoes = document.querySelector(".paginaProdutos");
 <section class="relative flex items-center w-full overflow-hidden rounded-lg" aria-label="Galeria de imagens do produto">
   
   <!-- Container dos slides -->
-  <div id="slides" class="flex w-full flex-row transition-transform mt-10" role="region" aria-roledescription="carrossel">
+  <div id="slides" class="flex w-full flex-row transition-transform mt-10 items-center" role="region" aria-roledescription="carrossel">
     
   </div>
 
   <!-- Botões -->
-  <button id="prev" class="absolute left-3 top-20 -translate-y-1/2 bg-opacity-50 text-black p-3 rounded-full text-2xl sm:text-2xl md:text-3xl" aria-label="Imagem anterior">
+  <button id="prev" class="absolute left-0 top-[50%] bg-opacity-50 text-black rounded-full text-2xl sm:text-2xl md:text-3xl" aria-label="Imagem anterior">
     &#10094;
   </button>
-  <button id="next" class="absolute right-3 top-20 -translate-y-1/2 bg-opacity-50 text-black p-3 rounded-full  text-2xl sm:text-2xl md:text-3xl" aria-label="Próxima imagem">
+  <button id="next" class="absolute right-0 top-[50%] bg-opacity-50 text-black rounded-full  text-2xl sm:text-2xl md:text-3xl" aria-label="Próxima imagem">
     &#10095;
   </button>
 </section>
@@ -239,6 +239,7 @@ if(imgs.length <= 3){
    }) 
    
  
+
 
 
 
