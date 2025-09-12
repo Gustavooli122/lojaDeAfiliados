@@ -106,7 +106,7 @@ const produtos = [
 
 const container = document.querySelector(".containerShop");
 produtos.forEach(produto =>{
-    const card = `<article class="bg-white pb-3 flex flex-col rounded-md shadow">
+    const card = `<article class="bg-white pb-3 flex flex-col rounded-md shadow-md shadow-slate-600">
     <a href="produto.html?id=${produto.id}">
       <img src="${produto.imagem}" alt="img-produto-card" 
            class="w-full object-cover rounded-t-md">
@@ -141,6 +141,7 @@ function gerarEstrelas(rating) {
   }
   return estrelas;
 }
+
 
 
 
