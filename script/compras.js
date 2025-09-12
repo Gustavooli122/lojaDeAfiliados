@@ -17,21 +17,30 @@
       });
     });
 
-        const dropdownBtn = document.getElementById("dropdownBtn");
-    const dropdownMenu = document.getElementById("dropdownMenu");
-    const dropdownValue = document.getElementById("dropdownValue");
+        const dropdownBtn = document.querySelectorAll(".dropdownBtn");
+    const dropdownMenu = document.querySelectorAll(".dropdownMenu");
+    const dropdownValue = document.querySelectorAll(".dropdownValue");
 
     // Alterna menu ao clicar no botão
-    dropdownBtn.addEventListener("click", () => {
-      dropdownMenu.classList.toggle("hidden");
+    dropdownBtn.forEach(botao =>{
+        botao.addEventListener("click", () => {
+          dropdownMenu.forEach(menuBtn =>{
+            menuBtn.classList.toggle("hidden");
+          })
+      
+    })
+  
     });
 
-    // Fecha o menu e seleciona o item
-    dropdownMenu.querySelectorAll("li").forEach(option => {
+   dropdownMenu.forEach(menubtn => {
+    menubtn.querySelectorAll("li").forEach(option =>{
       option.addEventListener("click", () => {
-        dropdownValue.textContent = option.textContent; // altera texto do botão
-        dropdownMenu.classList.add("hidden"); // fecha menu
+        dropdownValue.forEach(valor => valor.textContent = option.textContent)// altera texto do botão
+        dropdownMenu.forEach(menubtn => menubtn.classList.add("hidden")) // fecha menu 
       });
+    })
+      
+      
     });
 
     // Fecha se clicar fora
@@ -50,3 +59,7 @@
     menu.classList.toggle("translate-y-[-15rem]"); // ou o valor inicial que você usa
   }
 }
+
+
+
+
