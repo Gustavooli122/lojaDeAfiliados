@@ -69,7 +69,7 @@
         </form>
         <div class="flex items-center mr-3" aria-label="Carrinho de compras">
           <i class="fa-solid fa-heart iconeFavoritoPrincipal text-2xl"></i>
-          <div class="rounded-[50px] bg-slate-300 w-auto h-5 flex justify-center items-center -translate-x-3 -translate-y-4">
+          <div class="rounded-[50px] bg-slate-200 w-auto h-5 flex justify-center items-center -translate-x-3 -translate-y-4">
             <p class="numeroFavoritos text-gray-900 text-xs font-medium m-2">0</p>
           </div>
         </div>
@@ -77,12 +77,14 @@
     </nav>
    
      <main  class="flex flex-col menuNavegacao absolute transition-transformMenu ease-in-out duration-500 z-20 translate-y-[-15rem] lg:translate-y-[-0.5rem]  overflow-hidden w-full bg-white shadow-[inset_0_4px_15px_rgba(0,0,0,0.2)]">
-   <aside class="p-6">
+
+      <section class="flex flex-col md:flex-row">
+   <aside class="p-6  md:w-[30%]">
     <!-- Título -->
     <h2 class="text-3xl text-gray-800 mb-4 font-[300]">Categories</h2>
 
     <!-- Accordion -->
-    <section class="space-y-3 bg-white mt-10">
+    <section class="space-y-3 bg-white mt-10 ">
       <!-- Item 1 -->
       <div>
         <button class="w-full flex justify-between items-center text-gray-800 accordion-btn">
@@ -122,34 +124,57 @@
     </section>
 
     <!-- Links inferiores -->
-    <div class="mt-2 flex gap-4 text-gray-700 text-xl  bg-white">
+    <div class="md:hidden gap-4 text-gray-700 text-xl space-x-5 mt-5 bg-white">
       <a href="#" class="hover:underline">All</a>
       <a href="#" class="hover:underline">Men's</a>
       <a href="#" class="hover:underline">Women's</a>
     </div>
   </aside>
  
-     <div class="relative inline-block w-full px-6">
+     <div class="relative inline-block w-full px-6 md:hidden">
     
     <!-- Botão principal (dropdown) -->
-    <button id="dropdownBtn" 
-      class="w-full bg-white border border-gray-300 rounded-md p-2 mt-2 flex justify-between items-center text-gray-700 hover:border-blue-500 focus:outline-none">
-      <span id="dropdownValue">Selecione uma opção</span>
+    <button
+      class="w-full dropdownBtn bg-white border border-gray-300 rounded-md p-2 mt-2 flex justify-between items-center text-gray-700 hover:border-blue-500 focus:outline-none">
+      <span class="dropdownValue">Selecione uma opção</span>
 
     </button>
 
     <!-- Lista de opções -->
-    <ul id="dropdownMenu" 
-      class="absolute hidden w-[90%] overflow-hidden bg-white border mt-2 border-gray-300 rounded-md shadow-lg z-10">
+    <ul class="absolute dropdownMenu hidden w-[90%] overflow-hidden bg-white border mt-2 border-gray-300 rounded-md shadow-lg z-10">
       <li class="px-4 py-2 hover:bg-blue-500 hover:text-white cursor-pointer">Apresentou</li>
       <li class="px-4 py-2 hover:bg-blue-500 hover:text-white cursor-pointer">A a Z</li>
       <li class="px-4 py-2 hover:bg-blue-500 hover:text-white cursor-pointer">Item</li>
     </ul>
   </div>
-     <div class="bg-gray-200 pt-10 mt-20 w-full">
-    <section class="containerShop grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 my-6 gap-2 px-1">
+     <div class="bg-white my-5 w-full">
+
+      
+      <section class="md:flex flex-row justify-between w-full px-5">
+        <div class="mt-2 gap-4 text-gray-700 text-xl  hidden md:flex">
+      <a href="#" class="hover:underline">All</a>
+      <a href="#" class="hover:underline">Men's</a>
+      <a href="#" class="hover:underline">Women's</a>
+    </div>
+      <div class="relative w-full px-2 hidden md:w-[50%] md:flex flex-col">
+    
+    <!-- Botão principal (dropdown) -->
+    <button class="w-full dropdownBtn bg-g border border-gray-300  rounded-md p-2 mt-2 flex justify-between items-center text-gray-700 hover:border-blue-500 focus:outline-none">
+      <span class="dropdownValue">Selecione uma opção</span>
+
+    </button>
+
+    <!-- Lista de opções -->
+    <ul
+      class="dropdownMenu absolute hidden overflow-hidden bg-white border mt-2 border-gray-300 rounded-md shadow-lg z-10">
+      <li class="px-4 py-2 hover:bg-blue-500 hover:text-white cursor-pointer">Apresentou</li>
+      <li class="px-4 py-2 hover:bg-blue-500 hover:text-white cursor-pointer">A a Z</li>
+      <li class="px-4 py-2 hover:bg-blue-500 hover:text-white cursor-pointer">Item</li>
+    </ul>
+  </div></section>
+    <section class="containerShop grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 my-6 gap-2 px-2 sm:px-3 md:px-4 lg:px-5">
    
-</section>
+</section></section>
          <footer class="bg-gray-800 text-white py-10">
           <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
             <!-- Seção 1: Empresa -->
@@ -214,6 +239,7 @@
      
 </body>
 </html>
+
 
 
 
