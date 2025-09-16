@@ -47,16 +47,16 @@ const cardDeInformacoes = document.querySelector(".paginaProdutos");
     
     produtoCompleto.forEach(produto =>{
        const card2 = `
-
-       
-       <figure>
-  <img id="imgPrincipal" src="${produto.imagem}" alt="Produto esportivo principal" class="w-full">
-  <figcaption class="sr-only">Imagem principal do produto</figcaption>
+      <section class= "h-full md:h-[90%] lg:h-full">
+       <figure class="w-full flex justify-center ">
+  <img id="imgPrincipal" src="${produto.imagem}" alt="Produto esportivo principal" class= "w-full h-auto object-contain">
+  <figcaption class="sr-only ">Imagem principal do produto</figcaption>
 </figure>
 <!-- Galeria de imagens (carrossel) -->
 <section class="relative flex items-center w-full overflow-hidden rounded-lg" aria-label="Galeria de imagens do produto">
   
   <!-- Container dos slides -->
+  <section>
   <div id="slides" class="flex w-full flex-row transition-transform mt-10 items-center" role="region" aria-roledescription="carrossel">
     
   </div>
@@ -67,11 +67,11 @@ const cardDeInformacoes = document.querySelector(".paginaProdutos");
   </button>
   <button id="next" class="absolute right-0 top-[50%] bg-opacity-50 text-black rounded-full  text-2xl sm:text-2xl md:text-3xl" aria-label="Próxima imagem">
     &#10095;
-  </button>
-</section>
+  </button></section>
+</section></section>
 
     
-        <section class="bg-white w-full text-gray-700 px-5 py-7 flex flex-col my-10 sm:px-10">
+        <section class="bg-white w-full h-full lg:h-full text-gray-700 px-5 py-7 md:h-[90%] lg:pt-5 flex flex-col lg:my-0 my-10 sm:px-10">
   <!-- Cabeçalho do produto -->
   
 <header>
@@ -81,11 +81,11 @@ const cardDeInformacoes = document.querySelector(".paginaProdutos");
   </header>
 
   <!-- Avaliação -->
-   <section aria-label="Avaliação do produto" class="flex flex-col sm:flex-row md:flex-row lg:flex-row gap-3 sm:gap-5 my-3 sm:my-4 sm:items-center">
+   <section aria-label="Avaliação do produto" class="flex flex-col sm:flex-row md:flex-row lg:flex-row gap-3 sm:gap-5 md:gap-0 my-3 sm:my-4 sm:items-center">
     <ul class="flex gap-2 md:flex-wrap md:w-[60%] sm:gap-3" role="list" aria-label="Estrelas da avaliação">
       ${gerarEstrelas(produto.rating)}
     </ul>
-    <p class="text-lg">Avaliação <strong>4,8</strong> | 36 comentários</p>
+    <p class="text-lg">Avaliação <strong>4,8</strong></p>
   </section>
 
   <!-- Detalhes do produto -->
@@ -119,15 +119,14 @@ const cardDeInformacoes = document.querySelector(".paginaProdutos");
     </p>
   </section>
 
-<section class="flex gap-2 sm:gap-2 flex-col sm:flex-row md:flex-row lg:flex-row my-3 sm:justify-between w-full sm:px-0">
+<section class="flex gap-2 sm:gap-2 flex-col sm:flex-row md:flex-col lg:flex-row my-3 sm:justify-between w-full sm:px-0">
   <a href="#" aria-label="Link do produto" 
      class="bg-[#0b2c57d5] hover:bg-[#238a48] text-white py-2 px-3 rounded-[4px] text-xl w-auto text-center sm:w-full">
      <button class="p-0 m-0">Comprar agora</button>
   </a>
-  <button id="btnFavoritos" class="bg-[#2ea55cd5] hover:bg-[#238a48] text-white py-2 px-3 rounded-[4px] text-[18px] w-auto sm:w-full">
-  
-<i class="fa-regular fa-heart mx-2 sm:mx-0 iconeFavoritoProduto"></i> Adicionar aos favoritos
-  </button>
+ <button id="btnFavoritos" class="bg-[#2ea55cd5] hover:bg-[#238a48] text-white py-2 px-3 rounded-[4px] text-[18px] w-auto sm:w-full">
+        <i class="fa-regular fa-heart mx-2 sm:mx-0 iconeFavoritoProduto"></i> <span class = "textoBtnFavoritos">Adicionar aos favoritos</span>
+      </button>  
 
 
 </section></section>`;
@@ -163,16 +162,21 @@ if(imgs.length <= 3){
    
     })
   
+ 
     const btnFavoritos = document.getElementById("btnFavoritos");
     const iconeFavoritosContorno = document.querySelector(".iconeFavoritoProduto");
 
+     let textoBtnFavoritos = document.querySelector(".textoBtnFavoritos");
     btnFavoritos.addEventListener("click", () => {
-      if(document.querySelector(".fa-regular")){ 
+      if(document.querySelector(".fa-regular")){
+      textoBtnFavoritos.textContent = "Remover dos favoritos";
       iconeFavoritosContorno.classList.remove("fa-regular");
-      iconeFavoritosContorno.classList.add("fa-solid");}
+      iconeFavoritosContorno.classList.add("fa-solid");
+     }
       else{
       iconeFavoritosContorno.classList.add("fa-regular");
       iconeFavoritosContorno.classList.remove("fa-solid");
+      textoBtnFavoritos.textContent = "Adicionar aos favoritos";
       }
     });
 
@@ -239,6 +243,7 @@ if(imgs.length <= 3){
    }) 
    
  
+
 
 
 
