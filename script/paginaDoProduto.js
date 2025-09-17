@@ -47,9 +47,9 @@ const cardDeInformacoes = document.querySelector(".paginaProdutos");
     
     produtoCompleto.forEach(produto =>{
        const card2 = `
-      <section class= "h-full md:h-[90%] lg:h-full">
-       <figure class="w-full flex justify-center ">
-  <img id="imgPrincipal" src="${produto.imagem}" alt="Produto esportivo principal" class= "w-full h-auto object-contain">
+       <section class= "h-full md:h-[90%] lg:h-full">
+       <figure class="flex justify-center">
+  <img id="imgPrincipal" src="${produto.imagem}" alt="Produto esportivo principal" class= "object-contain">
   <figcaption class="sr-only ">Imagem principal do produto</figcaption>
 </figure>
 <!-- Galeria de imagens (carrossel) -->
@@ -243,6 +243,7 @@ if(imgs.length <= 3){
    }) 
    
  
+
 
 
 
