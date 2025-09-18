@@ -145,8 +145,15 @@ const produtos = [
 ];
 
 const container = document.querySelector(".containerShop");
-produtos.forEach(produto =>{
-    const card = `<article class="bg-white pb-3 flex flex-col justify-between rounded-md shadow-md shadow-slate-600">
+
+function limparContainer(){
+  container.innerHTML ="";
+}
+
+function renderizarCard(lista){
+  
+ const card = lista.map(produto =>
+     `<article class="bg-white pb-3 flex flex-col justify-between rounded-md shadow-md shadow-slate-600">
     <a href="produto.html?id=${produto.id}">
       <img src="${produto.imagem}" alt="img-produto-card" 
            class="w-full   rounded-t-md">
@@ -166,10 +173,24 @@ produtos.forEach(produto =>{
       </button>
     </a> 
     </div>
-  </article>`;
+  </article>`
+).join(""); container.innerHTML = card;
+}
 
-  container.innerHTML += card;
-})
+  renderizarCard(produtos);
+
+
+document.querySelectorAll("[data-classe]").forEach(botao =>
+  botao.addEventListener("click",()=>{
+    const classe = botao.dataset.classe;
+    limparContainer();
+    renderizarCard(produtos.filter(e => e.categoria == classe))
+     
+  } )
+)
+
+
+
 // Função para renderizar as estrelas
 function gerarEstrelas(rating) {
   let estrelas = "";
@@ -182,8 +203,6 @@ function gerarEstrelas(rating) {
   }
   return estrelas;
 }
-
-
 
 
 
