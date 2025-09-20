@@ -17,7 +17,7 @@ const produtos = [
     descricao: "O produto de CategoriaC id 2 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse. Donec condimentum elementum convallis. Nunc sed orci a diam ultrices aliquet interdum quis nulla.",
     preco: 240.00,
     imagem: "https://images.tcdn.com.br/img/img_prod/394779/bicicleta_29_gts_m1_freio_a_disco_21_marchas_shimano_ride_new_g_series_4993_variacao_16043_1_db4f41946fc392eb4eb4d284ddae2822_20250701155948.jpg",
-    outrasImg: ["","","","","","","","",""],
+    outrasImg: [],
     rating: 4 , // até 5
     categoria:"C"
   },
@@ -37,7 +37,7 @@ const produtos = [
     descricao: "Produto resistente para treinos intensos.",
     preco: 240.00,
     imagem: "../img/feature_prod_02.jpg",
-     outrasImg: ["","","","","","","","",""],
+     outrasImg: [],
     rating: 4 , // até 5
     categoria:"B"
   },
@@ -47,7 +47,7 @@ const produtos = [
     descricao: "Produto resistente para treinos intensos.",
     preco: 240.00,
     imagem: "../img/feature_prod_01.jpg",
-     outrasImg: ["","","","","","","","",""],
+     outrasImg: [],
     rating: 4 , // até 5
     categoria:"B"
   },
@@ -57,7 +57,7 @@ const produtos = [
     descricao: "Produto resistente para treinos intensos.",
     preco: 240.00,
     imagem: "../img/feature_prod_03.jpg",
-     outrasImg: ["","","","","","","","",""],
+     outrasImg: [],
     rating: 4 , // até 5
     categoria:"A"
   },
@@ -67,7 +67,7 @@ const produtos = [
     descricao: "Produto resistente para treinos intensos.",
     preco: 240.00,
     imagem: "../img/feature_prod_02.jpg",
-    outrasImg: ["","","","","","","","",""],
+    outrasImg: [],
     rating: 4 , // até 5
     categoria:"A"
   },
@@ -77,7 +77,7 @@ const produtos = [
     descricao: "Produto resistente para treinos intensos.",
     preco: 240.00,
     imagem: "../img/feature_prod_03.jpg",
-     outrasImg: ["","","","","","","","",""],
+     outrasImg: [],
     rating: 2, // até 5
     categoria:"C"
   },
@@ -87,7 +87,7 @@ const produtos = [
     descricao: "Produto resistente para treinos intensos.",
     preco: 240.00,
     imagem: "../img/feature_prod_01.jpg",
-     outrasImg: ["","","","","","","","",""],
+     outrasImg: [],
     rating: 3 , // até 5
     categoria:"A"
   },
@@ -97,7 +97,7 @@ const produtos = [
     descricao: "Produto resistente para treinos intensos.",
     preco: 240.00,
     imagem: "../img/feature_prod_02.jpg",
-     outrasImg: ["","","","","","","","",""],
+     outrasImg: [],
     rating: 5, // até 5
     categoria:"A"
   },
@@ -107,7 +107,7 @@ const produtos = [
     descricao: "Produto resistente para treinos intensos.",
     preco: 240.00,
     imagem: "../img/feature_prod_02.jpg",
-     outrasImg: ["","","","","","","","",""],
+     outrasImg: [],
     rating: 5, // até 5
     categoria:"D"
   },
@@ -117,7 +117,7 @@ const produtos = [
     descricao: "Produto resistente para treinos intensos.",
     preco: 240.00,
     imagem: "../img/feature_prod_02.jpg",
-     outrasImg: ["","","","","","","","",""],
+     outrasImg: [],
     rating: 5, // até 5
     categoria:"D"
   },
@@ -127,7 +127,7 @@ const produtos = [
     descricao: "Produto resistente para treinos intensos.",
     preco: 240.00,
     imagem: "../img/feature_prod_02.jpg",
-     outrasImg: ["","","","","","","","",""],
+     outrasImg: [],
     rating: 5, // até 5
     categoria:"D"
   },
@@ -137,7 +137,7 @@ const produtos = [
     descricao: "Produto resistente para treinos intensos.",
     preco: 240.00,
     imagem: "../img/feature_prod_02.jpg",
-     outrasImg: ["","","","","","","","",""],
+     outrasImg: [],
     rating: 5, // até 5
     categoria:"C"
   },
@@ -203,6 +203,13 @@ function gerarEstrelas(rating) {
   }
   return estrelas;
 }
+
+const categoriasTodos = document.querySelector(".categoriasTodos");
+categoriasTodos.addEventListener("click",()=>{
+limparContainer();
+renderizarCard(produtos);
+})
+
 
 
 
