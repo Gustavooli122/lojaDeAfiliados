@@ -34,49 +34,40 @@
       <img src="../img/logo.png" alt="Logo da loja" width="170px" height="40px">
       <nav aria-label="Menu principal">
         <ul class="hidden sm:hidden md:hidden lg:flex flex-row gap-28 text-3xl">
-          <li><a href="../index.html" class="text-gray-600 text-xl hover:text-[#2ea55cd5]">Inicio</a></li>
-          <li><a href="#" class="text-gray-600 text-xl hover:text-[#2ea55cd5]">Sobre</a></li>
-          <li><a href="../paginas/compras.html" class="text-gray-600 text-xl hover:text-[#2ea55cd5]">Comprar</a></li>
-          <li><a href="#" class="text-gray-600 text-xl hover:text-[#2ea55cd5]">Contatos</a></li>
+          <li class="flex items-center"><a href="../index.html" class="text-gray-600 text-xl hover:text-[#2ea55cd5]">Inicio</a></li>
+          <li class="flex items-center"><a href="#" class="text-gray-600 text-xl hover:text-[#2ea55cd5]">Sobre</a></li>
+          <li class="flex items-center"><a href="../paginas/compras.html" class="text-gray-600 text-xl hover:text-[#2ea55cd5]">Comprar</a></li>
+          <li class="flex space-x-2"><a href="#" class="text-gray-600 text-xl hover:text-[#2ea55cd5]">Favoritos</a>  <div class="lg:flex hidden gap-3 " aria-label="Pagina dos favoritos">
+         <i class="fa-solid fa-heart iconeFavoritoPrincipal text-2xl"></i>
+        
+          <p class="text-gray-900 text-xs numeroFavoritos rounded-[50px] bg-slate-300 w-auto h-5 flex justify-center items-center -translate-x-6 -translate-y-3.5 font-medium  p-2">0</p>
+       
+      </div></li>
         </ul>
       </nav>
-      <div class="lg:flex hidden gap-3 mr-3 " aria-label="Carrinho de compras">
-        <a href="#"><img src="../img/lupa.png" alt="Ícone de lupa" width="25px" class="m-auto" ></a> 
-        <a href="#">  <i class="fa-solid fa-heart iconeFavoritoPrincipal text-2xl"></i>
-          <div class="rounded-[50px] bg-slate-300 w-auto h-5 flex justify-center items-center translate-x-3 -translate-y-10">
-          <p class="text-gray-900 text-xs numeroFavoritos font-medium m-2">0</p>
-        </div>
-      </div>
+    
       <nav aria-label="Menu mobile" class="m-0.5">
         <button  class="p-0 m-0 btnAbrirMenu" onclick="abrirMenu()" aria-label="Abrir menu">
           <img src="../img/menu.png" alt="Ícone do menu" class="w-[80px] h-[80px] object-cover lg:hidden">
         </button>
       </nav>
     </header>
-    <nav aria-label="Navegação secundária" class="relative flex-col mt-10 z-10 lg:hidden">
+    <nav aria-label="Navegação secundária" class="relative flex-col mt-10 z-12 lg:hidden">
       <ul class="flex flex-col gap-1 -translate-y-10 ml-6 lg:flex-row">
         <li><a href="../index.html" class="text-gray-600 text-lg hover:text-[#2ea55cd5]">Início</a></li>
         <li><a href="#" class="text-gray-600 text-lg hover:text-[#2ea55cd5]">Sobre</a></li>
         <li><a href="../paginas/compras.html" class="text-gray-600 text-lg hover:text-[#2ea55cd5]">Comprar</a></li>
-        <li><a href="#" class="text-gray-600 text-lg hover:text-[#2ea55cd5]">Contatos</a></li>
-      </ul>
-      <section class="flex justify-between h-auto w-full -translate-y-3 mb-5 ">
-        <form class="rounded-sm flex border border-gray-300 w-[70%] ml-6" role="search" aria-label="Procurar produtos">
-          <input type="text" id="inputProcurar" placeholder="Procurar..." class="w-full placeholder:p-5 rounded-md">
-          <button type="submit" class="bg-gray-300 w-[60px] flex justify-center items-center" aria-label="Buscar">
-            <img src="../img/lupa.png" alt="Ícone de lupa" width="25px" class="m-[5px]">
-          </button>
-        </form>
-        <div class="flex items-center mr-3" aria-label="Carrinho de compras">
+        <li class="flex flex-row gap-2"><a href="#" class="text-gray-600 text-lg  hover:text-[#2ea55cd5] ">Favoritos</a>  <div class="flex items-center mr-3" aria-label="Carrinho de compras">
           <i class="fa-solid fa-heart iconeFavoritoPrincipal text-2xl"></i>
           <div class="rounded-[50px] bg-slate-200 w-auto h-5 flex justify-center items-center -translate-x-3 -translate-y-4">
-            <p class="numeroFavoritos text-gray-900 text-xs font-medium m-2">0</p>
-          </div>
-        </div>
+            <p class="numeroFavoritos text-gray-900 text-xs font-medium m-2">5</p>
+          </div></li>
+      </ul>
+    
       </section>
     </nav>
    
-     <main  class="flex flex-col menuNavegacao absolute transition-transformMenu ease-in-out duration-500 z-20 translate-y-[-15rem] lg:translate-y-[-0.5rem]  overflow-hidden w-full bg-white shadow-[inset_0_4px_15px_rgba(0,0,0,0.2)]">
+     <main  class="flex flex-col menuNavegacao absolute transition-transformMenu ease-in-out duration-500 z-20 translate-y-[-11rem] lg:translate-y-[-0.5rem]  overflow-hidden w-full bg-white shadow-[inset_0_4px_15px_rgba(0,0,0,0.2)]">
 
       <section class="flex flex-col md:flex-row">
    <aside class="p-6  md:w-[30%]">
@@ -88,12 +79,13 @@
       <!-- Item 1 -->
       <div>
         <button class="w-full flex justify-between items-center text-gray-800 accordion-btn">
-          <span class="text-xl bg-white">Gender</span>
+          <span class="text-xl bg-white">Gênero</span>
           <i class="fa-solid fa-circle-chevron-down text-2xl transition-transform duration-500"></i>
         </button>
         <ul class="pl-4 mt-2 transition-all ease-in-out duration-500 overflow-hidden accordion-content  text-gray-600 max-h-0 space-y-3">
-          <li><a href="#" class="hover:underline">Men</a></li>
-          <li><a href="#" class="hover:underline">Women</a></li>
+          <li><a href="#" class="hover:underline">Mulheres</a></li>
+          <li><a href="#" class="hover:underline">Homens</a></li>
+          <li><a href="#" class="hover:underline">Ambos</a></li>
         </ul>
       </div>
 
@@ -115,63 +107,84 @@
           <span class="text-xl bg-white  py-2">Product</span>
           <i class="fa-solid fa-circle-chevron-down text-2xl transition-transform duration-500"></i>
         </button>
-      <ul class="pl-4 mt-2 overflow-hidden transition-all  ease-in-out duration-500 accordion-content text-gray-600 max-h-0 accordion-content space-y-1">
+        <ul class="pl-4 mt-2 overflow-hidden transition-all  ease-in-out duration-500 accordion-content text-gray-600 max-h-0 accordion-content space-y-1">
           <li><a href="#" data-classe="A" class="hover:underline">Produto categoria A</a></li>
           <li><a href="#" data-classe="B" class="hover:underline">Produto categoria B</a></li>
           <li><a href="#" data-classe="C" class="hover:underline">Produto categoria C</a></li>
           <li><a href="#" data-classe="D" class="hover:underline">Produto categoria D</a></li>
+          <li><a href="#" class="hover:underline categoriasTodos">Todos</a></li>
         </ul>
       </div>
     </section>
 
-    <!-- Links inferiores -->
-    <div class="md:hidden gap-4 text-gray-700 text-xl space-x-5 mt-5 bg-white">
-      <a href="#" class="hover:underline">All</a>
-      <a href="#" class="hover:underline">Men's</a>
-      <a href="#" class="hover:underline">Women's</a>
-    </div>
+   
   </aside>
  
      <div class="relative inline-block w-full px-6 md:hidden">
-    
+       <form class="rounded-sm flex border border-gray-300" role="search" aria-label="Procurar produtos">
+          <input type="text" id="inputProcurar" placeholder="Procurar..." class="w-full placeholder:p-5 rounded-md">
+          <button type="submit" class="bg-gray-300 w-[60px] flex justify-center items-center" aria-label="Buscar">
+            <img src="../img/lupa.png" alt="Ícone de lupa" width="25px" class="m-[5px]">
+          </button>
+        </form>
     <!-- Botão principal (dropdown) -->
     <button
       class="w-full dropdownBtn bg-white border border-gray-300 rounded-md p-2 mt-2 flex justify-between items-center text-gray-700 hover:border-blue-500 focus:outline-none">
-      <span class="dropdownValue">Selecione uma opção</span>
+      <span class="dropdownValue">Filtrar por preço</span>
 
     </button>
 
     <!-- Lista de opções -->
-    <ul class="absolute dropdownMenu hidden w-[90%] overflow-hidden bg-white border mt-2 border-gray-300 rounded-md shadow-lg z-10">
-      <li class="px-4 py-2 hover:bg-blue-500 hover:text-white cursor-pointer">Apresentou</li>
-      <li class="px-4 py-2 hover:bg-blue-500 hover:text-white cursor-pointer">A a Z</li>
-      <li class="px-4 py-2 hover:bg-blue-500 hover:text-white cursor-pointer">Item</li>
-    </ul>
+    <section class="absolute dropdownMenu hidden w-[90%] overflow-hidden  flex-row gap-2 bg-white border mt-2 border-gray-300 rounded-md shadow-lg z-10">
+   <section class="flex flex-col gap-4 py-2 px-2"> <div class="flex gap-2">
+      <input type="number" placeholder="Mín." 
+             class="w-1/2 p-2 border minPrice rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+      <input type="number" placeholder="Máx." 
+             class="w-1/2 p-2 border maxPrice rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+    </div>
+
+    <button
+            class="w-full filterBtn bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition">
+      Filtrar
+    </button>
+   
+    </section>
   </div>
      <div class="bg-white my-5 w-full">
 
       
       <section class="md:flex flex-row justify-between w-full px-5">
-        <div class="mt-2 gap-4 text-gray-700 text-xl  hidden md:flex">
-      <a href="#" class="hover:underline">All</a>
-      <a href="#" class="hover:underline">Men's</a>
-      <a href="#" class="hover:underline">Women's</a>
-    </div>
+         <form class="rounded-sm md:flex border border-gray-300 hidden w-full" role="search" aria-label="Procurar produtos">
+          <input type="text" id="inputProcurar" placeholder="Procurar..." class="w-full placeholder:p-5 rounded-md">
+          <button type="submit" class="bg-gray-300 w-[60px] flex justify-center items-center" aria-label="Buscar">
+            <img src="../img/lupa.png" alt="Ícone de lupa" width="25px" class="m-[5px]">
+          </button>
+        </form>
       <div class="relative w-full px-2 hidden md:w-[50%] md:flex flex-col">
     
     <!-- Botão principal (dropdown) -->
-    <button class="w-full dropdownBtn bg-g border border-gray-300  rounded-md p-2 mt-2 flex justify-between items-center text-gray-700 hover:border-blue-500 focus:outline-none">
-      <span class="dropdownValue">Selecione uma opção</span>
+    <button class="w-full dropdownBtn bg-g border border-gray-300  rounded-md p-2  flex justify-between items-center text-gray-700 hover:border-blue-500 focus:outline-none">
+      <span class="dropdownValue">Filtrar por preço</span>
 
     </button>
 
     <!-- Lista de opções -->
-    <ul
-      class="dropdownMenu absolute hidden overflow-hidden bg-white border mt-2 border-gray-300 rounded-md shadow-lg z-10">
-      <li class="px-4 py-2 hover:bg-blue-500 hover:text-white cursor-pointer">Apresentou</li>
-      <li class="px-4 py-2 hover:bg-blue-500 hover:text-white cursor-pointer">A a Z</li>
-      <li class="px-4 py-2 hover:bg-blue-500 hover:text-white cursor-pointer">Item</li>
-    </ul>
+    <section
+      class="dropdownMenu absolute hidden overflow-hidden bg-white border mt-12 border-gray-300 rounded-md shadow-lg z-10 ">
+     <section class="flex flex-col gap-4 py-2 px-2"> <div class="flex gap-2">
+      <input type="number" placeholder="Mín." 
+             class="w-1/2 p-2 border minPrice rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+      <input type="number" placeholder="Máx." 
+             class="w-1/2 p-2 border maxPrice rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+    </div>
+
+    <button
+            class="w-full filterBtn bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition">
+      Filtrar
+    </button>
+   
+    </section>
+    </section>
   </div></section>
     <section class="containerShop grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 my-6 gap-2 px-2 sm:px-3 md:px-4 lg:px-5">
    
@@ -181,6 +194,7 @@
             <!-- Seção 1: Empresa -->
             <section>
               <h2 class="text-[#2ea55cd5] text-3xl font-bold mb-8  border-b-[1px] border-gray-600 pb-5 ">Afilideal</h2>
+              <p class="my-5 text-slate-300">Este site participa de programas de afiliados e pode receber comissão pelas compras realizadas através dos links.</p>
               <ul class="space-y-4 text-gray-300">
                 <li class="flex items-center gap-2">
                   <img src="https://img.icons8.com/ios-filled/20/ffffff/marker.png" alt="Localização">
@@ -228,7 +242,7 @@
               </nav>
               <!-- Copyright -->
               <p class="text-gray-400 text-sm mt-7">
-                &copy; 2021 Company Name | Designed by <a href="#" class="underline">Gustavo Oliveira</a>
+                &copy; 2021 Company Name | Desenvolvido por <a href="#" class="underline">Gustavo Oliveira</a>
               </p>
             </section>
           </div>
@@ -240,6 +254,7 @@
      
 </body>
 </html>
+
 
 
 
