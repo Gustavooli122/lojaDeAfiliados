@@ -47,7 +47,8 @@ const cardDeInformacoes = document.querySelector(".paginaProdutos");
     
     produtoCompleto.forEach(produto =>{
        const card2 = `
-       <section class= "h-full md:h-[90%] lg:h-full">
+
+      <section class= "h-full md:h-[90%] lg:h-full">
        <figure class="flex justify-center">
   <img id="imgPrincipal" src="${produto.imagem}" alt="Produto esportivo principal" class= "object-contain">
   <figcaption class="sr-only ">Imagem principal do produto</figcaption>
@@ -162,7 +163,6 @@ if(imgs.length <= 3){
    
     })
   
- 
     const btnFavoritos = document.getElementById("btnFavoritos");
     const iconeFavoritosContorno = document.querySelector(".iconeFavoritoProduto");
 
@@ -243,6 +243,7 @@ if(imgs.length <= 3){
    }) 
    
  
+
 
 
 
