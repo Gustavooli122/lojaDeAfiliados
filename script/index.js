@@ -1,19 +1,10 @@
 
+const carrosselPrincipal = document.querySelector(".carrosselPrincipal");
+function abrirCarrosselPrincipal() {
 
+  carrosselPrincipal.classList.toggle("translate-y-[20rem]");
+  carrosselPrincipal.classList.remove("lg:translate-y-[20rem]");
 
-const carrossel = document.querySelector(".carrosselPrincipal");
-
-  
-function abrirNavegacao() {
-
-  carrossel.classList.toggle("translate-y-[20rem]");
-  carrossel.classList.remove("lg:translate-y-[20rem]")
-
-}
-
-function abrirNavegacaoCompras(){
-  carrossel.classList.toggle("translate-y-[-15rem]");
-  carrossel.classList.remove("lg:translate-y-[20rem]")
 }
 
 const slides = document.getElementById('slides');
@@ -36,9 +27,9 @@ document.querySelector(".btnAnterior").addEventListener("click", () => mostrarSl
 document.querySelector(".btnProximo").addEventListener("click", () => mostrarSlide(index + 1));
 
 // Auto-play
-setInterval(() => {
-  mostrarSlide(index + 1);
-}, 6000);
+
+
+
 
 
 
