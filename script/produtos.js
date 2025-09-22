@@ -1,5 +1,6 @@
 
 
+
 const produtos = [
   {
     id: 1,
@@ -209,8 +210,6 @@ categoriasTodos.addEventListener("click",()=>{
 limparContainer();
 renderizarCard(produtos);
 })
-
-
 
 
 
