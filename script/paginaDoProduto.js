@@ -241,8 +241,19 @@ if(imgs.length <= 3){
 
     })
    }) 
+
+    const carrosselProdutos = document.querySelector(".carrosselProdutos");
+ function abrirCarrosselProdutos() {
+
+  carrosselProdutos.classList.toggle("translate-y-[-13.5rem]");
+  carrosselProdutos.classList.remove("lg:-translate-y-2");
+  console.log("funçao esta sendo chamada")
+
+
+}
    
  
+
 
 
 
