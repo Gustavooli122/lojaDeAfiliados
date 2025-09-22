@@ -50,15 +50,15 @@
       }
     }); 
 
-     function abrirMenu() {
-  // pega o menu da página atual
-  const menu = document.querySelector(".menuNavegacao");
+    const carrosselCompras = document.querySelector(".carrosselCompras");
+ function abrirCarrosselCompras() {
 
-  if (menu) { // só roda se existir na página
-    menu.classList.toggle("translate-y-0");
-    menu.classList.toggle("translate-y-[-15rem]"); // ou o valor inicial que você usa
-  }
+  carrosselCompras.classList.toggle("translate-y-[-11rem]");
+  carrosselCompras.classList.remove("lg:translate-y-[-0.5rem]");
+  console.log("funçao esta sendo chamada")
+
 }
+   
 
 
 
