@@ -16,7 +16,7 @@ const produtos = [
     id: 2,
     nome: "Peso de academia categoriaC",
     descricao: "O produto de CategoriaC id 2 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse. Donec condimentum elementum convallis. Nunc sed orci a diam ultrices aliquet interdum quis nulla.",
-    preco: 240.00,
+    preco: 460.00,
     imagem: "https://images.tcdn.com.br/img/img_prod/394779/bicicleta_29_gts_m1_freio_a_disco_21_marchas_shimano_ride_new_g_series_4993_variacao_16043_1_db4f41946fc392eb4eb4d284ddae2822_20250701155948.jpg",
     outrasImg: [],
     rating: 4 , // até 5
@@ -26,7 +26,7 @@ const produtos = [
     id: 3,
     nome: "Peso de academia categoriaA id3",
     descricao: "Produto resistente para treinos intensos.",
-    preco: 240.00,
+    preco: 342.00,
     imagem: "https://http2.mlstatic.com/D_NQ_NP_922021-MLB78734496967_082024-O-bicicleta-aro-29-gta-21v-freio-disco-mecnico-suspenso-bike.webp",
      outrasImg: ["https://http2.mlstatic.com/D_NQ_NP_922021-MLB78734496967_082024-O-bicicleta-aro-29-gta-21v-freio-disco-mecnico-suspenso-bike.webp","https://http2.mlstatic.com/D_NQ_NP_922021-MLB78734496967_082024-O-bicicleta-aro-29-gta-21v-freio-disco-mecnico-suspenso-bike.webp","https://http2.mlstatic.com/D_NQ_NP_922021-MLB78734496967_082024-O-bicicleta-aro-29-gta-21v-freio-disco-mecnico-suspenso-bike.webp","https://http2.mlstatic.com/D_NQ_NP_922021-MLB78734496967_082024-O-bicicleta-aro-29-gta-21v-freio-disco-mecnico-suspenso-bike.webp"],
     rating: 4, // até 5
@@ -36,7 +36,7 @@ const produtos = [
     id: 4,
     nome: "Peso de academia categoria B",
     descricao: "Produto resistente para treinos intensos.",
-    preco: 240.00,
+    preco: 893.00,
     imagem: "../img/feature_prod_02.jpg",
      outrasImg: [],
     rating: 4 , // até 5
@@ -46,7 +46,7 @@ const produtos = [
     id: 5,
     nome: "Peso de academia categoria B",
     descricao: "Produto resistente para treinos intensos.",
-    preco: 240.00,
+    preco: 120.00,
     imagem: "../img/feature_prod_01.jpg",
      outrasImg: [],
     rating: 4 , // até 5
@@ -56,7 +56,7 @@ const produtos = [
     id: 6,
     nome: "Peso de academia categoriaA id6",
     descricao: "Produto resistente para treinos intensos.",
-    preco: 240.00,
+    preco: 24.00,
     imagem: "../img/feature_prod_03.jpg",
      outrasImg: [],
     rating: 4 , // até 5
@@ -66,7 +66,7 @@ const produtos = [
     id: 7,
     nome: "Peso de academia categoriaA id7",
     descricao: "Produto resistente para treinos intensos.",
-    preco: 240.00,
+    preco: 270.00,
     imagem: "../img/feature_prod_02.jpg",
     outrasImg: [],
     rating: 4 , // até 5
@@ -76,7 +76,7 @@ const produtos = [
     id: 8,
     nome: "Peso de academia categoria C",
     descricao: "Produto resistente para treinos intensos.",
-    preco: 240.00,
+    preco: 650.00,
     imagem: "../img/feature_prod_03.jpg",
      outrasImg: [],
     rating: 2, // até 5
@@ -86,7 +86,7 @@ const produtos = [
     id: 9,
     nome: "Peso de academia categoriaA id9",
     descricao: "Produto resistente para treinos intensos.",
-    preco: 240.00,
+    preco: 40.00,
     imagem: "../img/feature_prod_01.jpg",
      outrasImg: [],
     rating: 3 , // até 5
@@ -96,7 +96,7 @@ const produtos = [
     id: 10,
     nome: "Peso de academia categoriaA id10",
     descricao: "Produto resistente para treinos intensos.",
-    preco: 240.00,
+    preco: 22.00,
     imagem: "../img/feature_prod_02.jpg",
      outrasImg: [],
     rating: 5, // até 5
@@ -106,7 +106,7 @@ const produtos = [
     id: 11,
     nome: "Peso de academia categoriaD",
     descricao: "Produto resistente para treinos intensos.",
-    preco: 240.00,
+    preco: 990.00,
     imagem: "../img/feature_prod_02.jpg",
      outrasImg: [],
     rating: 5, // até 5
@@ -116,7 +116,7 @@ const produtos = [
     id: 12,
     nome: "Peso de academia categoriaD",
     descricao: "Produto resistente para treinos intensos.",
-    preco: 240.00,
+    preco: 2000.00,
     imagem: "../img/feature_prod_02.jpg",
      outrasImg: [],
     rating: 5, // até 5
@@ -126,7 +126,7 @@ const produtos = [
     id: 13,
     nome: "Peso de academia categoriaD",
     descricao: "Produto resistente para treinos intensos.",
-    preco: 240.00,
+    preco: 222.00,
     imagem: "../img/feature_prod_02.jpg",
      outrasImg: [],
     rating: 5, // até 5
@@ -136,7 +136,7 @@ const produtos = [
     id: 14,
     nome: "Peso de academia categoriaC",
     descricao: "Produto resistente para treinos intensos.",
-    preco: 240.00,
+    preco: 10.00,
     imagem: "../img/feature_prod_02.jpg",
      outrasImg: [],
     rating: 5, // até 5
@@ -211,7 +211,17 @@ limparContainer();
 renderizarCard(produtos);
 })
 
+let precoInputMin = document.querySelector(".minPreco");
+let precoInputMax = document.querySelector(".maxPreco");
+const btnFiltroPreco = document.querySelector(".filterBtn");
 
-
+btnFiltroPreco.addEventListener("click",()=>{
+  limparContainer()
+  const precoMin = parseFloat(precoInputMin.value) || 0;
+  const precoMax = parseFloat(precoInputMax.value) || Infinity;
+  let cardsFiltradosPreco = produtos.filter(p => p.preco >= precoMin && p.preco <= precoMax);
+  renderizarCard(cardsFiltradosPreco)
+  console.log("botao esta funcionando")
+})
 
 
