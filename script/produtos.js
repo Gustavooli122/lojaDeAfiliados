@@ -4,33 +4,33 @@
 const produtos = [
   {
     id: 1,
-    nome: "Produto Teste categoria A",
+    nome: "Bicicleta azul",
     descricao: "Produto resistente para treinos intensos.",
     preco:950.00,
     imagem: "https://static.netshoes.com.br/produtos/bicicleta-aro-29-krw-aluminio-24-vel-marchas-freio-a-disco-suspensao-dianteira-mountain-bike-x32/08/CGY-0302-108/CGY-0302-108_zoom1.jpg?ts=1745398163&ims=1088x",
      outrasImg: ["../img/feature_prod_02.jpg","../img/feature_prod_03.jpg","../img/feature_prod_01.jpg","../img/feature_prod_03.jpg","../img/feature_prod_02.jpg"],
     rating: 4, // até 5
-    categoria:"A"
+    categoria:"bicicletas"
   },
    {
     id: 2,
-    nome: "Peso de academia categoriaC",
+    nome: "Bicicleta branca",
     descricao: "O produto de CategoriaC id 2 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse. Donec condimentum elementum convallis. Nunc sed orci a diam ultrices aliquet interdum quis nulla.",
     preco: 460.00,
     imagem: "https://images.tcdn.com.br/img/img_prod/394779/bicicleta_29_gts_m1_freio_a_disco_21_marchas_shimano_ride_new_g_series_4993_variacao_16043_1_db4f41946fc392eb4eb4d284ddae2822_20250701155948.jpg",
     outrasImg: [],
     rating: 4 , // até 5
-    categoria:"C"
+    categoria:"bicicletas"
   },
     {
     id: 3,
-    nome: "Peso de academia categoriaA id3",
+    nome: "bicicleta amarela",
     descricao: "Produto resistente para treinos intensos.",
     preco: 342.00,
     imagem: "https://http2.mlstatic.com/D_NQ_NP_922021-MLB78734496967_082024-O-bicicleta-aro-29-gta-21v-freio-disco-mecnico-suspenso-bike.webp",
      outrasImg: ["https://http2.mlstatic.com/D_NQ_NP_922021-MLB78734496967_082024-O-bicicleta-aro-29-gta-21v-freio-disco-mecnico-suspenso-bike.webp","https://http2.mlstatic.com/D_NQ_NP_922021-MLB78734496967_082024-O-bicicleta-aro-29-gta-21v-freio-disco-mecnico-suspenso-bike.webp","https://http2.mlstatic.com/D_NQ_NP_922021-MLB78734496967_082024-O-bicicleta-aro-29-gta-21v-freio-disco-mecnico-suspenso-bike.webp","https://http2.mlstatic.com/D_NQ_NP_922021-MLB78734496967_082024-O-bicicleta-aro-29-gta-21v-freio-disco-mecnico-suspenso-bike.webp"],
     rating: 4, // até 5
-    categoria:"A"
+    categoria:"bicicletas"
   },
     {
     id: 4,
@@ -40,7 +40,7 @@ const produtos = [
     imagem: "../img/feature_prod_02.jpg",
      outrasImg: [],
     rating: 4 , // até 5
-    categoria:"B"
+    categoria:"relogios"
   },
     {
     id: 5,
@@ -50,7 +50,7 @@ const produtos = [
     imagem: "../img/feature_prod_01.jpg",
      outrasImg: [],
     rating: 4 , // até 5
-    categoria:"B"
+    categoria:"lanternas"
   },
     {
     id: 6,
@@ -60,7 +60,7 @@ const produtos = [
     imagem: "../img/feature_prod_03.jpg",
      outrasImg: [],
     rating: 4 , // até 5
-    categoria:"A"
+    categoria:"cameras"
   },
     {
     id: 7,
@@ -70,7 +70,7 @@ const produtos = [
     imagem: "../img/feature_prod_02.jpg",
     outrasImg: [],
     rating: 4 , // até 5
-    categoria:"A"
+    categoria:"relogios"
   },
     {
     id: 8,
@@ -80,7 +80,7 @@ const produtos = [
     imagem: "../img/feature_prod_03.jpg",
      outrasImg: [],
     rating: 2, // até 5
-    categoria:"C"
+    categoria:"cameras"
   },
     {
     id: 9,
@@ -88,9 +88,9 @@ const produtos = [
     descricao: "Produto resistente para treinos intensos.",
     preco: 40.00,
     imagem: "../img/feature_prod_01.jpg",
-     outrasImg: [],
+    outrasImg: [],
     rating: 3 , // até 5
-    categoria:"A"
+    categoria:"lanternas"
   },
     {
     id: 10,
@@ -100,7 +100,7 @@ const produtos = [
     imagem: "../img/feature_prod_02.jpg",
      outrasImg: [],
     rating: 5, // até 5
-    categoria:"A"
+    categoria:"relogios"
   },
    {
     id: 11,
@@ -110,7 +110,7 @@ const produtos = [
     imagem: "../img/feature_prod_02.jpg",
      outrasImg: [],
     rating: 5, // até 5
-    categoria:"D"
+    categoria:"relogios"
   },
    {
     id: 12,
@@ -120,7 +120,7 @@ const produtos = [
     imagem: "../img/feature_prod_02.jpg",
      outrasImg: [],
     rating: 5, // até 5
-    categoria:"D"
+    categoria:"relogios"
   },
    {
     id: 13,
@@ -130,7 +130,7 @@ const produtos = [
     imagem: "../img/feature_prod_02.jpg",
      outrasImg: [],
     rating: 5, // até 5
-    categoria:"D"
+    categoria:"relogios"
   },
    {
     id: 14,
@@ -140,7 +140,7 @@ const produtos = [
     imagem: "../img/feature_prod_02.jpg",
      outrasImg: [],
     rating: 5, // até 5
-    categoria:"C"
+    categoria:"relogios"
   },
 
 ];
@@ -224,4 +224,14 @@ btnFiltroPreco.addEventListener("click",()=>{
   console.log("botao esta funcionando")
 })
 
+//input de busca
+
+const inputBusca = document.getElementById("inputProcurar");
+
+inputBusca.addEventListener("input",()=>{
+  limparContainer()
+  const termo = inputBusca.value.toLowerCase();
+  const pesquisados =  produtos.filter(p => p.nome.toLowerCase().includes(termo))
+  renderizarCard(pesquisados);
+})
 
