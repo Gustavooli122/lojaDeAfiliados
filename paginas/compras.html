@@ -120,75 +120,50 @@
    
   </aside>
  
-     <div class="relative inline-block w-full px-6 md:hidden">
-       <form class="rounded-sm flex border border-gray-300" role="search" aria-label="Procurar produtos">
-          <input type="text" id="inputProcurar" placeholder="Procurar..." class="w-full placeholder:p-5 rounded-md">
-          <button type="submit" class="bg-gray-300 w-[60px] flex justify-center items-center" aria-label="Buscar">
-            <img src="../img/lupa.png" alt="Ícone de lupa" width="25px" class="m-[5px]">
-          </button>
-        </form>
-    <!-- Botão principal (dropdown) -->
+     <div class="flex flex-col w-full gap-1 ">
+     <section class="md:flex md:flex-row md:gap-1 px-4 sm:px-4 md:px-4 lg:px-5 w-full md:mt-6 flex flex-col gap-1 sm:flex-row">
+  <!-- Busca -->
+  <form class="md:w-[70%] w-full rounded-sm flex border border-gray-300" role="search" aria-label="Procurar produtos">
+    <input type="text" id="inputProcurar" placeholder="Procurar..." class="placeholder:p-5 rounded-md w-full">
+    <button type="submit" class="bg-gray-300 w-[60px] flex justify-center items-center" aria-label="Buscar">
+      <img src="../img/lupa.png" alt="Ícone de lupa" width="25px" class="m-[5px]">
+    </button>
+  </form>
+
+  <!-- Wrapper do botão + dropdown -->
+  <div class="relative md:w-[30%] sm:w-[40%] w-full">
+    <!-- Botão -->
     <button
-      class="w-full dropdownBtn bg-white border border-gray-300 rounded-md p-2 mt-2 flex justify-between items-center text-gray-700 hover:border-blue-500 focus:outline-none">
+      class="dropdownBtn bg-g border border-gray-300 rounded-md p-2 flex justify-between items-center text-gray-700 hover:border-blue-500 focus:outline-none w-full">
       <span class="dropdownValue">Filtrar por preço</span>
-
     </button>
 
-    <!-- Lista de opções -->
-    <section class="absolute dropdownMenu hidden w-[90%] overflow-hidden  flex-row gap-2 bg-white border mt-2 border-gray-300 rounded-md shadow-lg z-10">
-   <section class="flex flex-col gap-4 py-2 px-2"> <div class="flex gap-2">
-      <input type="number" placeholder="Mín." 
-             class="w-1/2 p-2 border minPrice rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
-      <input type="number" placeholder="Máx." 
-             class="w-1/2 p-2 border maxPrice rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
-    </div>
+    <!-- Dropdown -->
+    <section
+      class="dropdownMenu absolute hidden overflow-hidden bg-white border top-full mt-2 left-0 w-full border-gray-300 rounded-md shadow-lg z-10">
+      <section class="flex flex-col gap-4 py-2 px-2">
+        <div class="flex gap-2">
+          <input type="number" placeholder="Mín." 
+            class="w-1/2 p-2 border minPreco rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <input type="number" placeholder="Máx." 
+            class="w-1/2 p-2 border maxPreco rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
 
-    <button
-            class="w-full filterBtn bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition">
-      Filtrar
-    </button>
-   
+        <button
+          class="w-full filterBtn bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition">
+          Filtrar
+        </button>
+      </section>
     </section>
   </div>
-     <div class="bg-white my-5 w-full">
+</section>
 
-      
-      <section class="md:flex flex-row justify-between w-full px-5">
-         <form class="rounded-sm md:flex border border-gray-300 hidden w-full" role="search" aria-label="Procurar produtos">
-          <input type="text" id="inputProcurar" placeholder="Procurar..." class="w-full placeholder:p-5 rounded-md">
-          <button type="submit" class="bg-gray-300 w-[60px] flex justify-center items-center" aria-label="Buscar">
-            <img src="../img/lupa.png" alt="Ícone de lupa" width="25px" class="m-[5px]">
-          </button>
-        </form>
-      <div class="relative w-full px-2 hidden md:w-[50%] md:flex flex-col">
-    
-    <!-- Botão principal (dropdown) -->
-    <button class="w-full dropdownBtn bg-g border border-gray-300  rounded-md p-2  flex justify-between items-center text-gray-700 hover:border-blue-500 focus:outline-none">
-      <span class="dropdownValue">Filtrar por preço</span>
-
-    </button>
-
-    <!-- Lista de opções -->
-    <section
-      class="dropdownMenu absolute hidden overflow-hidden bg-white border mt-12 border-gray-300 rounded-md shadow-lg z-10 ">
-     <section class="flex flex-col gap-4 py-2 px-2"> <div class="flex gap-2">
-      <input type="number" placeholder="Mín." 
-             class="w-1/2 p-2 border minPrice rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
-      <input type="number" placeholder="Máx." 
-             class="w-1/2 p-2 border maxPrice rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
-    </div>
-
-    <button
-            class="w-full filterBtn bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition">
-      Filtrar
-    </button>
-   
-    </section>
-    </section>
-  </div></section>
+  
     <section class="containerShop grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 my-6 gap-2 px-2 sm:px-3 md:px-4 lg:px-5">
    
-</section></section>
+</section>
+  </div>
+    </section>
          <footer class="bg-gray-800 text-white py-10">
           <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
             <!-- Seção 1: Empresa -->
@@ -254,6 +229,7 @@
      
 </body>
 </html>
+
 
 
 
