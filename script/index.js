@@ -37,4 +37,3 @@ document.querySelector(".btnProximo").addEventListener("click", () => mostrarSli
 
 
 
-
