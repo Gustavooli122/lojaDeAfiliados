@@ -5,7 +5,7 @@ const produtos = [
   {
     id: 1,
     nome: "Bicicleta azul",
-    descricao: "Produto resistente para treinos intensos.",
+    descricao: "Bicicleta Azul aro 29.",
     preco:950.00,
     imagem: "https://static.netshoes.com.br/produtos/bicicleta-aro-29-krw-aluminio-24-vel-marchas-freio-a-disco-suspensao-dianteira-mountain-bike-x32/08/CGY-0302-108/CGY-0302-108_zoom1.jpg?ts=1745398163&ims=1088x",
      outrasImg: ["../img/feature_prod_02.jpg","../img/feature_prod_03.jpg","../img/feature_prod_01.jpg","../img/feature_prod_03.jpg","../img/feature_prod_02.jpg"],
@@ -176,12 +176,17 @@ function renderizarCard(lista){
     </div>
   </article>`
 ).join(""); container.innerHTML = card;
+
+if(lista.length === 0){
+  container.innerHTML = `<p class ="my-40 mx-auto">Nenhum produto encontrado.</p>`;
+  return;
+}
 }
 
   renderizarCard(produtos);
 
 
-document.querySelectorAll("[data-classe]").forEach(botao =>
+const produtosClasses = document.querySelectorAll("[data-classe]").forEach(botao =>
   botao.addEventListener("click",()=>{
     const classe = botao.dataset.classe;
     limparContainer();
@@ -226,12 +231,26 @@ btnFiltroPreco.addEventListener("click",()=>{
 
 //input de busca
 
+// input de busca
 const inputBusca = document.getElementById("inputProcurar");
 
-inputBusca.addEventListener("input",()=>{
-  limparContainer()
-  const termo = inputBusca.value.toLowerCase();
-  const pesquisados =  produtos.filter(p => p.nome.toLowerCase().includes(termo))
+inputBusca.addEventListener("input", () => {
+  limparContainer();
+  const termo = inputBusca.value.toLowerCase().trim();
+
+  if (termo === "") {
+    // se o input estiver vazio, renderiza todos de novo
+    renderizarCard(produtos);
+    return;
+  }
+
+  const pesquisados = produtos.filter(p => 
+    p.nome.toLowerCase().includes(termo) || 
+    p.descricao.toLowerCase().includes(termo)
+  );
+
   renderizarCard(pesquisados);
-})
+});
+
+
 
