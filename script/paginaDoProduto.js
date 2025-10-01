@@ -45,9 +45,11 @@ let scrollLeft;        // posição inicial do scroll
 
 const cardDeInformacoes = document.querySelector(".paginaProdutos");
     
+  const favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
     produtoCompleto.forEach(produto =>{
-       const card2 = `
+      const nosFavoritos = favoritos.some(f => f.id == produto.id);
 
+       const card2 = `
       <section class= "h-full md:h-[90%] lg:h-full">
        <figure class="flex justify-center">
   <img id="imgPrincipal" src="${produto.imagem}" alt="Produto esportivo principal" class= "object-contain">
@@ -125,9 +127,10 @@ const cardDeInformacoes = document.querySelector(".paginaProdutos");
      class="bg-[#0b2c57d5] hover:bg-[#238a48] text-white py-2 px-3 rounded-[4px] text-xl w-auto text-center sm:w-full">
      <button class="p-0 m-0">Comprar agora</button>
   </a>
- <button id="btnFavoritos" class="bg-[#2ea55cd5] hover:bg-[#238a48] text-white py-2 px-3 rounded-[4px] text-[18px] w-auto sm:w-full">
-        <i class="fa-regular fa-heart mx-2 sm:mx-0 iconeFavoritoProduto"></i> <span class = "textoBtnFavoritos">Adicionar aos favoritos</span>
-      </button>  
+  <button data-id="${produto.id}" class="bg-[#2ea55cd5] btnFavoritos hover:bg-[#238a48] text-white py-2 px-3 rounded text-[18px] w-auto sm:w-full">
+          <i class="fa-regular fa-heart mx-2 iconeFavoritoProduto"></i>
+          <span class="textoBtnFavoritos">${nosFavoritos ? "Remover dos favoritos" : "Adicionar favorito"}</span>
+        </button>
 
 
 </section></section>`;
@@ -160,25 +163,72 @@ if(imgs.length <= 3){
   botaoAntes.classList.add("hidden")
   botaoDepois.classList.add("hidden")
 }
-   
+    adicionarEventosFavoritos();
     })
   
-    const btnFavoritos = document.getElementById("btnFavoritos");
-    const iconeFavoritosContorno = document.querySelector(".iconeFavoritoProduto");
 
-     let textoBtnFavoritos = document.querySelector(".textoBtnFavoritos");
-    btnFavoritos.addEventListener("click", () => {
-      if(document.querySelector(".fa-regular")){
-      textoBtnFavoritos.textContent = "Remover dos favoritos";
-      iconeFavoritosContorno.classList.remove("fa-regular");
-      iconeFavoritosContorno.classList.add("fa-solid");
-     }
-      else{
-      iconeFavoritosContorno.classList.add("fa-regular");
-      iconeFavoritosContorno.classList.remove("fa-solid");
-      textoBtnFavoritos.textContent = "Adicionar aos favoritos";
+
+
+function renderizarCard(lista){
+  
+ const card = lista.map(produto =>
+     `<article class="bg-white pb-3 flex flex-col justify-between rounded-md shadow-md shadow-slate-600">
+    <a href="produto.html?id=${produto.id}">
+      <img src="${produto.imagem}" alt="img-produto-card" 
+           class="w-full   rounded-t-md">
+    </a>
+  
+    <div class="mx-2 mt-2"> 
+     <div class="flex flex-col  sm:justify-between lg:flex-row md:flex-col sm:flex-row lg:items-center md:items-start sm:items-center items-start lg:justify-between mt-2">
+      <ul id = "rating" class="flex gap-1">
+    ${gerarEstrelas(produto.rating)}
+      </ul>
+      <p class="text-gray-400  lg:text-base md:text-sm sm:text-xs text-sm">R$ ${produto.preco.toFixed(2)}</p>
+    </div>
+      <h2 class="text-sm sm:text-base font-medium leading-tight">${produto.nome}</h2>
+        <a href="produto.html?id=${produto.id}">
+     <button  class="bg-[#0d2f42] text-gray-200 text-xs sm:text-sm md:text-base px-2 sm:py-2 sm:px-2 py-1 mt-4 rounded hover:bg-[#123f59] w-full">
+        Ver mais
+      </button>
+    </a> 
+    </div>
+  </article>`
+).join(""); container.innerHTML = card;}
+
+    const btnFavoritos = document.getElementById("btnFavoritos");
+
+    const iconeFavoritosContorno = document.querySelector(".iconeFavoritoProduto");
+    const containerProdutosFavoritos = document.querySelector(".paginaProdutosFavoritos")
+
+// --- FUNÇÃO FAVORITOS ---
+function adicionarEventosFavoritos() {
+  const btns = document.querySelectorAll(".btnFavoritos");
+
+  btns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const produtoId = btn.dataset.id;
+      let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
+      const produto = produtos.find((p) => p.id == produtoId);
+      const existe = favoritos.some((f) => f.id == produtoId);
+
+      if (!existe) {
+        favoritos.push(produto);
+      } else {
+        favoritos = favoritos.filter((f) => f.id != produtoId);
       }
+
+      localStorage.setItem("favoritos", JSON.stringify(favoritos));
+
+      // Atualiza texto do botão
+      const textoBtn = btn.querySelector(".textoBtnFavoritos");
+      textoBtn.textContent = existe
+        ? "Adicionar favorito"
+        : "Remover dos favoritos";
     });
+  });
+}
+
+
 
     const slides = document.getElementById('slides');
     const totalSlides = slides.children.length;
@@ -251,8 +301,10 @@ if(imgs.length <= 3){
 
 
 }
+
    
- 
+
+
 
 
 
