@@ -47,6 +47,7 @@ let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
 
       localStorage.setItem("favoritos", JSON.stringify(favoritos));
       renderizarFavoritos();
+      renderizarNumerosFavoritos()
      
     });
   });
