@@ -224,6 +224,9 @@ function adicionarEventosFavoritos() {
       textoBtn.textContent = existe
         ? "Adicionar favorito"
         : "Remover dos favoritos";
+        
+      
+        renderizarNumerosFavoritos()
     });
   });
 }
@@ -295,15 +298,13 @@ function adicionarEventosFavoritos() {
     const carrosselProdutos = document.querySelector(".carrosselProdutos");
  function abrirCarrosselProdutos() {
 
-  carrosselProdutos.classList.toggle("translate-y-[-13.5rem]");
-  carrosselProdutos.classList.remove("lg:-translate-y-2");
-  console.log("funçao esta sendo chamada")
+  carrosselProdutos.classList.toggle("translate-y-[-10rem]");
+  carrosselProdutos.classList.toggle("lg:translate-y-0");
 
 
 }
 
    
-
 
 
 
