@@ -2,8 +2,8 @@
 const carrosselPrincipal = document.querySelector(".carrosselPrincipal");
 function abrirCarrosselPrincipal() {
 
-  carrosselPrincipal.classList.toggle("translate-y-[20rem]");
-  carrosselPrincipal.classList.remove("lg:translate-y-[20rem]");
+  carrosselPrincipal.classList.toggle("translate-y-[11rem]");
+  console.log("teste btn")
 
 }
 
@@ -27,6 +27,7 @@ document.querySelector(".btnAnterior").addEventListener("click", () => mostrarSl
 document.querySelector(".btnProximo").addEventListener("click", () => mostrarSlide(index + 1));
 
 // Auto-play
+
 
 
 
