@@ -1,3 +1,4 @@
+
 /* Para títulos */
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Poppins', sans-serif;
@@ -7,15 +8,6 @@ h1, h2, h3, h4, h5, h6 {
 body, p, a, li {
   font-family: 'Roboto', sans-serif;
 }
-
-
-.transition-transformMenu{
-    transition: transform 0.3s ease-in-out;
-}
-.transition-transformCarrossel{
-    transition: transform 0.6s ease-in-out;
-}
 #slides > article{
     background: hsl(0, 0%, 94%);
 }
-
