@@ -58,7 +58,8 @@
   console.log("funçao esta sendo chamada")
 
 }
-   
+   document.addEventListener("DOMContentLoaded", renderizarFavoritos);
+
 
 
 
