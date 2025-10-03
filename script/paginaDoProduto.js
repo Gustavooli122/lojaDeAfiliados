@@ -224,8 +224,6 @@ function adicionarEventosFavoritos() {
       textoBtn.textContent = existe
         ? "Adicionar favorito"
         : "Remover dos favoritos";
-        
-      
         renderizarNumerosFavoritos()
     });
   });
@@ -305,12 +303,6 @@ function adicionarEventosFavoritos() {
 }
 
    
-document.addEventListener("DOMContentLoaded", renderizarFavoritos);
-
-
-
-
-
 
 
 
