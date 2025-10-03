@@ -305,6 +305,7 @@ function adicionarEventosFavoritos() {
 }
 
    
+document.addEventListener("DOMContentLoaded", renderizarFavoritos);
 
 
 
