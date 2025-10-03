@@ -73,12 +73,16 @@ function renderizarNumerosFavoritos(){
 }
 
 function voltarPagina(){
-  window.history.back();
-  renderizarNumerosFavoritos();
+   renderizarNumerosFavoritos();
   console.log("log")
+  window.history.back();
+ 
 }
 document.addEventListener("DOMContentLoaded", renderizarNumerosFavoritos);
 
    
+
    
+   
+
 
