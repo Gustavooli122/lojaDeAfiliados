@@ -67,6 +67,7 @@ function renderizarNumerosFavoritos(){
    let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
   numeroFavoritos.forEach(num =>{
       num.textContent = favoritos.length;
+
   })
   
 }
@@ -74,7 +75,7 @@ function renderizarNumerosFavoritos(){
 
 // Atualiza sempre que a página carregar
 window.addEventListener("load", renderizarNumerosFavoritos);
-
+window.addEventListener("pageshow", renderizarNumerosFavoritos);
 
    
 
