@@ -71,6 +71,14 @@ function renderizarNumerosFavoritos(){
   })
   
 }
+
+function voltarPagina(){
+  window.history.back();
+  renderizarNumerosFavoritos();
+  console.log("log")
+}
 document.addEventListener("DOMContentLoaded", renderizarNumerosFavoritos);
 
    
+   
+
