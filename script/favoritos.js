@@ -47,7 +47,6 @@ let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
 
       localStorage.setItem("favoritos", JSON.stringify(favoritos));
       renderizarFavoritos();
-      renderizarNumerosFavoritos()
      
     });
   });
@@ -72,22 +71,11 @@ function renderizarNumerosFavoritos(){
   
 }
 
-function voltarPagina(){
-   renderizarNumerosFavoritos();
-  console.log("log")
-  window.history.back();
- 
-}
 
 // Atualiza sempre que a página carregar
 window.addEventListener("load", renderizarNumerosFavoritos);
 
-function voltarPagina() {
-  // Volta para a página anterior
-  window.history.back();
-}
-   
-   
 
+   
 
 
