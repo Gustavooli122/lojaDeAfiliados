@@ -67,8 +67,34 @@
 
   <!-- Conteúdo Principal -->
   <main class="flex flex-col carrosselProdutosFavoritos absolute transition-transform ease-in-out duration-500 z-20 translate-y-[-10rem] lg:-translate-y-2 w-full">
-    <section class="bg-slate-200 paginaProdutosFavoritos flex flex-col overflow-x-hidden items-center py-10 sm:py-10 mt-2 sm:px-8 md:px-[10%] lg:px-3 gap-5 lg:grid lg:grid-cols-2 lg:items-center shadow-[inset_0_4px_15px_rgba(0,0,0,0.3)] w-full px-5">
+
+    
+    <section class="bg-white flex flex-col overflow-x-hidden  py-10 sm:py-10 mt-2 sm:px-8 md:px-[10%]  shadow-[inset_0_4px_15px_rgba(0,0,0,0.3)] w-full px-5">
+   <header class="my-8  font-semibold text-gray-800 flex  justify-between"><h1 class="w-full text-2xl">Meus favoritos</h1>
+   <div class="relative  w-full">
+    <!-- Botão -->
+    <button
+      class="btnRemoverCategoria bg-g border border-gray-300 rounded-md p-2 flex justify-center items-center text-gray-700 hover:border-blue-500 focus:outline-none w-full">
+      <span class="dropdownValue">Remover por categoria</span>
+    </button>
+
+    <!-- Dropdown -->
+   <section class="menuRemoverCategoria absolute hidden overflow-hidden bg-white border mt-2 left-0 w-full border-gray-300 rounded-md shadow-lg z-10">
+  <section class="py-3 px-2">
+    <ul class="pl-4 mt-2 text-gray-600 space-y-1">
+      <li><button data-classe="bicicletas" class="hover:underline">Remover apenas bicicletas</button></li>
+      <li><button data-classe="lanternas" class="hover:underline">Remover apenas lanternas</button></li>
+      <li><button data-classe="cameras" class="hover:underline">Remover apenas cameras</button></li>
+      <li><button data-classe="relogios" class="hover:underline">Remover apenas relogios</button></li>
+      <li><button class="hover:underline categoriasRemoverTodos">Remover todos</button></li>
+    </ul>
+  </section>
+</section>
+
+  </div>
    
+  </header>
+   <section class=" paginaProdutosFavoritos grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-2 gap-y-5"></section>
     </section>
 
    
@@ -147,6 +173,7 @@
 </html>
 
    
+
 
 
 
