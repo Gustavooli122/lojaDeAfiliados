@@ -1,152 +1,83 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Página do Produto</title>
+const containerFavoritos = document.querySelector(".paginaProdutosFavoritos");
+
+
+function renderizarFavoritos(){
+let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
   
-   <!-- TailwindCSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Fonte Poppins -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-</head>
-<body id="paginaDoProduto" class="font-sans">
-
-  <!-- Barra superior -->
-  <aside class="hidden lg:flex bg-[rgb(33,41,52)] w-full py-2 px-10 justify-between items-center">
-    <div class="flex gap-2 items-center">
-      <img src="https://img.icons8.com/ios-filled/20/ffffff/new-post.png" alt="Ícone email" class="w-3 h-3">
-      <a href="mailto:contato@exemplo.com" class="text-gray-400 text-xs">info@company.com</a>
-      <img src="https://img.icons8.com/ios-filled/20/ffffff/whatsapp.png" alt="Ícone WhatsApp" class="w-3 h-3">
-      <a href="tel:010-020-0340" class="text-gray-400 text-xs">010-020-0340</a>
-    </div>
-    <nav class="flex gap-4" aria-label="Redes sociais">
-      <a href="#"><img src="https://img.icons8.com/ios-filled/24/ffffff/facebook-new.png" alt="Facebook" class="w-4"></a>
-      <a href="#"><img src="https://img.icons8.com/ios-filled/24/ffffff/instagram-new.png" alt="Instagram" class="w-4"></a>
-      <a href="#"><img src="https://img.icons8.com/ios-filled/24/ffffff/twitter.png" alt="Twitter" class="w-4"></a>
-      <a href="#"><img src="https://img.icons8.com/ios-filled/24/ffffff/linkedin.png" alt="LinkedIn" class="w-4"></a>
-    </nav>
-  </aside>
-
-  <!-- Cabeçalho -->
-  <header class="flex justify-between items-center z-20 lg:px-10 h-[5.5rem]">
-    <!-- Logo -->
-    <img src="../img/logo.png" alt="Logo da loja" width="170" height="40">
-
-    <!-- Menu Desktop -->
-    <nav aria-label="Menu principal" class="hidden lg:flex justify-center w-full">
-      <ul class="flex gap-20 text-xl text-gray-600">
-        <li><a href="../index.html" class="hover:text-green-600">Início</a></li>
-        <li><a href="#" class="hover:text-green-600">Sobre</a></li>
-        <li><a href="../paginas/compras.html" class="hover:text-green-600">Comprar</a></li>
-        <li><a href="#" onclick="voltarPagina()" class="hover:text-green-600">Voltar</a></li>
+  if (favoritos.length === 0) {
+    containerFavoritos.innerHTML = "<p class='text-gray-500 col-span-full text-center'>Nenhum favorito adicionado.</p>";
+    return;
+  }
+ containerFavoritos.innerHTML = favoritos.map((produto) =>
+     `<article class="bg-white pb-3 flex flex-col justify-between rounded-md shadow-md shadow-slate-600">
+    <a href="produto.html?id=${produto.id}">
+      <img src="${produto.imagem}" alt="img-produto-card" 
+           class="w-full   rounded-t-md">
+    </a>
+  
+    <div class="mx-2 mt-2"> 
+     <div class="flex flex-col  sm:justify-between lg:flex-row md:flex-col sm:flex-row lg:items-center md:items-start sm:items-center items-start lg:justify-between mt-2">
+      <ul id = "rating" class="flex gap-1">
+    ${gerarEstrelas(produto.rating)}
       </ul>
-    </nav>
-
-    <!-- Menu Mobile -->
-    <button class="lg:hidden flex" onclick="abrirCarrosselProdutosFavoritos()" aria-label="Abrir menu">
-      <img src="../img/menu.png" alt="Menu" class="w-[80px] h-[80px] object-cover lg:hidden">
-    </button>
-  </header>
-
-  <!-- Menu Mobile -->
-  <nav aria-label="Menu mobile" class="navPrincipal relative flex-col items-start px-6 py-2 z-10 lg:hidden">
-    <ul class="flex flex-col gap-2">
-      <li><a href="../index.html" class="text-gray-600 text-lg hover:text-green-600">Início</a></li>
-      <li><a href="#" class="text-gray-600 text-lg hover:text-green-600">Sobre</a></li>
-      <li><a href="../paginas/compras.html" class="text-gray-600 text-lg hover:text-green-600">Comprar</a></li>
-      <li class="flex items-center gap-2">
-        <a href="#" onclick="voltarPagina()" class="text-gray-600 text-lg hover:text-green-600">Voltar</a>
-   
-      </li>
-    </ul>
-  </nav>
-
-  <!-- Conteúdo Principal -->
-  <main class="flex flex-col carrosselProdutosFavoritos absolute transition-transform ease-in-out duration-500 z-20 translate-y-[-10rem] lg:-translate-y-2 w-full">
-    <section class="bg-slate-200 paginaProdutosFavoritos flex flex-col overflow-x-hidden items-center py-10 sm:py-10 mt-2 sm:px-8 md:px-[10%] lg:px-3 gap-5 lg:grid lg:grid-cols-2 lg:items-center shadow-[inset_0_4px_15px_rgba(0,0,0,0.3)] w-full px-5">
-   
-    </section>
-
-   
-  <footer class="bg-gray-800 text-white py-10">
-    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
-      
-      <!-- Empresa -->
-      <section>
-        <h2 class="text-green-600 text-3xl font-bold mb-6 border-b border-gray-600 pb-4">Afilideal</h2>
-        <ul class="space-y-4 text-gray-300">
-          <li class="flex items-center gap-2">
-            <img src="https://img.icons8.com/ios-filled/20/ffffff/marker.png" alt="Localização">
-            123 Consectetur at ligula 10660
-          </li>
-          <li class="flex items-center gap-2">
-            <img src="https://img.icons8.com/ios-filled/20/ffffff/whatsapp.png" alt="WhatsApp">
-            010-020-0340
-          </li>
-          <li class="flex items-center gap-2">
-            <img src="https://img.icons8.com/ios-filled/20/ffffff/new-post.png" alt="Email">
-            info@company.com
-          </li>
-        </ul>
-      </section>
-
-      <!-- Produtos -->
-      <section>
-        <h2 class="text-white text-xl mb-4 border-b border-gray-700 pb-4">Produtos</h2>
-        <ul class="space-y-2 text-gray-300">
-          <li>Luxury</li>
-          <li>Sport Wear</li>
-          <li>Men's Shoes</li>
-          <li>Women's Shoes</li>
-          <li>Popular Dress</li>
-          <li>Gym Accessories</li>
-          <li>Sport Shoes</li>
-        </ul>
-      </section>
-
-      <!-- Info -->
-      <section>
-        <h2 class="text-xl mb-4 text-gray-200">Mais Informações</h2>
-        <ul class="space-y-2 text-gray-300 mb-4 border-b border-gray-700 pb-4 border-t pt-4">
-          <li>Home</li>
-          <li>About Us</li>
-          <li>Shop Locations</li>
-          <li>FAQs</li>
-          <li>Contact</li>
-        </ul>
-        <!-- Redes sociais -->
-        <nav class="flex gap-4 mt-2" aria-label="Redes sociais">
-          <a href="#"><img src="https://img.icons8.com/ios-filled/24/ffffff/facebook-new.png" alt="Facebook"></a>
-          <a href="#"><img src="https://img.icons8.com/ios-filled/24/ffffff/instagram-new.png" alt="Instagram"></a>
-          <a href="#"><img src="https://img.icons8.com/ios-filled/24/ffffff/twitter.png" alt="Twitter"></a>
-          <a href="#"><img src="https://img.icons8.com/ios-filled/24/ffffff/linkedin.png" alt="LinkedIn"></a>
-        </nav>
-        <!-- Copyright -->
-        <p class="text-gray-400 text-sm mt-6">
-          &copy; 2021 Company Name | Designed by <a href="#" class="underline">Gustavo Oliveira</a>
-        </p>
-      </section>
+      <p class="text-gray-400  lg:text-base md:text-sm sm:text-xs text-sm">R$ ${produto.preco.toFixed(2)}</p>
     </div>
-  </footer>
-  </main>
-
+      <h2 class="text-sm sm:text-base font-medium leading-tight">${produto.nome}</h2>
+      <section>
+        <a href="produto.html?id=${produto.id}">
+     <button  class="bg-[#0d2f42] text-gray-200 text-xs sm:text-sm md:text-base px-2 sm:py-2 sm:px-2 py-1 mt-4 rounded hover:bg-[#123f59] w-full">
+        Ver mais
+      </button>
+    </a>   
+     <button data-id = "${produto.id}" class="btnRemoverFavorito bg-[#9b3939] text-gray-100 text-xs sm:text-sm md:text-base px-2 sm:py-2 sm:px-2 py-1 mt-4 rounded w-full">
+       Remover
+      </button></section>
+    </div>
+  </article>`
   
+).join(""); 
 
-  <!-- Scripts -->
+// Eventos para remover favoritos
+  const btns = document.querySelectorAll(".btnRemoverFavorito");
+  btns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
+      const id = btn.dataset.id;
+      favoritos = favoritos.filter(f => f.id != id);
+
+      localStorage.setItem("favoritos", JSON.stringify(favoritos));
+      renderizarFavoritos();
+      renderizarNumerosFavoritos()
+     
+    });
+  });
+
+
+}
+
+document.addEventListener("DOMContentLoaded", renderizarFavoritos);
+
+    const carrosselProdutosFavoritos = document.querySelector(".carrosselProdutosFavoritos");
+ function abrirCarrosselProdutosFavoritos() {
+  carrosselProdutosFavoritos.classList.toggle("translate-y-[-10rem]");
+  console.log("carrossel funcionando")
+}
+
+ const numeroFavoritos = document.querySelectorAll(".numeroFavoritos");
+function renderizarNumerosFavoritos(){
+   let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
+  numeroFavoritos.forEach(num =>{
+      num.textContent = favoritos.length;
+  })
+  
+}
+
+function voltarPagina(){
+   renderizarNumerosFavoritos();
+  console.log("log")
+  window.history.back();
  
-  <script src="../script/index.js"></script>
-  <script src="../script/favoritos.js"></script>
-  <script src="../script/paginaDoProduto.js"></script>
-  <script src="../script/produtos.js"></script>
+}
+document.addEventListener("DOMContentLoaded", renderizarNumerosFavoritos);
 
-</body>
-</html>
-
-
-
-
+   
