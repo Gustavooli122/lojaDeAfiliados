@@ -302,7 +302,8 @@ function adicionarEventosFavoritos() {
 
 }
 
-   
+   window.addEventListener("pageshow", renderizarNumerosFavoritos);
+
 
 
 
