@@ -78,11 +78,16 @@ function voltarPagina(){
   window.history.back();
  
 }
-document.addEventListener("DOMContentLoaded", renderizarNumerosFavoritos);
 
+// Atualiza sempre que a página carregar
+window.addEventListener("load", renderizarNumerosFavoritos);
+
+function voltarPagina() {
+  // Volta para a página anterior
+  window.history.back();
+}
+   
    
 
-   
-   
 
 
